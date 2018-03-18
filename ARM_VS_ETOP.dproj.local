@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2018.03.18 16:13:04.689,=C:\Users\Erlan\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018.03.18 16:15:20.676,D:\projects\Anar\App\ARM_VS_ETOP\Unit1.dfm=C:\Users\Erlan\Documents\RAD Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2018.03.18 16:15:20.676,D:\projects\Anar\App\ARM_VS_ETOP\Unit1.pas=C:\Users\Erlan\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018.03.18 16:15:33.620,D:\projects\Anar\App\ARM_VS_ETOP\ARM_VS_ETOP.dproj=C:\Users\Erlan\Documents\RAD Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
