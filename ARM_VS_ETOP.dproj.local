@@ -1,9 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-  <Transactions>
-    <Transaction>2018.03.18 16:13:04.689,=C:\Users\Erlan\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2018.03.18 16:15:20.676,D:\projects\Anar\App\ARM_VS_ETOP\Unit1.dfm=C:\Users\Erlan\Documents\RAD Studio\Projects\Unit1.dfm</Transaction>
-    <Transaction>2018.03.18 16:15:20.676,D:\projects\Anar\App\ARM_VS_ETOP\Unit1.pas=C:\Users\Erlan\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2018.03.18 16:15:33.620,D:\projects\Anar\App\ARM_VS_ETOP\ARM_VS_ETOP.dproj=C:\Users\Erlan\Documents\RAD Studio\Projects\Project1.dproj</Transaction>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.676,C:\Users\Erlan\Documents\RAD Studio\Projects\Unit1.dfm=D:\projects\Anar\App\ARM_VS_ETOP\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.759,=D:\projects\Anar\App\ARM_VS_ETOP\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.620,C:\Users\Erlan\Documents\RAD Studio\Projects\Project1.dproj=D:\projects\Anar\App\ARM_VS_ETOP\ARM_VS_ETOP.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.145,D:\projects\Anar\App\ARM_VS_ETOP\unit_datamodule.dfm=D:\projects\Anar\App\ARM_VS_ETOP\Unit2.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.689,=C:\Users\Erlan\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.676,C:\Users\Erlan\Documents\RAD Studio\Projects\Unit1.pas=D:\projects\Anar\App\ARM_VS_ETOP\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.145,D:\projects\Anar\App\ARM_VS_ETOP\unit_datamodule.pas=D:\projects\Anar\App\ARM_VS_ETOP\Unit2.pas</Transaction>
+    <Transaction>2018.03.18 17:36:10.421,=D:\projects\Anar\App\ARM_VS_ETOP\Unit2.pas</Transaction>
+    <Transaction>2018.03.18 17:36:27.000,D:\projects\Anar\App\ARM_VS_ETOP\unit_dolzhnost.pas=D:\projects\Anar\App\ARM_VS_ETOP\Unit2.pas</Transaction>
+    <Transaction>2018.03.18 17:36:27.000,D:\projects\Anar\App\ARM_VS_ETOP\unit_dolzhnost.dfm=D:\projects\Anar\App\ARM_VS_ETOP\Unit2.dfm</Transaction>
   </Transactions>
 </BorlandProject>
