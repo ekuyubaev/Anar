@@ -31,15 +31,19 @@ object form_main: Tform_main
       end
       object N5: TMenuItem
         Caption = #1042#1080#1076#1099' '#1072#1090#1090#1077#1089#1090#1072#1094#1080#1081
+        OnClick = N5Click
       end
       object N6: TMenuItem
         Caption = #1056#1077#1079#1091#1083#1100#1090#1072#1090' '#1072#1090#1090#1077#1089#1090#1072#1094#1080#1080
+        OnClick = N6Click
       end
       object N7: TMenuItem
         Caption = #1058#1077#1093#1085#1080#1095#1077#1089#1082#1086#1077' '#1089#1086#1089#1090#1086#1103#1085#1080#1077
+        OnClick = N7Click
       end
       object N8: TMenuItem
         Caption = #1056#1077#1079#1091#1083#1100#1090#1072#1090' '#1087#1086#1074#1077#1088#1082#1080
+        OnClick = N8Click
       end
     end
     object N3: TMenuItem

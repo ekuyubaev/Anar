@@ -95,6 +95,22 @@
             <Form>form_dolzhnost</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="unit_vid_attestacia.pas">
+            <Form>form_vid_attestacia</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="unit_rezultat_attestacia.pas">
+            <Form>form_rezultat_attestacia</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="unit_sostoianie.pas">
+            <Form>form_sostoianie</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="unit_rezultat_poverka.pas">
+            <Form>form_rezultat_poverka</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

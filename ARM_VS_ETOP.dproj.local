@@ -1,15 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.676,C:\Users\Erlan\Documents\RAD Studio\Projects\Unit1.dfm=D:\projects\Anar\App\ARM_VS_ETOP\Unit1.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.759,=D:\projects\Anar\App\ARM_VS_ETOP\Unit2.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.620,C:\Users\Erlan\Documents\RAD Studio\Projects\Project1.dproj=D:\projects\Anar\App\ARM_VS_ETOP\ARM_VS_ETOP.dproj</Transaction>
     <Transaction>1899.12.30 00:00:00.000.145,D:\projects\Anar\App\ARM_VS_ETOP\unit_datamodule.dfm=D:\projects\Anar\App\ARM_VS_ETOP\Unit2.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.620,C:\Users\Erlan\Documents\RAD Studio\Projects\Project1.dproj=D:\projects\Anar\App\ARM_VS_ETOP\ARM_VS_ETOP.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.676,C:\Users\Erlan\Documents\RAD Studio\Projects\Unit1.dfm=D:\projects\Anar\App\ARM_VS_ETOP\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.145,D:\projects\Anar\App\ARM_VS_ETOP\unit_datamodule.pas=D:\projects\Anar\App\ARM_VS_ETOP\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.421,=D:\projects\Anar\App\ARM_VS_ETOP\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.759,=D:\projects\Anar\App\ARM_VS_ETOP\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.000,D:\projects\Anar\App\ARM_VS_ETOP\unit_dolzhnost.dfm=D:\projects\Anar\App\ARM_VS_ETOP\Unit2.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.000,D:\projects\Anar\App\ARM_VS_ETOP\unit_dolzhnost.pas=D:\projects\Anar\App\ARM_VS_ETOP\Unit2.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.689,=C:\Users\Erlan\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.676,C:\Users\Erlan\Documents\RAD Studio\Projects\Unit1.pas=D:\projects\Anar\App\ARM_VS_ETOP\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.145,D:\projects\Anar\App\ARM_VS_ETOP\unit_datamodule.pas=D:\projects\Anar\App\ARM_VS_ETOP\Unit2.pas</Transaction>
-    <Transaction>2018.03.18 17:36:10.421,=D:\projects\Anar\App\ARM_VS_ETOP\Unit2.pas</Transaction>
-    <Transaction>2018.03.18 17:36:27.000,D:\projects\Anar\App\ARM_VS_ETOP\unit_dolzhnost.pas=D:\projects\Anar\App\ARM_VS_ETOP\Unit2.pas</Transaction>
-    <Transaction>2018.03.18 17:36:27.000,D:\projects\Anar\App\ARM_VS_ETOP\unit_dolzhnost.dfm=D:\projects\Anar\App\ARM_VS_ETOP\Unit2.dfm</Transaction>
+    <Transaction>2018.03.18 18:59:32.094,=D:\projects\Anar\App\ARM_VS_ETOP\Unit2.pas</Transaction>
+    <Transaction>2018.03.18 19:00:53.750,D:\projects\Anar\App\ARM_VS_ETOP\unit_vid_attestacia.dfm=D:\projects\Anar\App\ARM_VS_ETOP\Unit2.dfm</Transaction>
+    <Transaction>2018.03.18 19:00:53.750,D:\projects\Anar\App\ARM_VS_ETOP\unit_vid_attestacia.pas=D:\projects\Anar\App\ARM_VS_ETOP\Unit2.pas</Transaction>
+    <Transaction>2018.03.18 19:07:25.349,=D:\projects\Anar\App\ARM_VS_ETOP\Unit2.pas</Transaction>
+    <Transaction>2018.03.18 19:08:44.026,D:\projects\Anar\App\ARM_VS_ETOP\unit_rezultat_attestacia.dfm=D:\projects\Anar\App\ARM_VS_ETOP\Unit2.dfm</Transaction>
+    <Transaction>2018.03.18 19:08:44.026,D:\projects\Anar\App\ARM_VS_ETOP\unit_rezultat_attestacia.pas=D:\projects\Anar\App\ARM_VS_ETOP\Unit2.pas</Transaction>
+    <Transaction>2018.03.18 19:15:00.171,=D:\projects\Anar\App\ARM_VS_ETOP\Unit2.pas</Transaction>
+    <Transaction>2018.03.18 19:16:06.973,D:\projects\Anar\App\ARM_VS_ETOP\unit_sostoianie.pas=D:\projects\Anar\App\ARM_VS_ETOP\Unit2.pas</Transaction>
+    <Transaction>2018.03.18 19:16:06.973,D:\projects\Anar\App\ARM_VS_ETOP\unit_sostoianie.dfm=D:\projects\Anar\App\ARM_VS_ETOP\Unit2.dfm</Transaction>
+    <Transaction>2018.03.18 19:20:50.121,=D:\projects\Anar\App\ARM_VS_ETOP\Unit2.pas</Transaction>
+    <Transaction>2018.03.18 19:21:54.918,D:\projects\Anar\App\ARM_VS_ETOP\unit_rezultat_poverka.dfm=D:\projects\Anar\App\ARM_VS_ETOP\Unit2.dfm</Transaction>
+    <Transaction>2018.03.18 19:21:54.918,D:\projects\Anar\App\ARM_VS_ETOP\unit_rezultat_poverka.pas=D:\projects\Anar\App\ARM_VS_ETOP\Unit2.pas</Transaction>
   </Transactions>
 </BorlandProject>
