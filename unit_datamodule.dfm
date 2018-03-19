@@ -1,4 +1,4 @@
-object DataModule2: TDataModule2
+object DM: TDM
   OldCreateOrder = False
   Height = 416
   Width = 808
@@ -86,6 +86,58 @@ object DataModule2: TDataModule2
   object ds_rezultat_poverka: TDataSource
     DataSet = q_rezultat_poverka
     Left = 472
+    Top = 72
+  end
+  object q_sotrudnik: TADOQuery
+    Active = True
+    Connection = conn_main
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'Select * From Sotrudnik'
+      '')
+    Left = 560
+    Top = 24
+    object q_sotrudnikID_sotrudnik: TAutoIncField
+      FieldName = 'ID_sotrudnik'
+      ReadOnly = True
+    end
+    object q_sotrudnikFIO: TWideStringField
+      FieldName = 'FIO'
+      Size = 256
+    end
+    object q_sotrudnikDolzhnost: TStringField
+      FieldKind = fkLookup
+      FieldName = 'Dolzhnost'
+      LookupDataSet = q_dolzhnost
+      LookupKeyFields = 'ID_dolzhnost'
+      LookupResultField = 'Naimenovanie'
+      KeyFields = 'ID_dolzhnost'
+      Size = 255
+      Lookup = True
+    end
+    object q_sotrudnikID_dolzhnost: TIntegerField
+      FieldName = 'ID_dolzhnost'
+    end
+    object q_sotrudnikDR: TDateTimeField
+      FieldName = 'DR'
+    end
+    object q_sotrudnikAdress: TWideStringField
+      FieldName = 'Adress'
+      Size = 256
+    end
+    object q_sotrudnikTelefon: TWideStringField
+      FieldName = 'Telefon'
+      Size = 256
+    end
+    object q_sotrudnikPrimechanie: TWideMemoField
+      FieldName = 'Primechanie'
+      BlobType = ftWideMemo
+    end
+  end
+  object ds_sotrudnik: TDataSource
+    DataSet = q_sotrudnik
+    Left = 560
     Top = 72
   end
 end

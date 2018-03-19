@@ -15,6 +15,7 @@ object form_main: Tform_main
   Menu = MainMenu1
   OldCreateOrder = False
   Position = poDesktopCenter
+  OnActivate = FormActivate
   PixelsPerInch = 96
   TextHeight = 13
   object MainMenu1: TMainMenu
@@ -22,6 +23,13 @@ object form_main: Tform_main
     Top = 16
     object N1: TMenuItem
       Caption = #1060#1072#1081#1083
+    end
+    object N9: TMenuItem
+      Caption = #1059#1095#1077#1090
+      object N10: TMenuItem
+        Caption = #1059#1095#1077#1090' '#1089#1086#1090#1088#1091#1076#1085#1080#1082#1086#1074
+        OnClick = N10Click
+      end
     end
     object N2: TMenuItem
       Caption = #1057#1087#1088#1072#1074#1086#1095#1085#1080#1082#1080

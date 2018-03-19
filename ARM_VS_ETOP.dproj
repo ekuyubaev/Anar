@@ -87,7 +87,7 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="unit_datamodule.pas">
-            <Form>DataModule2</Form>
+            <Form>DM</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
@@ -109,6 +109,14 @@
         </DCCReference>
         <DCCReference Include="unit_rezultat_poverka.pas">
             <Form>form_rezultat_poverka</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="unit_sotrudnik.pas">
+            <Form>form_sotrudnik</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="unit_edit_sotrudnik.pas">
+            <Form>form_edit_sotrudnik</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">

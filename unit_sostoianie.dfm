@@ -22,7 +22,7 @@ object form_sostoianie: Tform_sostoianie
     Width = 586
     Height = 322
     Align = alClient
-    DataSource = DataModule2.ds_sostoianie
+    DataSource = DM.ds_sostoianie
     DrawMemoText = True
     DynProps = <>
     IndicatorOptions = [gioShowRowIndicatorEh]

@@ -22,7 +22,7 @@ object form_vid_attestacia: Tform_vid_attestacia
     Width = 585
     Height = 322
     Align = alClient
-    DataSource = DataModule2.ds_vid_attestacia
+    DataSource = DM.ds_vid_attestacia
     DrawMemoText = True
     DynProps = <>
     IndicatorOptions = [gioShowRowIndicatorEh]

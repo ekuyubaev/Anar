@@ -22,7 +22,7 @@ object form_rezultat_poverka: Tform_rezultat_poverka
     Width = 586
     Height = 322
     Align = alClient
-    DataSource = DataModule2.ds_rezultat_poverka
+    DataSource = DM.ds_rezultat_poverka
     DrawMemoText = True
     DynProps = <>
     IndicatorOptions = [gioShowRowIndicatorEh]

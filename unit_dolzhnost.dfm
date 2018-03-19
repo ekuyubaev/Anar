@@ -22,7 +22,7 @@ object form_dolzhnost: Tform_dolzhnost
     Width = 588
     Height = 322
     Align = alClient
-    DataSource = DataModule2.ds_dolzhnost
+    DataSource = DM.ds_dolzhnost
     DrawMemoText = True
     DynProps = <>
     IndicatorOptions = [gioShowRowIndicatorEh]

@@ -22,7 +22,7 @@ object form_rezultat_attestacia: Tform_rezultat_attestacia
     Width = 586
     Height = 322
     Align = alClient
-    DataSource = DataModule2.ds_rezultat_attestacia
+    DataSource = DM.ds_rezultat_attestacia
     DrawMemoText = True
     DynProps = <>
     IndicatorOptions = [gioShowRowIndicatorEh]
