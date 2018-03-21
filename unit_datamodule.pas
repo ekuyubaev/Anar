@@ -28,6 +28,11 @@ type
     q_sotrudnikTelefon: TWideStringField;
     q_sotrudnikPrimechanie: TWideMemoField;
     q_sotrudnikDolzhnost: TStringField;
+    q_sooruzhenie: TADOQuery;
+    ds_sooruzhenie: TDataSource;
+    q_sooruzhenieID_sooruzhenie: TAutoIncField;
+    q_sooruzhenieNomer: TWideStringField;
+    q_sooruzheniePrimechanie: TWideMemoField;
   private
     { Private declarations }
   public

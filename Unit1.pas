@@ -19,6 +19,7 @@ type
     N8: TMenuItem;
     N9: TMenuItem;
     N10: TMenuItem;
+    N11: TMenuItem;
     procedure N4Click(Sender: TObject);
     procedure N5Click(Sender: TObject);
     procedure N6Click(Sender: TObject);
@@ -26,6 +27,7 @@ type
     procedure N8Click(Sender: TObject);
     procedure N10Click(Sender: TObject);
     procedure FormActivate(Sender: TObject);
+    procedure N11Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -40,7 +42,8 @@ implementation
 {$R *.dfm}
 
 uses unit_dolzhnost, unit_vid_attestacia, unit_rezultat_attestacia,
-  unit_sostoianie, unit_rezultat_poverka, unit_sotrudnik, unit_datamodule;
+  unit_sostoianie, unit_rezultat_poverka, unit_sotrudnik, unit_datamodule,
+  unit_sooruzhenie;
 
 procedure Tform_main.FormActivate(Sender: TObject);
 begin
@@ -50,6 +53,11 @@ end;
 procedure Tform_main.N10Click(Sender: TObject);
 begin
   form_sotrudnik.ShowModal;
+end;
+
+procedure Tform_main.N11Click(Sender: TObject);
+begin
+  form_sooruzhenie.ShowModal;
 end;
 
 procedure Tform_main.N4Click(Sender: TObject);

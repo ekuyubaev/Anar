@@ -10,7 +10,9 @@ uses
   unit_sostoianie in 'unit_sostoianie.pas' {form_sostoianie},
   unit_rezultat_poverka in 'unit_rezultat_poverka.pas' {form_rezultat_poverka},
   unit_sotrudnik in 'unit_sotrudnik.pas' {form_sotrudnik},
-  unit_edit_sotrudnik in 'unit_edit_sotrudnik.pas' {form_edit_sotrudnik};
+  unit_edit_sotrudnik in 'unit_edit_sotrudnik.pas' {form_edit_sotrudnik},
+  unit_sooruzhenie in 'unit_sooruzhenie.pas' {form_sooruzhenie},
+  unit_edit_sooruzhenie in 'unit_edit_sooruzhenie.pas' {form_edit_sooruzhenie};
 
 {$R *.res}
 
@@ -26,5 +28,7 @@ begin
   Application.CreateForm(Tform_rezultat_poverka, form_rezultat_poverka);
   Application.CreateForm(Tform_sotrudnik, form_sotrudnik);
   Application.CreateForm(Tform_edit_sotrudnik, form_edit_sotrudnik);
+  Application.CreateForm(Tform_sooruzhenie, form_sooruzhenie);
+  Application.CreateForm(Tform_edit_sooruzhenie, form_edit_sooruzhenie);
   Application.Run;
 end.

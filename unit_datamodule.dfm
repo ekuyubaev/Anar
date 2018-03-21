@@ -140,4 +140,31 @@ object DM: TDM
     Left = 560
     Top = 72
   end
+  object q_sooruzhenie: TADOQuery
+    Active = True
+    Connection = conn_main
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'Select * From Sooruzhenie')
+    Left = 632
+    Top = 24
+    object q_sooruzhenieID_sooruzhenie: TAutoIncField
+      FieldName = 'ID_sooruzhenie'
+      ReadOnly = True
+    end
+    object q_sooruzhenieNomer: TWideStringField
+      FieldName = 'Nomer'
+      Size = 255
+    end
+    object q_sooruzheniePrimechanie: TWideMemoField
+      FieldName = 'Primechanie'
+      BlobType = ftWideMemo
+    end
+  end
+  object ds_sooruzhenie: TDataSource
+    DataSet = q_sooruzhenie
+    Left = 632
+    Top = 72
+  end
 end
