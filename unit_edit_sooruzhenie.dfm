@@ -14,6 +14,7 @@ object form_edit_sooruzhenie: Tform_edit_sooruzhenie
   Font.Style = []
   OldCreateOrder = False
   Position = poMainFormCenter
+  OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 13
   object GroupBox1: TGroupBox
@@ -23,10 +24,6 @@ object form_edit_sooruzhenie: Tform_edit_sooruzhenie
     Height = 171
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = 120
-    ExplicitTop = 72
-    ExplicitWidth = 185
-    ExplicitHeight = 105
     object Label1: TLabel
       Left = 24
       Top = 24
@@ -86,8 +83,6 @@ object form_edit_sooruzhenie: Tform_edit_sooruzhenie
     Height = 55
     Align = alBottom
     TabOrder = 1
-    ExplicitTop = 360
-    ExplicitWidth = 457
     object BitBtn1: TBitBtn
       Left = 24
       Top = 16

@@ -27,6 +27,7 @@ type
     DBMemoEh1: TDBMemoEh;
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -50,8 +51,13 @@ end;
 
 procedure Tform_edit_sotrudnik.BitBtn2Click(Sender: TObject);
 begin
-  if (DM.q_sotrudnik.State in [dsEdit, dsInsert]) then DM.q_sotrudnik.Cancel;
   self.Close;
+end;
+
+procedure Tform_edit_sotrudnik.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+  if (DM.q_sotrudnik.State in [dsEdit, dsInsert]) then DM.q_sotrudnik.Cancel;
 end;
 
 end.

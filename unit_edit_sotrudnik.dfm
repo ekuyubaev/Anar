@@ -14,6 +14,7 @@ object form_edit_sotrudnik: Tform_edit_sotrudnik
   Font.Style = [fsBold]
   OldCreateOrder = False
   Position = poMainFormCenter
+  OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 13
   object GroupBox1: TGroupBox
@@ -23,7 +24,6 @@ object form_edit_sotrudnik: Tform_edit_sotrudnik
     Height = 307
     Align = alClient
     TabOrder = 0
-    ExplicitHeight = 201
     object Label4: TLabel
       Left = 80
       Top = 136
@@ -178,7 +178,6 @@ object form_edit_sotrudnik: Tform_edit_sotrudnik
     Height = 54
     Align = alBottom
     TabOrder = 1
-    ExplicitTop = 209
     object BitBtn1: TBitBtn
       Left = 24
       Top = 16

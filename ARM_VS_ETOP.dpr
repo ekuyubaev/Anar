@@ -12,7 +12,13 @@ uses
   unit_sotrudnik in 'unit_sotrudnik.pas' {form_sotrudnik},
   unit_edit_sotrudnik in 'unit_edit_sotrudnik.pas' {form_edit_sotrudnik},
   unit_sooruzhenie in 'unit_sooruzhenie.pas' {form_sooruzhenie},
-  unit_edit_sooruzhenie in 'unit_edit_sooruzhenie.pas' {form_edit_sooruzhenie};
+  unit_edit_sooruzhenie in 'unit_edit_sooruzhenie.pas' {form_edit_sooruzhenie},
+  unit_oborudovanie in 'unit_oborudovanie.pas' {form_oborudovanie},
+  unit_edit_oborudovanie in 'unit_edit_oborudovanie.pas' {form_edit_oborudovanie},
+  unit_narabotka in 'unit_narabotka.pas' {form_narabotka},
+  unit_EI in 'unit_EI.pas' {form_EI},
+  unit_sredstvo_izmerenia in 'unit_sredstvo_izmerenia.pas' {form_sredstvo_izmerenia},
+  unit_edit_sredstvo_izmerenia in 'unit_edit_sredstvo_izmerenia.pas' {form_edit_sredstvo_izmerenia};
 
 {$R *.res}
 
@@ -30,5 +36,11 @@ begin
   Application.CreateForm(Tform_edit_sotrudnik, form_edit_sotrudnik);
   Application.CreateForm(Tform_sooruzhenie, form_sooruzhenie);
   Application.CreateForm(Tform_edit_sooruzhenie, form_edit_sooruzhenie);
+  Application.CreateForm(Tform_oborudovanie, form_oborudovanie);
+  Application.CreateForm(Tform_edit_oborudovanie, form_edit_oborudovanie);
+  Application.CreateForm(Tform_narabotka, form_narabotka);
+  Application.CreateForm(Tform_EI, form_EI);
+  Application.CreateForm(Tform_sredstvo_izmerenia, form_sredstvo_izmerenia);
+  Application.CreateForm(Tform_edit_sredstvo_izmerenia, form_edit_sredstvo_izmerenia);
   Application.Run;
 end.

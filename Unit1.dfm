@@ -4,8 +4,8 @@ object form_main: Tform_main
   Caption = 
     #1040#1056#1052' '#1042#1077#1076#1091#1097#1077#1075#1086' '#1089#1087#1077#1094#1080#1072#1083#1080#1089#1090#1072' '#1091#1079#1083#1072' '#1101#1083#1077#1082#1090#1088#1086#1090#1077#1093#1085#1080#1095#1077#1089#1082#1086#1075#1086' '#1086#1073#1077#1089#1087#1077#1095#1077#1085#1080#1103' '#1087#1086 +
     #1083#1077#1090#1086#1074
-  ClientHeight = 480
-  ClientWidth = 729
+  ClientHeight = 542
+  ClientWidth = 784
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -34,6 +34,14 @@ object form_main: Tform_main
         Caption = #1059#1095#1077#1090' '#1089#1086#1086#1088#1091#1078#1077#1085#1080#1081
         OnClick = N11Click
       end
+      object N12: TMenuItem
+        Caption = #1059#1095#1077#1090' '#1086#1073#1086#1088#1091#1076#1086#1074#1072#1085#1080#1103
+        OnClick = N12Click
+      end
+      object N14: TMenuItem
+        Caption = #1059#1095#1077#1090' '#1089#1088#1077#1076#1089#1090#1074' '#1080#1079#1084#1077#1088#1077#1085#1080#1081
+        OnClick = N14Click
+      end
     end
     object N2: TMenuItem
       Caption = #1057#1087#1088#1072#1074#1086#1095#1085#1080#1082#1080
@@ -56,6 +64,10 @@ object form_main: Tform_main
       object N8: TMenuItem
         Caption = #1056#1077#1079#1091#1083#1100#1090#1072#1090' '#1087#1086#1074#1077#1088#1082#1080
         OnClick = N8Click
+      end
+      object N13: TMenuItem
+        Caption = #1045#1076#1080#1085#1080#1094#1099' '#1080#1079#1084#1077#1088#1077#1085#1080#1103
+        OnClick = N13Click
       end
     end
     object N3: TMenuItem
