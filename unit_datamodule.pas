@@ -70,6 +70,19 @@ type
     q_sredstvo_izmereniaID_sostoianie: TIntegerField;
     q_sredstvo_izmereniaPrimechanie: TWideMemoField;
     q_sredstvo_izmereniaSostoianie: TStringField;
+    q_ZIP: TADOQuery;
+    q_vydacha_ZIP: TADOQuery;
+    ds_ZIP: TDataSource;
+    ds_vydacha_ZIP: TDataSource;
+    q_ZIPID_ZIP: TAutoIncField;
+    q_ZIPNaimenovanie: TWideStringField;
+    q_ZIPData_vvedeno: TDateTimeField;
+    q_ZIPData_spisano: TDateTimeField;
+    q_ZIPN_zavodskoi: TWideStringField;
+    q_ZIPN_inventarnyi: TWideStringField;
+    q_ZIPID_sostoianie: TIntegerField;
+    q_ZIPPrimechanie: TWideMemoField;
+    q_ZIPSostoianie: TStringField;
     procedure q_narabotkaBeforePost(DataSet: TDataSet);
   private
     { Private declarations }
@@ -101,6 +114,8 @@ begin
   if not self.q_narabotka.Active then  self.q_narabotka.Open;
   if not self.q_EI.Active then self.q_EI.Open;
   if not self.q_sredstvo_izmerenia.Active then self.q_sredstvo_izmerenia.Open;
+  if not self.q_ZIP.Active then self.q_ZIP.Open;
+  if not self.q_vydacha_ZIP.Active then self.q_vydacha_ZIP.Open;
 end;
 
 procedure TDM.q_narabotkaBeforePost(DataSet: TDataSet);

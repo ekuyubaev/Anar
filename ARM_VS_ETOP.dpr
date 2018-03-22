@@ -18,7 +18,10 @@ uses
   unit_narabotka in 'unit_narabotka.pas' {form_narabotka},
   unit_EI in 'unit_EI.pas' {form_EI},
   unit_sredstvo_izmerenia in 'unit_sredstvo_izmerenia.pas' {form_sredstvo_izmerenia},
-  unit_edit_sredstvo_izmerenia in 'unit_edit_sredstvo_izmerenia.pas' {form_edit_sredstvo_izmerenia};
+  unit_edit_sredstvo_izmerenia in 'unit_edit_sredstvo_izmerenia.pas' {form_edit_sredstvo_izmerenia},
+  unit_ZIP in 'unit_ZIP.pas' {form_ZIP},
+  unit_edit_ZIP in 'unit_edit_ZIP.pas' {form_edit_ZIP},
+  unit_vydacha_ZIP in 'unit_vydacha_ZIP.pas' {form_vydacha_ZIP};
 
 {$R *.res}
 
@@ -42,5 +45,8 @@ begin
   Application.CreateForm(Tform_EI, form_EI);
   Application.CreateForm(Tform_sredstvo_izmerenia, form_sredstvo_izmerenia);
   Application.CreateForm(Tform_edit_sredstvo_izmerenia, form_edit_sredstvo_izmerenia);
+  Application.CreateForm(Tform_ZIP, form_ZIP);
+  Application.CreateForm(Tform_edit_ZIP, form_edit_ZIP);
+  Application.CreateForm(Tform_vydacha_ZIP, form_vydacha_ZIP);
   Application.Run;
 end.

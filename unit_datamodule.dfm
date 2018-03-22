@@ -367,4 +367,83 @@ object DM: TDM
     Left = 432
     Top = 208
   end
+  object q_ZIP: TADOQuery
+    Active = True
+    Connection = conn_main
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'Select * From ZIP')
+    Left = 528
+    Top = 160
+    object q_ZIPID_ZIP: TAutoIncField
+      FieldName = 'ID_ZIP'
+      ReadOnly = True
+    end
+    object q_ZIPNaimenovanie: TWideStringField
+      FieldName = 'Naimenovanie'
+      Size = 255
+    end
+    object q_ZIPN_zavodskoi: TWideStringField
+      FieldName = 'N_zavodskoi'
+      Size = 255
+    end
+    object q_ZIPN_inventarnyi: TWideStringField
+      FieldName = 'N_inventarnyi'
+      Size = 255
+    end
+    object q_ZIPData_vvedeno: TDateTimeField
+      FieldName = 'Data_vvedeno'
+    end
+    object q_ZIPSostoianie: TStringField
+      FieldKind = fkLookup
+      FieldName = 'Sostoianie'
+      LookupDataSet = q_sostoianie
+      LookupKeyFields = 'ID_sostoianie'
+      LookupResultField = 'Naimenovanie'
+      KeyFields = 'ID_sostoianie'
+      Size = 255
+      Lookup = True
+    end
+    object q_ZIPData_spisano: TDateTimeField
+      FieldName = 'Data_spisano'
+    end
+    object q_ZIPID_sostoianie: TIntegerField
+      FieldName = 'ID_sostoianie'
+    end
+    object q_ZIPPrimechanie: TWideMemoField
+      FieldName = 'Primechanie'
+      BlobType = ftWideMemo
+    end
+  end
+  object q_vydacha_ZIP: TADOQuery
+    Active = True
+    Connection = conn_main
+    CursorType = ctStatic
+    DataSource = ds_ZIP
+    Parameters = <
+      item
+        Name = 'ID_ZIP'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        NumericScale = 24
+        Precision = 255
+        Value = Null
+      end>
+    SQL.Strings = (
+      'Select * From Vydacha_ZIP'
+      'Where ID_ZIP = :ID_ZIP')
+    Left = 600
+    Top = 160
+  end
+  object ds_ZIP: TDataSource
+    DataSet = q_ZIP
+    Left = 528
+    Top = 208
+  end
+  object ds_vydacha_ZIP: TDataSource
+    DataSet = q_vydacha_ZIP
+    Left = 600
+    Top = 208
+  end
 end
