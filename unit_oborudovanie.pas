@@ -21,6 +21,7 @@ type
     procedure BitBtn2Click(Sender: TObject);
     procedure BitBtn3Click(Sender: TObject);
     procedure BitBtn4Click(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -34,7 +35,7 @@ implementation
 
 {$R *.dfm}
 
-uses unit_datamodule, unit_edit_oborudovanie, unit_narabotka;
+uses unit_datamodule, unit_edit_oborudovanie, unit_narabotka, Unit1;
 
 procedure Tform_oborudovanie.BitBtn1Click(Sender: TObject);
 begin
@@ -57,6 +58,13 @@ end;
 procedure Tform_oborudovanie.BitBtn4Click(Sender: TObject);
 begin
   form_narabotka.ShowModal;
+end;
+
+procedure Tform_oborudovanie.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+  Action := caFree;
+  unit1.form_oborudovanie := nil;
 end;
 
 end.

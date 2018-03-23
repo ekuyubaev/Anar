@@ -1,37 +1,37 @@
 object form_attestacia: Tform_attestacia
   Left = 0
   Top = 0
-  BorderIcons = [biSystemMenu]
-  BorderStyle = bsSingle
   Caption = #1040#1090#1090#1077#1089#1090#1072#1094#1080#1103
-  ClientHeight = 427
-  ClientWidth = 492
+  ClientHeight = 417
+  ClientWidth = 482
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
+  FormStyle = fsMDIChild
   OldCreateOrder = False
-  Position = poMainFormCenter
+  Position = poOwnerFormCenter
+  Visible = True
+  WindowState = wsMaximized
+  OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 13
   object GroupBox1: TGroupBox
     Left = 0
     Top = 0
-    Width = 492
-    Height = 392
+    Width = 482
+    Height = 382
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = 136
-    ExplicitTop = 72
-    ExplicitWidth = 185
-    ExplicitHeight = 105
+    ExplicitWidth = 492
+    ExplicitHeight = 392
     object DBGridEh1: TDBGridEh
       Left = 2
       Top = 15
-      Width = 488
-      Height = 375
+      Width = 478
+      Height = 365
       Align = alClient
       AutoFitColWidths = True
       DataSource = DM.ds_attestacia
@@ -118,11 +118,13 @@ object form_attestacia: Tform_attestacia
   end
   object GroupBox2: TGroupBox
     Left = 0
-    Top = 392
-    Width = 492
+    Top = 382
+    Width = 482
     Height = 35
     Align = alBottom
     TabOrder = 1
+    ExplicitTop = 392
+    ExplicitWidth = 492
     object BitBtn1: TBitBtn
       Left = 16
       Top = 6

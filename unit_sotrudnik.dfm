@@ -2,26 +2,28 @@ object form_sotrudnik: Tform_sotrudnik
   Left = 0
   Top = 0
   ActiveControl = DBGridEh1
-  BorderIcons = [biSystemMenu]
-  BorderStyle = bsSingle
   Caption = #1057#1086#1090#1088#1091#1076#1085#1080#1082
-  ClientHeight = 368
-  ClientWidth = 572
+  ClientHeight = 358
+  ClientWidth = 562
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
+  FormStyle = fsMDIChild
   OldCreateOrder = False
-  Position = poMainFormCenter
+  Position = poOwnerFormCenter
+  Visible = True
+  WindowState = wsMaximized
+  OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 13
   object DBGridEh1: TDBGridEh
     Left = 0
     Top = 0
-    Width = 572
-    Height = 326
+    Width = 562
+    Height = 316
     Align = alClient
     DataSource = DM.ds_sotrudnik
     DrawMemoText = True
@@ -150,35 +152,55 @@ object form_sotrudnik: Tform_sotrudnik
   end
   object GroupBox1: TGroupBox
     Left = 0
-    Top = 326
-    Width = 572
+    Top = 316
+    Width = 562
     Height = 42
     Align = alBottom
     TabOrder = 1
+    ExplicitTop = 326
+    ExplicitWidth = 572
     object BitBtn1: TBitBtn
       Left = 16
       Top = 6
-      Width = 75
+      Width = 90
       Height = 25
       Caption = #1044#1086#1073#1072#1074#1080#1090#1100
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
       TabOrder = 0
       OnClick = BitBtn1Click
     end
     object BitBtn2: TBitBtn
-      Left = 112
+      Left = 120
       Top = 6
-      Width = 75
+      Width = 90
       Height = 25
       Caption = #1055#1088#1086#1089#1084#1086#1090#1088#1077#1090#1100
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
       TabOrder = 1
       OnClick = BitBtn2Click
     end
     object BitBtn3: TBitBtn
-      Left = 208
+      Left = 224
       Top = 6
-      Width = 75
+      Width = 90
       Height = 25
       Caption = #1059#1076#1072#1083#1080#1090#1100
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
       TabOrder = 2
       OnClick = BitBtn3Click
     end

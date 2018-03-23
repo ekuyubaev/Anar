@@ -13,7 +13,7 @@ object form_edit_sotrudnik: Tform_edit_sotrudnik
   Font.Name = 'Tahoma'
   Font.Style = [fsBold]
   OldCreateOrder = False
-  Position = poMainFormCenter
+  Position = poOwnerFormCenter
   OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 13

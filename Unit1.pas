@@ -6,7 +6,8 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, DBGridEhGrouping,
   ToolCtrlsEh, DBGridEhToolCtrls, DynVarsEh, EhLibVCL, GridsEh, DBAxisGridsEh,
-  DBGridEh;
+  DBGridEh, unit_attestacia, unit_oborudovanie, unit_sotrudnik, unit_sooruzhenie,
+  unit_sredstvo_izmerenia, unit_ZIP;
 
 type
   Tform_main = class(TForm)
@@ -48,15 +49,20 @@ type
 
 var
   form_main: Tform_main;
+  form_attestacia: Tform_attestacia;
+  form_oborudovanie: Tform_oborudovanie;
+  form_sotrudnik: Tform_sotrudnik;
+  form_sooruzhenie: Tform_sooruzhenie;
+  form_sredstvo_izmerenia: Tform_sredstvo_izmerenia;
+  form_ZIP: Tform_ZIP;
 
 implementation
 
 {$R *.dfm}
 
 uses unit_dolzhnost, unit_vid_attestacia, unit_rezultat_attestacia,
-  unit_sostoianie, unit_rezultat_poverka, unit_sotrudnik, unit_datamodule,
-  unit_sooruzhenie, unit_oborudovanie, unit_EI, unit_sredstvo_izmerenia,
-  unit_ZIP, unit_attestacia;
+  unit_sostoianie, unit_rezultat_poverka, unit_datamodule,
+  unit_EI;
 
 procedure Tform_main.FormActivate(Sender: TObject);
 begin
@@ -65,17 +71,29 @@ end;
 
 procedure Tform_main.N10Click(Sender: TObject);
 begin
-  form_sotrudnik.ShowModal;
+  if form_sotrudnik = nil then
+  begin
+    form_sotrudnik := Tform_sotrudnik.Create(Application);
+    form_sotrudnik.Show;
+  end;
 end;
 
 procedure Tform_main.N11Click(Sender: TObject);
 begin
-  form_sooruzhenie.ShowModal;
+  if form_sooruzhenie = nil then
+  begin
+    form_sooruzhenie := Tform_sooruzhenie.Create(Application);
+    form_sooruzhenie.Show;
+  end;
 end;
 
 procedure Tform_main.N12Click(Sender: TObject);
 begin
-  form_oborudovanie.ShowModal;
+  if form_oborudovanie = nil then
+  begin
+    form_oborudovanie := Tform_oborudovanie.Create(Application);
+    form_oborudovanie.Show;
+  end;
 end;
 
 procedure Tform_main.N13Click(Sender: TObject);
@@ -85,17 +103,29 @@ end;
 
 procedure Tform_main.N14Click(Sender: TObject);
 begin
-  form_sredstvo_izmerenia.ShowModal;
+  if form_sredstvo_izmerenia = nil then
+  begin
+    form_sredstvo_izmerenia := Tform_sredstvo_izmerenia.Create(Application);
+    form_sredstvo_izmerenia.Show;
+  end;
 end;
 
 procedure Tform_main.N15Click(Sender: TObject);
 begin
-  form_ZIP.ShowModal;
+  if form_ZIP = nil then
+  begin
+    form_ZIP := Tform_ZIP.Create(Application);
+    form_ZIP.Show;
+  end;
 end;
 
 procedure Tform_main.N16Click(Sender: TObject);
 begin
-  form_attestacia.ShowModal;
+  if form_attestacia = nil then
+  begin
+    form_attestacia := Tform_attestacia.Create(Application);
+    form_attestacia.Show;
+  end;
 end;
 
 procedure Tform_main.N4Click(Sender: TObject);

@@ -12,6 +12,7 @@ object form_main: Tform_main
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
+  FormStyle = fsMDIForm
   Menu = MainMenu1
   OldCreateOrder = False
   Position = poDesktopCenter

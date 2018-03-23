@@ -1,26 +1,28 @@
 object form_sooruzhenie: Tform_sooruzhenie
   Left = 0
   Top = 0
-  BorderIcons = [biSystemMenu]
-  BorderStyle = bsSingle
   Caption = #1057#1086#1086#1088#1091#1078#1077#1085#1080#1103
-  ClientHeight = 391
-  ClientWidth = 535
+  ClientHeight = 381
+  ClientWidth = 525
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
+  FormStyle = fsMDIChild
   OldCreateOrder = False
-  Position = poMainFormCenter
+  Position = poOwnerFormCenter
+  Visible = True
+  WindowState = wsMaximized
+  OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 13
   object DBGridEh1: TDBGridEh
     Left = 0
     Top = 0
-    Width = 535
-    Height = 352
+    Width = 525
+    Height = 342
     Align = alClient
     DataSource = DM.ds_sooruzhenie
     DrawMemoText = True
@@ -75,11 +77,13 @@ object form_sooruzhenie: Tform_sooruzhenie
   end
   object GroupBox1: TGroupBox
     Left = 0
-    Top = 352
-    Width = 535
+    Top = 342
+    Width = 525
     Height = 39
     Align = alBottom
     TabOrder = 1
+    ExplicitTop = 352
+    ExplicitWidth = 535
     object BitBtn1: TBitBtn
       Left = 16
       Top = 6

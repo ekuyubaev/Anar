@@ -2,34 +2,37 @@ object form_oborudovanie: Tform_oborudovanie
   Left = 0
   Top = 0
   ActiveControl = DBGridEh1
-  BorderIcons = [biSystemMenu, biMaximize]
-  BorderStyle = bsSingle
   Caption = #1054#1073#1086#1088#1091#1076#1086#1074#1072#1085#1080#1077
-  ClientHeight = 348
-  ClientWidth = 794
+  ClientHeight = 338
+  ClientWidth = 784
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
+  FormStyle = fsMDIChild
   OldCreateOrder = False
-  Position = poMainFormCenter
+  Position = poOwnerFormCenter
+  Visible = True
+  WindowState = wsMaximized
+  OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 13
   object GroupBox1: TGroupBox
     Left = 0
     Top = 0
-    Width = 794
-    Height = 310
+    Width = 784
+    Height = 300
     Align = alClient
     TabOrder = 0
-    ExplicitHeight = 296
+    ExplicitWidth = 794
+    ExplicitHeight = 310
     object DBGridEh1: TDBGridEh
       Left = 2
       Top = 15
-      Width = 790
-      Height = 293
+      Width = 780
+      Height = 283
       Align = alClient
       AutoFitColWidths = True
       DataSource = DM.ds_oborudovanie
@@ -207,13 +210,15 @@ object form_oborudovanie: Tform_oborudovanie
   end
   object GroupBox2: TGroupBox
     Left = 0
-    Top = 310
-    Width = 794
+    Top = 300
+    Width = 784
     Height = 38
     Align = alBottom
     TabOrder = 1
+    ExplicitTop = 310
+    ExplicitWidth = 794
     DesignSize = (
-      794
+      784
       38)
     object BitBtn1: TBitBtn
       Left = 16
@@ -264,7 +269,7 @@ object form_oborudovanie: Tform_oborudovanie
       OnClick = BitBtn3Click
     end
     object BitBtn4: TBitBtn
-      Left = 688
+      Left = 678
       Top = 4
       Width = 90
       Height = 25
@@ -278,6 +283,7 @@ object form_oborudovanie: Tform_oborudovanie
       ParentFont = False
       TabOrder = 3
       OnClick = BitBtn4Click
+      ExplicitLeft = 688
     end
   end
 end

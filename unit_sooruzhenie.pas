@@ -18,6 +18,7 @@ type
     procedure BitBtn3Click(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -31,7 +32,7 @@ implementation
 
 {$R *.dfm}
 
-uses unit_datamodule, unit_edit_sooruzhenie;
+uses unit_datamodule, unit_edit_sooruzhenie, Unit1;
 
 procedure Tform_sooruzhenie.BitBtn1Click(Sender: TObject);
 begin
@@ -49,6 +50,13 @@ procedure Tform_sooruzhenie.BitBtn3Click(Sender: TObject);
 begin
   if (MessageDlg('Удалить запись?', mtConfirmation, [mbYes,mbNo], 0) = mrYes)
     then DM.q_sooruzhenie.Delete;
+end;
+
+procedure Tform_sooruzhenie.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+  Action := caFree;
+  unit1.form_sooruzhenie := nil;
 end;
 
 end.

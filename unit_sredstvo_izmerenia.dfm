@@ -2,7 +2,6 @@ object form_sredstvo_izmerenia: Tform_sredstvo_izmerenia
   Left = 0
   Top = 0
   ActiveControl = DBGridEh1
-  BorderIcons = [biSystemMenu, biMaximize]
   Caption = #1057#1088#1077#1076#1089#1090#1074#1072' '#1080#1079#1084#1077#1088#1077#1085#1080#1103
   ClientHeight = 323
   ClientWidth = 776
@@ -12,8 +11,12 @@ object form_sredstvo_izmerenia: Tform_sredstvo_izmerenia
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
+  FormStyle = fsMDIChild
   OldCreateOrder = False
-  Position = poMainFormCenter
+  Position = poOwnerFormCenter
+  Visible = True
+  WindowState = wsMaximized
+  OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 13
   object GroupBox1: TGroupBox
@@ -23,10 +26,6 @@ object form_sredstvo_izmerenia: Tform_sredstvo_izmerenia
     Height = 288
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = 168
-    ExplicitTop = 72
-    ExplicitWidth = 185
-    ExplicitHeight = 105
     object DBGridEh1: TDBGridEh
       Left = 2
       Top = 15
@@ -185,7 +184,6 @@ object form_sredstvo_izmerenia: Tform_sredstvo_izmerenia
     Height = 35
     Align = alBottom
     TabOrder = 1
-    ExplicitWidth = 447
     object BitBtn1: TBitBtn
       Left = 16
       Top = 6

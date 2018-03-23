@@ -19,6 +19,7 @@ type
     procedure BitBtn3Click(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -32,7 +33,7 @@ implementation
 
 {$R *.dfm}
 
-uses unit_datamodule, unit_edit_attestacia;
+uses unit_datamodule, unit_edit_attestacia, Unit1;
 
 procedure Tform_attestacia.BitBtn1Click(Sender: TObject);
 begin
@@ -50,6 +51,12 @@ procedure Tform_attestacia.BitBtn3Click(Sender: TObject);
 begin
   if (MessageDlg('Удалить запись?', mtConfirmation, [mbYes,mbNo], 0) = mrYes)
     then DM.q_attestacia.Delete;
+end;
+
+procedure Tform_attestacia.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  Action := caFree;
+  unit1.form_attestacia := nil;
 end;
 
 end.

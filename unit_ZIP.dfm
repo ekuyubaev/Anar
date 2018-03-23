@@ -2,37 +2,37 @@ object form_ZIP: Tform_ZIP
   Left = 0
   Top = 0
   ActiveControl = DBGridEh1
-  BorderIcons = [biSystemMenu, biMaximize]
-  BorderStyle = bsSingle
   Caption = #1047#1072#1087#1072#1089#1085#1099#1077' '#1080#1085#1089#1090#1088#1091#1084#1077#1085#1090#1099' '#1080' '#1087#1088#1080#1085#1072#1076#1083#1077#1078#1085#1086#1089#1090#1080
-  ClientHeight = 382
-  ClientWidth = 794
+  ClientHeight = 372
+  ClientWidth = 784
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
+  FormStyle = fsMDIChild
   OldCreateOrder = False
-  Position = poMainFormCenter
+  Position = poOwnerFormCenter
+  Visible = True
+  WindowState = wsMaximized
+  OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 13
   object GroupBox1: TGroupBox
     Left = 0
     Top = 0
-    Width = 794
-    Height = 342
+    Width = 784
+    Height = 332
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = 112
-    ExplicitTop = 64
-    ExplicitWidth = 185
-    ExplicitHeight = 105
+    ExplicitWidth = 794
+    ExplicitHeight = 342
     object DBGridEh1: TDBGridEh
       Left = 2
       Top = 15
-      Width = 790
-      Height = 325
+      Width = 780
+      Height = 315
       Align = alClient
       AutoFitColWidths = True
       DataSource = DM.ds_ZIP
@@ -186,11 +186,13 @@ object form_ZIP: Tform_ZIP
   end
   object GroupBox2: TGroupBox
     Left = 0
-    Top = 342
-    Width = 794
+    Top = 332
+    Width = 784
     Height = 40
     Align = alBottom
     TabOrder = 1
+    ExplicitTop = 342
+    ExplicitWidth = 794
     object BitBtn1: TBitBtn
       Left = 3
       Top = 6
