@@ -177,6 +177,22 @@
             <Form>form_vybor_sotrudnik_attestacia</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="unit_MTO.pas">
+            <Form>form_MTO</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="unit_edit_MTO.pas">
+            <Form>form_edit_MTO</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="unit_prihod_MTO.pas">
+            <Form>form_prihod_MTO</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="unit_edit_prihod_MTO.pas">
+            <Form>form_edit_prihod_MTO</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

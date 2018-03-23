@@ -24,7 +24,11 @@ uses
   unit_vydacha_ZIP in 'unit_vydacha_ZIP.pas' {form_vydacha_ZIP},
   unit_attestacia in 'unit_attestacia.pas' {form_attestacia},
   unit_edit_attestacia in 'unit_edit_attestacia.pas' {form_edit_attestacia},
-  unit_vybor_sotrudnik_attestacia in 'unit_vybor_sotrudnik_attestacia.pas' {form_vybor_sotrudnik_attestacia};
+  unit_vybor_sotrudnik_attestacia in 'unit_vybor_sotrudnik_attestacia.pas' {form_vybor_sotrudnik_attestacia},
+  unit_MTO in 'unit_MTO.pas' {form_MTO},
+  unit_edit_MTO in 'unit_edit_MTO.pas' {form_edit_MTO},
+  unit_prihod_MTO in 'unit_prihod_MTO.pas' {form_prihod_MTO},
+  unit_edit_prihod_MTO in 'unit_edit_prihod_MTO.pas' {form_edit_prihod_MTO};
 
 {$R *.res}
 
@@ -48,5 +52,8 @@ begin
   Application.CreateForm(Tform_vydacha_ZIP, form_vydacha_ZIP);
   Application.CreateForm(Tform_edit_attestacia, form_edit_attestacia);
   Application.CreateForm(Tform_vybor_sotrudnik_attestacia, form_vybor_sotrudnik_attestacia);
+  Application.CreateForm(Tform_edit_MTO, form_edit_MTO);
+  Application.CreateForm(Tform_prihod_MTO, form_prihod_MTO);
+  Application.CreateForm(Tform_edit_prihod_MTO, form_edit_prihod_MTO);
   Application.Run;
 end.

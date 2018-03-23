@@ -107,16 +107,39 @@ type
     q_vybor_sotrudnik_attestaciaVybran: TSmallintField;
     q_vybor_sotrudnik_attestaciaSotrudnik: TStringField;
     q_vybor_sotrudnik_attestaciaDolzhnost: TStringField;
+    q_MTO: TADOQuery;
+    ds_MTO: TDataSource;
+    q_MTOID_MTO: TAutoIncField;
+    q_MTOKolichestvo: TFloatField;
+    q_MTOID_EI: TIntegerField;
+    q_MTOPrimechanie: TWideMemoField;
+    q_MTOEI: TStringField;
+    q_MTONaimenovanie: TWideStringField;
+    q_list_MTO: TADOQuery;
+    ds_list_MTO: TDataSource;
+    q_prihod_MTO: TADOQuery;
+    ds_prihod_MTO: TDataSource;
+    q_prihod_MTOID_prihod_MTO: TAutoIncField;
+    q_prihod_MTOID_MTO: TIntegerField;
+    q_prihod_MTOData_prihod: TDateTimeField;
+    q_prihod_MTOPriniato_kem: TWideStringField;
+    q_prihod_MTOKolichestvo: TFloatField;
+    q_prihod_MTOID_EI: TIntegerField;
+    q_prihod_MTOPrimechanie: TWideMemoField;
+    q_prihod_MTOEI: TStringField;
     procedure q_narabotkaBeforePost(DataSet: TDataSet);
+    procedure q_prihod_MTOBeforePost(DataSet: TDataSet);
   private
     { Private declarations }
   public
     { Public declarations }
     Procedure connect();
+    Procedure refresh_MTO();
   end;
 
 var
   DM: TDM;
+  index: integer;
 
 implementation
 
@@ -127,20 +150,24 @@ Procedure TDM.connect();
 begin
   if not self.conn_main.Connected then  self.conn_main.Open();
 
-  if not self.q_dolzhnost.Active then self.q_dolzhnost.Open;
-  if not self.q_vid_attestacia.Active then self.q_vid_attestacia.Open;
-  if not self.q_rezultat_attestacia.Active then self.q_rezultat_attestacia.Open;
-  if not self.q_sostoianie.Active then self.q_sostoianie.Open;
-  if not self.q_rezultat_poverka.Active then self.q_rezultat_poverka.Open;
-  if not self.q_sotrudnik.Active then self.q_sotrudnik.Open;
-  if not self.q_sooruzhenie.Active then  self.q_sooruzhenie.Open;
-  if not self.q_oborudovanie.Active then  self.q_oborudovanie.Open;
-  if not self.q_narabotka.Active then  self.q_narabotka.Open;
-  if not self.q_EI.Active then self.q_EI.Open;
-  if not self.q_sredstvo_izmerenia.Active then self.q_sredstvo_izmerenia.Open;
-  if not self.q_ZIP.Active then self.q_ZIP.Open;
-  if not self.q_vydacha_ZIP.Active then self.q_vydacha_ZIP.Open;
-  if not self.q_attestacia.Active then self.q_attestacia.Open;
+  if not q_dolzhnost.Active then q_dolzhnost.Open;
+  if not q_vid_attestacia.Active then q_vid_attestacia.Open;
+  if not q_rezultat_attestacia.Active then q_rezultat_attestacia.Open;
+  if not q_sostoianie.Active then q_sostoianie.Open;
+  if not q_rezultat_poverka.Active then q_rezultat_poverka.Open;
+  if not q_sotrudnik.Active then q_sotrudnik.Open;
+  if not q_sooruzhenie.Active then  q_sooruzhenie.Open;
+  if not q_oborudovanie.Active then  q_oborudovanie.Open;
+  if not q_narabotka.Active then  q_narabotka.Open;
+  if not q_EI.Active then q_EI.Open;
+  if not q_sredstvo_izmerenia.Active then q_sredstvo_izmerenia.Open;
+  if not q_ZIP.Active then q_ZIP.Open;
+  if not q_vydacha_ZIP.Active then q_vydacha_ZIP.Open;
+  if not q_attestacia.Active then q_attestacia.Open;
+  if not q_zachet.Active then q_zachet.Open;
+  if not q_MTO.Active then q_MTO.Open;
+  if not q_list_MTO.Active then q_list_MTO.Open;
+  if not q_prihod_MTO.Active then q_prihod_MTO.Open;
 end;
 
 procedure TDM.q_narabotkaBeforePost(DataSet: TDataSet);
@@ -152,6 +179,26 @@ begin
   q_temp.Open;
   DataSet.FieldByName('Narabotka_vsego').Value := q_temp.FieldByName('Narabotka_vsego').AsFloat
                   + DataSet.FieldByName('Narabotka').AsFloat;
+end;
+
+procedure TDM.q_prihod_MTOBeforePost(DataSet: TDataSet);
+begin
+  if q_temp.Active then q_temp.Close;
+  q_temp.SQL.Text := 'Update MTO Set Kolichestvo = Kolichestvo + '
+                  + DataSet.FieldByName('Kolichestvo').AsString
+                  + ' Where ID_MTO = ' + q_MTO.FieldByName('ID_MTO').AsString;
+  q_temp.ExecSQL;
+end;
+
+Procedure TDM.refresh_MTO;
+begin
+  if q_MTO.Active then
+  begin
+    index := q_MTO.RecNo;
+    q_MTO.Close;
+  end;
+  q_MTO.Open;
+  q_MTO.RecNo := index;
 end;
 
 end.

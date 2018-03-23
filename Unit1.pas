@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, DBGridEhGrouping,
   ToolCtrlsEh, DBGridEhToolCtrls, DynVarsEh, EhLibVCL, GridsEh, DBAxisGridsEh,
   DBGridEh, unit_attestacia, unit_oborudovanie, unit_sotrudnik, unit_sooruzhenie,
-  unit_sredstvo_izmerenia, unit_ZIP;
+  unit_sredstvo_izmerenia, unit_ZIP, unit_MTO;
 
 type
   Tform_main = class(TForm)
@@ -28,6 +28,7 @@ type
     N14: TMenuItem;
     N15: TMenuItem;
     N16: TMenuItem;
+    N17: TMenuItem;
     procedure N4Click(Sender: TObject);
     procedure N5Click(Sender: TObject);
     procedure N6Click(Sender: TObject);
@@ -41,6 +42,7 @@ type
     procedure N14Click(Sender: TObject);
     procedure N15Click(Sender: TObject);
     procedure N16Click(Sender: TObject);
+    procedure N17Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -55,6 +57,7 @@ var
   form_sooruzhenie: Tform_sooruzhenie;
   form_sredstvo_izmerenia: Tform_sredstvo_izmerenia;
   form_ZIP: Tform_ZIP;
+  form_MTO: Tform_MTO;
 
 implementation
 
@@ -125,6 +128,15 @@ begin
   begin
     form_attestacia := Tform_attestacia.Create(Application);
     form_attestacia.Show;
+  end;
+end;
+
+procedure Tform_main.N17Click(Sender: TObject);
+begin
+  if form_MTO = nil then
+  begin
+    form_MTO := Tform_MTO.Create(Application);
+    form_MTO.Show;
   end;
 end;
 

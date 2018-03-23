@@ -494,7 +494,7 @@ object DM: TDM
       item
         Name = 'ID_attestacia'
         DataType = ftInteger
-        Value = Null
+        Value = 1
       end>
     SQL.Strings = (
       'Select * From Zachet'
@@ -591,6 +591,121 @@ object DM: TDM
   object ds_vybor_sotrudnik_attestacia: TDataSource
     DataSet = q_vybor_sotrudnik_attestacia
     Left = 288
+    Top = 336
+  end
+  object q_MTO: TADOQuery
+    Active = True
+    Connection = conn_main
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'Select * From MTO')
+    Left = 432
+    Top = 288
+    object q_MTOID_MTO: TAutoIncField
+      FieldName = 'ID_MTO'
+      ReadOnly = True
+    end
+    object q_MTOKolichestvo: TFloatField
+      FieldName = 'Kolichestvo'
+    end
+    object q_MTOID_EI: TIntegerField
+      FieldName = 'ID_EI'
+    end
+    object q_MTOPrimechanie: TWideMemoField
+      FieldName = 'Primechanie'
+      BlobType = ftWideMemo
+    end
+    object q_MTOEI: TStringField
+      FieldKind = fkLookup
+      FieldName = 'EI'
+      LookupDataSet = q_EI
+      LookupKeyFields = 'ID_EI'
+      LookupResultField = 'Oboznachenie'
+      KeyFields = 'ID_EI'
+      Size = 64
+      Lookup = True
+    end
+    object q_MTONaimenovanie: TWideStringField
+      FieldName = 'Naimenovanie'
+      Size = 255
+    end
+  end
+  object ds_MTO: TDataSource
+    DataSet = q_MTO
+    Left = 432
+    Top = 336
+  end
+  object q_list_MTO: TADOQuery
+    Active = True
+    Connection = conn_main
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'Select * From MTO')
+    Left = 496
+    Top = 288
+  end
+  object ds_list_MTO: TDataSource
+    DataSet = q_list_MTO
+    Left = 496
+    Top = 336
+  end
+  object q_prihod_MTO: TADOQuery
+    Active = True
+    Connection = conn_main
+    CursorType = ctStatic
+    BeforePost = q_prihod_MTOBeforePost
+    DataSource = ds_MTO
+    Parameters = <
+      item
+        Name = 'ID_MTO'
+        DataType = ftInteger
+        Value = Null
+      end>
+    SQL.Strings = (
+      'Select * From Prihod_MTO'
+      'Where ID_MTO = :ID_MTO')
+    Left = 576
+    Top = 288
+    object q_prihod_MTOID_prihod_MTO: TAutoIncField
+      FieldName = 'ID_prihod_MTO'
+      ReadOnly = True
+    end
+    object q_prihod_MTOID_MTO: TIntegerField
+      FieldName = 'ID_MTO'
+    end
+    object q_prihod_MTOData_prihod: TDateTimeField
+      FieldName = 'Data_prihod'
+    end
+    object q_prihod_MTOPriniato_kem: TWideStringField
+      FieldName = 'Priniato_kem'
+      Size = 64
+    end
+    object q_prihod_MTOKolichestvo: TFloatField
+      FieldName = 'Kolichestvo'
+    end
+    object q_prihod_MTOEI: TStringField
+      FieldKind = fkLookup
+      FieldName = 'EI'
+      LookupDataSet = q_EI
+      LookupKeyFields = 'ID_EI'
+      LookupResultField = 'Oboznachenie'
+      KeyFields = 'ID_EI'
+      Size = 64
+      Lookup = True
+    end
+    object q_prihod_MTOID_EI: TIntegerField
+      FieldName = 'ID_EI'
+    end
+    object q_prihod_MTOPrimechanie: TWideMemoField
+      FieldName = 'Primechanie'
+      BlobType = ftWideMemo
+    end
+  end
+  object ds_prihod_MTO: TDataSource
+    DataSet = q_prihod_MTO
+    Left = 576
     Top = 336
   end
 end
