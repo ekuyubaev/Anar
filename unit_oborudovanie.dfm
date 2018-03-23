@@ -21,18 +21,15 @@ object form_oborudovanie: Tform_oborudovanie
     Left = 0
     Top = 0
     Width = 794
-    Height = 296
+    Height = 310
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = 184
-    ExplicitTop = 56
-    ExplicitWidth = 185
-    ExplicitHeight = 105
+    ExplicitHeight = 296
     object DBGridEh1: TDBGridEh
       Left = 2
       Top = 15
       Width = 790
-      Height = 279
+      Height = 293
       Align = alClient
       AutoFitColWidths = True
       DataSource = DM.ds_oborudovanie
@@ -210,52 +207,75 @@ object form_oborudovanie: Tform_oborudovanie
   end
   object GroupBox2: TGroupBox
     Left = 0
-    Top = 296
+    Top = 310
     Width = 794
-    Height = 52
+    Height = 38
     Align = alBottom
     TabOrder = 1
-    ExplicitWidth = 457
     DesignSize = (
       794
-      52)
+      38)
     object BitBtn1: TBitBtn
       Left = 16
-      Top = 16
-      Width = 75
+      Top = 4
+      Width = 90
       Height = 25
       Anchors = [akLeft, akBottom]
       Caption = #1044#1086#1073#1072#1074#1080#1090#1100
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
       TabOrder = 0
       OnClick = BitBtn1Click
     end
     object BitBtn2: TBitBtn
-      Left = 104
-      Top = 16
-      Width = 75
+      Left = 120
+      Top = 4
+      Width = 90
       Height = 25
       Anchors = [akLeft, akBottom]
       Caption = #1055#1088#1086#1089#1084#1086#1090#1088#1077#1090#1100
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
       TabOrder = 1
       OnClick = BitBtn2Click
     end
     object BitBtn3: TBitBtn
-      Left = 192
-      Top = 16
-      Width = 75
+      Left = 224
+      Top = 4
+      Width = 90
       Height = 25
       Anchors = [akLeft, akBottom]
       Caption = #1059#1076#1072#1083#1080#1090#1100
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
       TabOrder = 2
       OnClick = BitBtn3Click
     end
     object BitBtn4: TBitBtn
       Left = 688
-      Top = 16
-      Width = 75
+      Top = 4
+      Width = 90
       Height = 25
       Anchors = [akRight, akBottom]
       Caption = #1053#1072#1088#1072#1073#1086#1090#1082#1072
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
       TabOrder = 3
       OnClick = BitBtn4Click
     end

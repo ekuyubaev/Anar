@@ -309,7 +309,7 @@ object DM: TDM
   object q_temp: TADOQuery
     Connection = conn_main
     Parameters = <>
-    Left = 344
+    Left = 328
     Top = 160
   end
   object q_sredstvo_izmerenia: TADOQuery
@@ -428,7 +428,7 @@ object DM: TDM
         DataType = ftInteger
         NumericScale = 24
         Precision = 255
-        Value = Null
+        Value = 1
       end>
     SQL.Strings = (
       'Select * From Vydacha_ZIP'
@@ -445,5 +445,152 @@ object DM: TDM
     DataSet = q_vydacha_ZIP
     Left = 600
     Top = 208
+  end
+  object q_attestacia: TADOQuery
+    Active = True
+    Connection = conn_main
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'Select * From Attestacia')
+    Left = 104
+    Top = 288
+    object q_attestaciaID_attestacia: TAutoIncField
+      FieldName = 'ID_attestacia'
+      ReadOnly = True
+    end
+    object q_attestaciaData_attestacia: TDateTimeField
+      FieldName = 'Data_attestacia'
+    end
+    object q_attestaciaID_vid_attestacia: TIntegerField
+      FieldName = 'ID_vid_attestacia'
+    end
+    object q_attestaciaPrimechanie: TWideMemoField
+      FieldName = 'Primechanie'
+      BlobType = ftWideMemo
+    end
+    object q_attestaciaVid_attestacia: TStringField
+      FieldKind = fkLookup
+      FieldName = 'Vid_attestacia'
+      LookupDataSet = q_vid_attestacia
+      LookupKeyFields = 'ID_vid_attestacia'
+      LookupResultField = 'Naimenovanie'
+      KeyFields = 'ID_vid_attestacia'
+      Size = 255
+      Lookup = True
+    end
+  end
+  object ds_attestacia: TDataSource
+    DataSet = q_attestacia
+    Left = 104
+    Top = 336
+  end
+  object q_zachet: TADOQuery
+    Active = True
+    Connection = conn_main
+    CursorType = ctStatic
+    DataSource = ds_attestacia
+    Parameters = <
+      item
+        Name = 'ID_attestacia'
+        DataType = ftInteger
+        Value = Null
+      end>
+    SQL.Strings = (
+      'Select * From Zachet'
+      'Where ID_attestacia = :ID_attestacia')
+    Left = 176
+    Top = 288
+    object q_zachetID_zachet: TAutoIncField
+      FieldName = 'ID_zachet'
+      ReadOnly = True
+    end
+    object q_zachetID_attestacia: TIntegerField
+      FieldName = 'ID_attestacia'
+    end
+    object q_zachetID_sotrudnik: TIntegerField
+      FieldName = 'ID_sotrudnik'
+    end
+    object q_zachetID_rezultat_attestacia: TIntegerField
+      FieldName = 'ID_rezultat_attestacia'
+    end
+    object q_zachetPrimechanie: TWideMemoField
+      FieldName = 'Primechanie'
+      BlobType = ftWideMemo
+    end
+    object q_zachetSotrudnik: TStringField
+      FieldKind = fkLookup
+      FieldName = 'Sotrudnik'
+      LookupDataSet = q_sotrudnik
+      LookupKeyFields = 'ID_sotrudnik'
+      LookupResultField = 'FIO'
+      KeyFields = 'ID_sotrudnik'
+      Size = 255
+      Lookup = True
+    end
+    object q_zachetRezultat: TStringField
+      FieldKind = fkLookup
+      FieldName = 'Rezultat'
+      LookupDataSet = q_rezultat_attestacia
+      LookupKeyFields = 'ID_rezultat_attestacia'
+      LookupResultField = 'Naimenovanie'
+      KeyFields = 'ID_rezultat_attestacia'
+      Size = 255
+      Lookup = True
+    end
+  end
+  object ds_zachet: TDataSource
+    DataSet = q_zachet
+    Left = 176
+    Top = 336
+  end
+  object q_vybor_sotrudnik_attestacia: TADOQuery
+    Active = True
+    Connection = conn_main
+    CursorType = ctStatic
+    Filter = 'Vybran <> true'
+    Parameters = <>
+    SQL.Strings = (
+      'Select * From Vybor')
+    Left = 288
+    Top = 288
+    object q_vybor_sotrudnik_attestaciaID_vybor: TAutoIncField
+      FieldName = 'ID_vybor'
+      ReadOnly = True
+    end
+    object q_vybor_sotrudnik_attestaciaID_sotrudnik: TIntegerField
+      FieldName = 'ID_sotrudnik'
+    end
+    object q_vybor_sotrudnik_attestaciaID_dolzhnost: TIntegerField
+      FieldName = 'ID_dolzhnost'
+    end
+    object q_vybor_sotrudnik_attestaciaVybran: TSmallintField
+      FieldName = 'Vybran'
+    end
+    object q_vybor_sotrudnik_attestaciaSotrudnik: TStringField
+      FieldKind = fkLookup
+      FieldName = 'Sotrudnik'
+      LookupDataSet = q_sotrudnik
+      LookupKeyFields = 'ID_sotrudnik'
+      LookupResultField = 'FIO'
+      KeyFields = 'ID_sotrudnik'
+      Size = 255
+      Lookup = True
+    end
+    object q_vybor_sotrudnik_attestaciaDolzhnost: TStringField
+      FieldKind = fkLookup
+      FieldName = 'Dolzhnost'
+      LookupDataSet = q_dolzhnost
+      LookupKeyFields = 'ID_dolzhnost'
+      LookupResultField = 'Naimenovanie'
+      KeyFields = 'ID_dolzhnost'
+      Size = 255
+      Lookup = True
+    end
+  end
+  object ds_vybor_sotrudnik_attestacia: TDataSource
+    DataSet = q_vybor_sotrudnik_attestacia
+    Left = 288
+    Top = 336
   end
 end

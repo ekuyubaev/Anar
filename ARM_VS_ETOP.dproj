@@ -163,6 +163,18 @@
             <Form>form_vydacha_ZIP</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="unit_attestacia.pas">
+            <Form>form_attestacia</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="unit_edit_attestacia.pas">
+            <Form>form_edit_attestacia</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="unit_vybor_sotrudnik_attestacia.pas">
+            <Form>form_vybor_sotrudnik_attestacia</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

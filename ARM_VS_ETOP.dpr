@@ -21,7 +21,10 @@ uses
   unit_edit_sredstvo_izmerenia in 'unit_edit_sredstvo_izmerenia.pas' {form_edit_sredstvo_izmerenia},
   unit_ZIP in 'unit_ZIP.pas' {form_ZIP},
   unit_edit_ZIP in 'unit_edit_ZIP.pas' {form_edit_ZIP},
-  unit_vydacha_ZIP in 'unit_vydacha_ZIP.pas' {form_vydacha_ZIP};
+  unit_vydacha_ZIP in 'unit_vydacha_ZIP.pas' {form_vydacha_ZIP},
+  unit_attestacia in 'unit_attestacia.pas' {form_attestacia},
+  unit_edit_attestacia in 'unit_edit_attestacia.pas' {form_edit_attestacia},
+  unit_vybor_sotrudnik_attestacia in 'unit_vybor_sotrudnik_attestacia.pas' {form_vybor_sotrudnik_attestacia};
 
 {$R *.res}
 
@@ -48,5 +51,8 @@ begin
   Application.CreateForm(Tform_ZIP, form_ZIP);
   Application.CreateForm(Tform_edit_ZIP, form_edit_ZIP);
   Application.CreateForm(Tform_vydacha_ZIP, form_vydacha_ZIP);
+  Application.CreateForm(Tform_attestacia, form_attestacia);
+  Application.CreateForm(Tform_edit_attestacia, form_edit_attestacia);
+  Application.CreateForm(Tform_vybor_sotrudnik_attestacia, form_vybor_sotrudnik_attestacia);
   Application.Run;
 end.

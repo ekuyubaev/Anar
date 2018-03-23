@@ -83,6 +83,30 @@ type
     q_ZIPID_sostoianie: TIntegerField;
     q_ZIPPrimechanie: TWideMemoField;
     q_ZIPSostoianie: TStringField;
+    q_attestacia: TADOQuery;
+    ds_attestacia: TDataSource;
+    q_attestaciaID_attestacia: TAutoIncField;
+    q_attestaciaData_attestacia: TDateTimeField;
+    q_attestaciaID_vid_attestacia: TIntegerField;
+    q_attestaciaPrimechanie: TWideMemoField;
+    q_attestaciaVid_attestacia: TStringField;
+    q_zachet: TADOQuery;
+    ds_zachet: TDataSource;
+    q_zachetID_zachet: TAutoIncField;
+    q_zachetID_attestacia: TIntegerField;
+    q_zachetID_sotrudnik: TIntegerField;
+    q_zachetID_rezultat_attestacia: TIntegerField;
+    q_zachetPrimechanie: TWideMemoField;
+    q_zachetSotrudnik: TStringField;
+    q_zachetRezultat: TStringField;
+    q_vybor_sotrudnik_attestacia: TADOQuery;
+    ds_vybor_sotrudnik_attestacia: TDataSource;
+    q_vybor_sotrudnik_attestaciaID_vybor: TAutoIncField;
+    q_vybor_sotrudnik_attestaciaID_sotrudnik: TIntegerField;
+    q_vybor_sotrudnik_attestaciaID_dolzhnost: TIntegerField;
+    q_vybor_sotrudnik_attestaciaVybran: TSmallintField;
+    q_vybor_sotrudnik_attestaciaSotrudnik: TStringField;
+    q_vybor_sotrudnik_attestaciaDolzhnost: TStringField;
     procedure q_narabotkaBeforePost(DataSet: TDataSet);
   private
     { Private declarations }
@@ -116,6 +140,7 @@ begin
   if not self.q_sredstvo_izmerenia.Active then self.q_sredstvo_izmerenia.Open;
   if not self.q_ZIP.Active then self.q_ZIP.Open;
   if not self.q_vydacha_ZIP.Active then self.q_vydacha_ZIP.Open;
+  if not self.q_attestacia.Active then self.q_attestacia.Open;
 end;
 
 procedure TDM.q_narabotkaBeforePost(DataSet: TDataSet);

@@ -26,6 +26,7 @@ type
     N13: TMenuItem;
     N14: TMenuItem;
     N15: TMenuItem;
+    N16: TMenuItem;
     procedure N4Click(Sender: TObject);
     procedure N5Click(Sender: TObject);
     procedure N6Click(Sender: TObject);
@@ -38,6 +39,7 @@ type
     procedure N13Click(Sender: TObject);
     procedure N14Click(Sender: TObject);
     procedure N15Click(Sender: TObject);
+    procedure N16Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -54,7 +56,7 @@ implementation
 uses unit_dolzhnost, unit_vid_attestacia, unit_rezultat_attestacia,
   unit_sostoianie, unit_rezultat_poverka, unit_sotrudnik, unit_datamodule,
   unit_sooruzhenie, unit_oborudovanie, unit_EI, unit_sredstvo_izmerenia,
-  unit_ZIP;
+  unit_ZIP, unit_attestacia;
 
 procedure Tform_main.FormActivate(Sender: TObject);
 begin
@@ -89,6 +91,11 @@ end;
 procedure Tform_main.N15Click(Sender: TObject);
 begin
   form_ZIP.ShowModal;
+end;
+
+procedure Tform_main.N16Click(Sender: TObject);
+begin
+  form_attestacia.ShowModal;
 end;
 
 procedure Tform_main.N4Click(Sender: TObject);
