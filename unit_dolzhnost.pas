@@ -11,6 +11,7 @@ uses
 type
   Tform_dolzhnost = class(TForm)
     DBGridEh1: TDBGridEh;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -24,5 +25,10 @@ implementation
 
 {$R *.dfm}
 
+
+procedure Tform_dolzhnost.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  DM.refresh_dolzhnost;
+end;
 
 end.

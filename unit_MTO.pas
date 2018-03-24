@@ -15,12 +15,11 @@ type
     DBGridEh1: TDBGridEh;
     BitBtn1: TBitBtn;
     BitBtn2: TBitBtn;
-    BitBtn3: TBitBtn;
     BitBtn4: TBitBtn;
-    procedure BitBtn3Click(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
     procedure BitBtn4Click(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -34,7 +33,7 @@ implementation
 
 {$R *.dfm}
 
-uses unit_datamodule, unit_edit_MTO, unit_prihod_MTO;
+uses unit_datamodule, unit_edit_MTO, unit_prihod_MTO, Unit1;
 
 procedure Tform_MTO.BitBtn1Click(Sender: TObject);
 begin
@@ -48,15 +47,15 @@ begin
   form_edit_MTO.ShowModal;
 end;
 
-procedure Tform_MTO.BitBtn3Click(Sender: TObject);
-begin
-  if (MessageDlg('Удалить запись?', mtConfirmation, [mbYes,mbNo], 0) = mrYes)
-    then DM.q_MTO.Delete;
-end;
-
 procedure Tform_MTO.BitBtn4Click(Sender: TObject);
 begin
   form_prihod_MTO.ShowModal;
+end;
+
+procedure Tform_MTO.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  Action := caFree;
+  unit1.form_MTO := nil;
 end;
 
 end.

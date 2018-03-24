@@ -1,6 +1,6 @@
 object DM: TDM
   OldCreateOrder = False
-  Height = 416
+  Height = 562
   Width = 808
   object conn_main: TADOConnection
     Connected = True
@@ -600,7 +600,7 @@ object DM: TDM
     Parameters = <>
     SQL.Strings = (
       'Select * From MTO')
-    Left = 432
+    Left = 416
     Top = 288
     object q_MTOID_MTO: TAutoIncField
       FieldName = 'ID_MTO'
@@ -633,7 +633,7 @@ object DM: TDM
   end
   object ds_MTO: TDataSource
     DataSet = q_MTO
-    Left = 432
+    Left = 416
     Top = 336
   end
   object q_list_MTO: TADOQuery
@@ -643,12 +643,12 @@ object DM: TDM
     Parameters = <>
     SQL.Strings = (
       'Select * From MTO')
-    Left = 496
+    Left = 480
     Top = 288
   end
   object ds_list_MTO: TDataSource
     DataSet = q_list_MTO
-    Left = 496
+    Left = 480
     Top = 336
   end
   object q_prihod_MTO: TADOQuery
@@ -661,12 +661,12 @@ object DM: TDM
       item
         Name = 'ID_MTO'
         DataType = ftInteger
-        Value = Null
+        Value = 1
       end>
     SQL.Strings = (
       'Select * From Prihod_MTO'
       'Where ID_MTO = :ID_MTO')
-    Left = 576
+    Left = 560
     Top = 288
     object q_prihod_MTOID_prihod_MTO: TAutoIncField
       FieldName = 'ID_prihod_MTO'
@@ -705,7 +705,110 @@ object DM: TDM
   end
   object ds_prihod_MTO: TDataSource
     DataSet = q_prihod_MTO
-    Left = 576
+    Left = 560
     Top = 336
+  end
+  object q_GSM: TADOQuery
+    Active = True
+    Connection = conn_main
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'Select * From GSM')
+    Left = 648
+    Top = 288
+    object q_GSMID_GSM: TAutoIncField
+      FieldName = 'ID_GSM'
+      ReadOnly = True
+    end
+    object q_GSMNaimenovanie: TWideStringField
+      FieldName = 'Naimenovanie'
+      Size = 255
+    end
+    object q_GSMKolichestvo: TFloatField
+      FieldName = 'Kolichestvo'
+    end
+    object q_GSMEI: TStringField
+      FieldKind = fkLookup
+      FieldName = 'EI'
+      LookupDataSet = q_EI
+      LookupKeyFields = 'ID_EI'
+      LookupResultField = 'Oboznachenie'
+      KeyFields = 'ID_EI'
+      Size = 64
+      Lookup = True
+    end
+    object q_GSMKriticheskoe_kolichestvo: TFloatField
+      FieldName = 'Kriticheskoe_kolichestvo'
+    end
+    object q_GSMID_EI: TIntegerField
+      FieldName = 'ID_EI'
+    end
+    object q_GSMPrimechanie: TWideMemoField
+      FieldName = 'Primechanie'
+      BlobType = ftWideMemo
+    end
+  end
+  object ds_GSM: TDataSource
+    DataSet = q_GSM
+    Left = 648
+    Top = 336
+  end
+  object ds_prihod_GSM: TDataSource
+    DataSet = q_prihod_GSM
+    Left = 712
+    Top = 336
+  end
+  object q_prihod_GSM: TADOQuery
+    Active = True
+    Connection = conn_main
+    CursorType = ctStatic
+    BeforePost = q_prihod_GSMBeforePost
+    DataSource = ds_GSM
+    Parameters = <
+      item
+        Name = 'ID_GSM'
+        DataType = ftInteger
+        Value = Null
+      end>
+    SQL.Strings = (
+      'Select * From Prihod_GSM'
+      'Where ID_GSM = :ID_GSM')
+    Left = 712
+    Top = 288
+    object q_prihod_GSMID_prihod_GSM: TAutoIncField
+      FieldName = 'ID_prihod_GSM'
+      ReadOnly = True
+    end
+    object q_prihod_GSMID_GSM: TIntegerField
+      FieldName = 'ID_GSM'
+    end
+    object q_prihod_GSMData_priniato: TDateTimeField
+      FieldName = 'Data_priniato'
+    end
+    object q_prihod_GSMPrinial: TWideStringField
+      FieldName = 'Prinial'
+      Size = 255
+    end
+    object q_prihod_GSMKolichestvo: TFloatField
+      FieldName = 'Kolichestvo'
+    end
+    object q_prihod_GSMEI: TStringField
+      FieldKind = fkLookup
+      FieldName = 'EI'
+      LookupDataSet = q_EI
+      LookupKeyFields = 'ID_EI'
+      LookupResultField = 'Oboznachenie'
+      KeyFields = 'ID_EI'
+      Size = 64
+      Lookup = True
+    end
+    object q_prihod_GSMID_EI: TIntegerField
+      FieldName = 'ID_EI'
+    end
+    object q_prihod_GSMPrimechanie: TWideMemoField
+      FieldName = 'Primechanie'
+      BlobType = ftWideMemo
+    end
   end
 end

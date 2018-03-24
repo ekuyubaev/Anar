@@ -42,7 +42,8 @@ end;
 
 procedure Tform_prihod_MTO.BitBtn2Click(Sender: TObject);
 begin
-  form_edit_prihod_MTO.state := 'edit';
+  form_edit_prihod_MTO.state := 'view';
+  DM.q_prihod_MTO.Edit;
   form_edit_prihod_MTO.ShowModal;
 end;
 

@@ -14,6 +14,7 @@ object form_dolzhnost: Tform_dolzhnost
   Font.Style = []
   OldCreateOrder = False
   Position = poMainFormCenter
+  OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 13
   object DBGridEh1: TDBGridEh

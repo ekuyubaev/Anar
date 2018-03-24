@@ -1,38 +1,39 @@
-object form_MTO: Tform_MTO
+object form_prihod_GSM: Tform_prihod_GSM
   Left = 0
   Top = 0
-  Caption = #1052#1072#1090#1077#1088#1080#1072#1083#1100#1085#1086'-'#1090#1077#1093#1085#1080#1095#1077#1089#1082#1086#1077' '#1086#1073#1077#1089#1087#1077#1095#1077#1085#1080#1077
-  ClientHeight = 372
-  ClientWidth = 674
+  BorderIcons = [biSystemMenu, biMaximize]
+  Caption = #1055#1088#1080#1093#1086#1076' '#1043#1057#1052
+  ClientHeight = 331
+  ClientWidth = 722
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  FormStyle = fsMDIChild
   OldCreateOrder = False
-  Position = poOwnerFormCenter
-  Visible = True
-  WindowState = wsMaximized
-  OnClose = FormClose
+  Position = poMainFormCenter
   PixelsPerInch = 96
   TextHeight = 13
   object GroupBox1: TGroupBox
     Left = 0
     Top = 0
-    Width = 674
-    Height = 328
+    Width = 722
+    Height = 294
     Align = alClient
     TabOrder = 0
+    ExplicitLeft = 160
+    ExplicitTop = 8
+    ExplicitWidth = 185
+    ExplicitHeight = 105
     object DBGridEh1: TDBGridEh
       Left = 2
       Top = 15
-      Width = 670
-      Height = 311
+      Width = 718
+      Height = 277
       Align = alClient
       AutoFitColWidths = True
-      DataSource = DM.ds_MTO
+      DataSource = DM.ds_prihod_GSM
       DrawMemoText = True
       DynProps = <>
       IndicatorOptions = [gioShowRowIndicatorEh]
@@ -45,7 +46,7 @@ object form_MTO: Tform_MTO
         item
           DynProps = <>
           EditButtons = <>
-          FieldName = 'ID_MTO'
+          FieldName = 'ID_prihod_GSM'
           Footers = <>
           Title.Alignment = taCenter
           Title.Font.Charset = DEFAULT_CHARSET
@@ -53,23 +54,50 @@ object form_MTO: Tform_MTO
           Title.Font.Height = -11
           Title.Font.Name = 'Tahoma'
           Title.Font.Style = [fsBold]
-          Title.TitleButton = True
           Visible = False
+          Width = 90
+        end
+        item
+          DynProps = <>
+          EditButtons = <>
+          FieldName = 'ID_GSM'
+          Footers = <>
+          Title.Alignment = taCenter
+          Title.Font.Charset = DEFAULT_CHARSET
+          Title.Font.Color = clWindowText
+          Title.Font.Height = -11
+          Title.Font.Name = 'Tahoma'
+          Title.Font.Style = [fsBold]
+          Visible = False
+          Width = 90
+        end
+        item
+          AutoFitColWidth = False
+          DynProps = <>
+          EditButtons = <>
+          FieldName = 'Data_priniato'
+          Footers = <>
+          Title.Alignment = taCenter
+          Title.Caption = #1044#1072#1090#1072' '#1087#1088#1080#1093#1086#1076#1072
+          Title.Font.Charset = DEFAULT_CHARSET
+          Title.Font.Color = clWindowText
+          Title.Font.Height = -11
+          Title.Font.Name = 'Tahoma'
+          Title.Font.Style = [fsBold]
           Width = 100
         end
         item
           DynProps = <>
           EditButtons = <>
-          FieldName = 'Naimenovanie'
+          FieldName = 'Prinial'
           Footers = <>
           Title.Alignment = taCenter
-          Title.Caption = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077
+          Title.Caption = #1055#1088#1080#1085#1103#1083
           Title.Font.Charset = DEFAULT_CHARSET
           Title.Font.Color = clWindowText
           Title.Font.Height = -11
           Title.Font.Name = 'Tahoma'
           Title.Font.Style = [fsBold]
-          Title.TitleButton = True
           Width = 200
         end
         item
@@ -85,7 +113,6 @@ object form_MTO: Tform_MTO
           Title.Font.Height = -11
           Title.Font.Name = 'Tahoma'
           Title.Font.Style = [fsBold]
-          Title.TitleButton = True
           Width = 90
         end
         item
@@ -101,8 +128,7 @@ object form_MTO: Tform_MTO
           Title.Font.Height = -11
           Title.Font.Name = 'Tahoma'
           Title.Font.Style = [fsBold]
-          Title.TitleButton = True
-          Width = 70
+          Width = 90
         end
         item
           DynProps = <>
@@ -115,9 +141,8 @@ object form_MTO: Tform_MTO
           Title.Font.Height = -11
           Title.Font.Name = 'Tahoma'
           Title.Font.Style = [fsBold]
-          Title.TitleButton = True
           Visible = False
-          Width = 100
+          Width = 90
         end
         item
           DynProps = <>
@@ -131,8 +156,7 @@ object form_MTO: Tform_MTO
           Title.Font.Height = -11
           Title.Font.Name = 'Tahoma'
           Title.Font.Style = [fsBold]
-          Title.TitleButton = True
-          Width = 250
+          Width = 200
         end>
       object RowDetailData: TRowDetailPanelControlEh
       end
@@ -140,14 +164,13 @@ object form_MTO: Tform_MTO
   end
   object GroupBox2: TGroupBox
     Left = 0
-    Top = 328
-    Width = 674
-    Height = 44
+    Top = 294
+    Width = 722
+    Height = 37
     Align = alBottom
     TabOrder = 1
-    DesignSize = (
-      674
-      44)
+    ExplicitTop = 304
+    ExplicitWidth = 678
     object BitBtn1: TBitBtn
       Left = 16
       Top = 6
@@ -164,7 +187,7 @@ object form_MTO: Tform_MTO
       OnClick = BitBtn1Click
     end
     object BitBtn2: TBitBtn
-      Left = 120
+      Left = 128
       Top = 6
       Width = 90
       Height = 25
@@ -177,22 +200,6 @@ object form_MTO: Tform_MTO
       ParentFont = False
       TabOrder = 1
       OnClick = BitBtn2Click
-    end
-    object BitBtn4: TBitBtn
-      Left = 568
-      Top = 6
-      Width = 90
-      Height = 25
-      Anchors = [akTop, akRight]
-      Caption = #1055#1088#1080#1093#1086#1076
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
-      ParentFont = False
-      TabOrder = 2
-      OnClick = BitBtn4Click
     end
   end
 end

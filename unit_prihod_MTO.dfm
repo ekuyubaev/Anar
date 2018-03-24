@@ -2,10 +2,9 @@ object form_prihod_MTO: Tform_prihod_MTO
   Left = 0
   Top = 0
   BorderIcons = [biSystemMenu, biMaximize]
-  BorderStyle = bsSingle
   Caption = #1055#1088#1080#1093#1086#1076' '#1052#1058#1054
-  ClientHeight = 350
-  ClientWidth = 703
+  ClientHeight = 340
+  ClientWidth = 702
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -20,19 +19,15 @@ object form_prihod_MTO: Tform_prihod_MTO
   object GroupBox1: TGroupBox
     Left = 0
     Top = 0
-    Width = 703
-    Height = 310
+    Width = 702
+    Height = 300
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = 136
-    ExplicitTop = 24
-    ExplicitWidth = 185
-    ExplicitHeight = 105
     object DBGridEh1: TDBGridEh
       Left = 2
       Top = 15
-      Width = 699
-      Height = 293
+      Width = 698
+      Height = 283
       Align = alClient
       DataSource = DM.ds_prihod_MTO
       DrawMemoText = True
@@ -173,12 +168,11 @@ object form_prihod_MTO: Tform_prihod_MTO
   end
   object GroupBox2: TGroupBox
     Left = 0
-    Top = 310
-    Width = 703
+    Top = 300
+    Width = 702
     Height = 40
     Align = alBottom
     TabOrder = 1
-    ExplicitWidth = 457
     object BitBtn1: TBitBtn
       Left = 16
       Top = 6

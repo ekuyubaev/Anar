@@ -28,7 +28,11 @@ uses
   unit_MTO in 'unit_MTO.pas' {form_MTO},
   unit_edit_MTO in 'unit_edit_MTO.pas' {form_edit_MTO},
   unit_prihod_MTO in 'unit_prihod_MTO.pas' {form_prihod_MTO},
-  unit_edit_prihod_MTO in 'unit_edit_prihod_MTO.pas' {form_edit_prihod_MTO};
+  unit_edit_prihod_MTO in 'unit_edit_prihod_MTO.pas' {form_edit_prihod_MTO},
+  unit_GSM in 'unit_GSM.pas' {form_GSM},
+  unit_edit_GSM in 'unit_edit_GSM.pas' {form_edit_GSM},
+  unit_edit_prihod_GSM in 'unit_edit_prihod_GSM.pas' {form_edit_prihod_GSM},
+  unit_prihod_GSM in 'unit_prihod_GSM.pas' {form_prihod_GSM};
 
 {$R *.res}
 
@@ -55,5 +59,8 @@ begin
   Application.CreateForm(Tform_edit_MTO, form_edit_MTO);
   Application.CreateForm(Tform_prihod_MTO, form_prihod_MTO);
   Application.CreateForm(Tform_edit_prihod_MTO, form_edit_prihod_MTO);
+  Application.CreateForm(Tform_edit_GSM, form_edit_GSM);
+  Application.CreateForm(Tform_edit_prihod_GSM, form_edit_prihod_GSM);
+  Application.CreateForm(Tform_prihod_GSM, form_prihod_GSM);
   Application.Run;
 end.

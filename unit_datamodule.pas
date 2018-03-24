@@ -127,14 +127,36 @@ type
     q_prihod_MTOID_EI: TIntegerField;
     q_prihod_MTOPrimechanie: TWideMemoField;
     q_prihod_MTOEI: TStringField;
+    q_GSM: TADOQuery;
+    ds_GSM: TDataSource;
+    ds_prihod_GSM: TDataSource;
+    q_prihod_GSM: TADOQuery;
+    q_GSMID_GSM: TAutoIncField;
+    q_GSMKolichestvo: TFloatField;
+    q_GSMKriticheskoe_kolichestvo: TFloatField;
+    q_GSMID_EI: TIntegerField;
+    q_GSMPrimechanie: TWideMemoField;
+    q_GSMEI: TStringField;
+    q_prihod_GSMID_prihod_GSM: TAutoIncField;
+    q_prihod_GSMID_GSM: TIntegerField;
+    q_prihod_GSMData_priniato: TDateTimeField;
+    q_prihod_GSMPrinial: TWideStringField;
+    q_prihod_GSMKolichestvo: TFloatField;
+    q_prihod_GSMID_EI: TIntegerField;
+    q_prihod_GSMPrimechanie: TWideMemoField;
+    q_prihod_GSMEI: TStringField;
+    q_GSMNaimenovanie: TWideStringField;
     procedure q_narabotkaBeforePost(DataSet: TDataSet);
     procedure q_prihod_MTOBeforePost(DataSet: TDataSet);
+    procedure q_prihod_GSMBeforePost(DataSet: TDataSet);
   private
     { Private declarations }
   public
     { Public declarations }
     Procedure connect();
     Procedure refresh_MTO();
+    Procedure refresh_GSM();
+    Procedure refresh_dolzhnost();
   end;
 
 var
@@ -168,6 +190,8 @@ begin
   if not q_MTO.Active then q_MTO.Open;
   if not q_list_MTO.Active then q_list_MTO.Open;
   if not q_prihod_MTO.Active then q_prihod_MTO.Open;
+  if not q_GSM.Active then q_GSM.Open;
+  if not q_prihod_GSM.Active then q_prihod_GSM.Open;
 end;
 
 procedure TDM.q_narabotkaBeforePost(DataSet: TDataSet);
@@ -181,13 +205,28 @@ begin
                   + DataSet.FieldByName('Narabotka').AsFloat;
 end;
 
+procedure TDM.q_prihod_GSMBeforePost(DataSet: TDataSet);
+begin
+  if DataSet.State = dsInsert then
+  begin
+      if q_temp.Active then q_temp.Close;
+      q_temp.SQL.Text := 'Update GSM Set Kolichestvo = Kolichestvo + '
+                      + DataSet.FieldByName('Kolichestvo').AsString
+                      + ' Where ID_GSM = ' + q_GSM.FieldByName('ID_GSM').AsString;
+      q_temp.ExecSQL;
+  end;
+end;
+
 procedure TDM.q_prihod_MTOBeforePost(DataSet: TDataSet);
 begin
-  if q_temp.Active then q_temp.Close;
-  q_temp.SQL.Text := 'Update MTO Set Kolichestvo = Kolichestvo + '
-                  + DataSet.FieldByName('Kolichestvo').AsString
-                  + ' Where ID_MTO = ' + q_MTO.FieldByName('ID_MTO').AsString;
-  q_temp.ExecSQL;
+  if DataSet.State = dsInsert then
+  begin
+      if q_temp.Active then q_temp.Close;
+      q_temp.SQL.Text := 'Update MTO Set Kolichestvo = Kolichestvo + '
+                      + DataSet.FieldByName('Kolichestvo').AsString
+                      + ' Where ID_MTO = ' + q_MTO.FieldByName('ID_MTO').AsString;
+      q_temp.ExecSQL;
+  end;
 end;
 
 Procedure TDM.refresh_MTO;
@@ -199,6 +238,23 @@ begin
   end;
   q_MTO.Open;
   q_MTO.RecNo := index;
+end;
+
+Procedure TDM.refresh_GSM;
+begin
+  if q_GSM.Active then
+  begin
+    index := q_GSM.RecNo;
+    q_GSM.Close;
+  end;
+  q_GSM.Open;
+  q_GSM.RecNo := index;
+end;
+
+Procedure TDM.refresh_dolzhnost;
+begin
+  if q_dolzhnost.Active then q_dolzhnost.Close;
+  q_dolzhnost.Open;
 end;
 
 end.
