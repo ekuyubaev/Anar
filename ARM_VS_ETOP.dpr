@@ -38,7 +38,8 @@ uses
   unit_rabota in 'unit_rabota.pas' {form_rabota},
   unit_vid_rabota in 'unit_vid_rabota.pas' {form_vid_rabota},
   unit_edit_rabota in 'unit_edit_rabota.pas' {form_edit_rabota},
-  unit_vybor_ispolnitel in 'unit_vybor_ispolnitel.pas' {form_vybor_ispolnitel};
+  unit_vybor_ispolnitel in 'unit_vybor_ispolnitel.pas' {form_vybor_ispolnitel},
+  unit_vybor_material in 'unit_vybor_material.pas' {form_vybor_material};
 
 {$R *.res}
 
@@ -72,5 +73,6 @@ begin
   Application.CreateForm(Tform_vid_rabota, form_vid_rabota);
   Application.CreateForm(Tform_edit_rabota, form_edit_rabota);
   Application.CreateForm(Tform_vybor_ispolnitel, form_vybor_ispolnitel);
+  Application.CreateForm(Tform_vybor_material, form_vybor_material);
   Application.Run;
 end.

@@ -916,6 +916,7 @@ object DM: TDM
     Active = True
     Connection = conn_main
     CursorType = ctStatic
+    BeforePost = q_rashod_MTOBeforePost
     DataSource = ds_rabota
     Parameters = <
       item

@@ -213,6 +213,7 @@ type
     procedure q_narabotkaBeforePost(DataSet: TDataSet);
     procedure q_prihod_MTOBeforePost(DataSet: TDataSet);
     procedure q_prihod_GSMBeforePost(DataSet: TDataSet);
+    procedure q_rashod_MTOBeforePost(DataSet: TDataSet);
   private
     { Private declarations }
   public
@@ -298,6 +299,18 @@ begin
                       + DataSet.FieldByName('Kolichestvo').AsString
                       + ' Where ID_MTO = ' + q_MTO.FieldByName('ID_MTO').AsString;
       q_temp.ExecSQL;
+  end;
+end;
+
+procedure TDM.q_rashod_MTOBeforePost(DataSet: TDataSet);
+begin
+  if DataSet.State = dsInsert then
+  begin
+    if q_temp.Active then q_temp.Close;
+    q_temp.SQL.Text := 'Update MTO Set Kolichestvo = Kolichestvo - '
+                    + DataSet.FieldByName('Kolichestvo').AsString
+                    + ' Where ID_MTO = ' + DataSet.FieldByName('ID_MTO').AsString;
+    q_temp.ExecSQL;
   end;
 end;
 
