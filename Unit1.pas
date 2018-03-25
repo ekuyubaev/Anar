@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, DBGridEhGrouping,
   ToolCtrlsEh, DBGridEhToolCtrls, DynVarsEh, EhLibVCL, GridsEh, DBAxisGridsEh,
   DBGridEh, unit_attestacia, unit_oborudovanie, unit_sotrudnik, unit_sooruzhenie,
-  unit_sredstvo_izmerenia, unit_ZIP, unit_MTO, unit_GSM, unit_pusk;
+  unit_sredstvo_izmerenia, unit_ZIP, unit_MTO, unit_GSM, unit_pusk, unit_rabota;
 
 type
   Tform_main = class(TForm)
@@ -31,6 +31,8 @@ type
     N17: TMenuItem;
     N18: TMenuItem;
     N19: TMenuItem;
+    N20: TMenuItem;
+    N21: TMenuItem;
     procedure N4Click(Sender: TObject);
     procedure N5Click(Sender: TObject);
     procedure N6Click(Sender: TObject);
@@ -47,6 +49,8 @@ type
     procedure N17Click(Sender: TObject);
     procedure N18Click(Sender: TObject);
     procedure N19Click(Sender: TObject);
+    procedure N20Click(Sender: TObject);
+    procedure N21Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -64,6 +68,7 @@ var
   form_MTO: Tform_MTO;
   form_GSM: Tform_GSM;
   form_pusk: Tform_pusk;
+  form_rabota: Tform_rabota;
 
 implementation
 
@@ -71,7 +76,7 @@ implementation
 
 uses unit_dolzhnost, unit_vid_attestacia, unit_rezultat_attestacia,
   unit_sostoianie, unit_rezultat_poverka, unit_datamodule,
-  unit_EI;
+  unit_EI, unit_vid_rabota;
 
 procedure Tform_main.FormActivate(Sender: TObject);
 begin
@@ -162,6 +167,20 @@ begin
     form_pusk := Tform_pusk.Create(Application);
     form_pusk.Show;
   end;
+end;
+
+procedure Tform_main.N20Click(Sender: TObject);
+begin
+  if form_rabota = nil then
+  begin
+    form_rabota := Tform_rabota.Create(Application);
+    form_rabota.Show;
+  end;
+end;
+
+procedure Tform_main.N21Click(Sender: TObject);
+begin
+  form_vid_rabota.ShowModal;
 end;
 
 procedure Tform_main.N4Click(Sender: TObject);

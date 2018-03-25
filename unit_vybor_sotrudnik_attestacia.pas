@@ -14,7 +14,6 @@ type
     GroupBox2: TGroupBox;
     GroupBox3: TGroupBox;
     BitBtn1: TBitBtn;
-    BitBtn2: TBitBtn;
     DBGridEh1: TDBGridEh;
     DBGridEh2: TDBGridEh;
     procedure BitBtn1Click(Sender: TObject);

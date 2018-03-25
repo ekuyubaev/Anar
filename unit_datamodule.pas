@@ -153,6 +153,63 @@ type
     q_puskData_nachalo: TDateTimeField;
     q_puskData_okonchanie: TDateTimeField;
     q_puskPrimechanie: TWideMemoField;
+    q_rabota: TADOQuery;
+    q_rashod_MTO: TADOQuery;
+    q_rashod_GSM: TADOQuery;
+    q_ispolnitel: TADOQuery;
+    ds_rabota: TDataSource;
+    ds_rashod_MTO: TDataSource;
+    ds_rashod_GSM: TDataSource;
+    ds_ispolnitel: TDataSource;
+    q_rabotaID_rabota: TAutoIncField;
+    q_rabotaID_oborudovanie: TIntegerField;
+    q_rabotaNachalo: TDateTimeField;
+    q_rabotaOkonchanie: TDateTimeField;
+    q_rabotaProdlen_po: TDateTimeField;
+    q_rabotaPo_rasporiazheniu: TBooleanField;
+    q_rabotaPo_nariadu_dopusku: TBooleanField;
+    q_rabotaVypolnena: TBooleanField;
+    q_rabotaPrimechanie: TWideMemoField;
+    q_rabotaOborudovanie: TStringField;
+    q_rashod_MTOID_rashod_MTO: TAutoIncField;
+    q_rashod_MTOID_rabota: TIntegerField;
+    q_rashod_MTOID_MTO: TIntegerField;
+    q_rashod_MTOKolichestvo: TFloatField;
+    q_rashod_MTOData_vydano: TDateTimeField;
+    q_rashod_MTOID_EI: TIntegerField;
+    q_rashod_MTOVydano_komu: TWideStringField;
+    q_rashod_MTOPrimechanie: TWideMemoField;
+    q_rashod_MTOMTO: TStringField;
+    q_rashod_GSMID_rashod_GSM: TAutoIncField;
+    q_rashod_GSMID_rabota: TIntegerField;
+    q_rashod_GSMID_GSM: TIntegerField;
+    q_rashod_GSMKolichestvo: TFloatField;
+    q_rashod_GSMData_vydano: TDateTimeField;
+    q_rashod_GSMPrimechanie: TWideMemoField;
+    q_rashod_GSMID_EI: TIntegerField;
+    q_rashod_GSMGSM: TStringField;
+    q_ispolnitelID_ispolnitel: TAutoIncField;
+    q_ispolnitelID_rabota: TIntegerField;
+    q_ispolnitelID_sotrudnik: TIntegerField;
+    q_ispolnitelID_dolzhnost: TIntegerField;
+    q_ispolnitelPrimechanie: TWideMemoField;
+    q_ispolnitelSotrudnik: TStringField;
+    q_ispolnitelDolzhnost: TStringField;
+    q_rashod_GSMEI: TStringField;
+    q_rashod_MTOEI: TStringField;
+    q_rabotaNaimenovanie: TWideStringField;
+    q_rabotaID_vid_rabota: TIntegerField;
+    q_vid_rabota: TADOQuery;
+    ds_vid_rabota: TDataSource;
+    q_rabotaVid_rabota: TStringField;
+    q_vybor_ispolnitel: TADOQuery;
+    ds_vybor_ispolnitel: TDataSource;
+    q_vybor_ispolnitelID_vybor: TAutoIncField;
+    q_vybor_ispolnitelID_sotrudnik: TIntegerField;
+    q_vybor_ispolnitelID_dolzhnost: TIntegerField;
+    q_vybor_ispolnitelVybran: TSmallintField;
+    q_vybor_ispolnitelSotrudnik: TStringField;
+    q_vybor_ispolnitelDolzhnost: TStringField;
     procedure q_narabotkaBeforePost(DataSet: TDataSet);
     procedure q_prihod_MTOBeforePost(DataSet: TDataSet);
     procedure q_prihod_GSMBeforePost(DataSet: TDataSet);
@@ -164,6 +221,7 @@ type
     Procedure refresh_MTO();
     Procedure refresh_GSM();
     Procedure refresh_dolzhnost();
+    Procedure refresh_rabota();
   end;
 
 var
@@ -199,6 +257,13 @@ begin
   if not q_prihod_MTO.Active then q_prihod_MTO.Open;
   if not q_GSM.Active then q_GSM.Open;
   if not q_prihod_GSM.Active then q_prihod_GSM.Open;
+  if not q_pusk.Active then q_pusk.Open;
+  if not q_rabota.Active then q_rabota.Open;
+  if not q_rashod_MTO.Active then q_rashod_MTO.Open;
+  if not q_rashod_GSM.Active then q_rashod_GSM.Open;
+  if not q_ispolnitel.Active then q_ispolnitel.Open;
+  if not q_vybor_ispolnitel.Active then q_vybor_ispolnitel.Open;
+  if not q_vid_rabota.Active then q_vid_rabota.Open;
 end;
 
 procedure TDM.q_narabotkaBeforePost(DataSet: TDataSet);
@@ -256,6 +321,17 @@ begin
   end;
   q_GSM.Open;
   q_GSM.RecNo := index;
+end;
+
+Procedure TDM.refresh_rabota;
+begin
+  if q_rabota.Active then
+  begin
+    index := q_rabota.RecNo;
+    q_rabota.Close;
+  end;
+  q_rabota.Open;
+  q_rabota.RecNo := index;
 end;
 
 Procedure TDM.refresh_dolzhnost;

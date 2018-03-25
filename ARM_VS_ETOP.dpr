@@ -34,7 +34,11 @@ uses
   unit_edit_prihod_GSM in 'unit_edit_prihod_GSM.pas' {form_edit_prihod_GSM},
   unit_prihod_GSM in 'unit_prihod_GSM.pas' {form_prihod_GSM},
   unit_pusk in 'unit_pusk.pas' {form_pusk},
-  unit_edit_pusk in 'unit_edit_pusk.pas' {form_edit_pusk};
+  unit_edit_pusk in 'unit_edit_pusk.pas' {form_edit_pusk},
+  unit_rabota in 'unit_rabota.pas' {form_rabota},
+  unit_vid_rabota in 'unit_vid_rabota.pas' {form_vid_rabota},
+  unit_edit_rabota in 'unit_edit_rabota.pas' {form_edit_rabota},
+  unit_vybor_ispolnitel in 'unit_vybor_ispolnitel.pas' {form_vybor_ispolnitel};
 
 {$R *.res}
 
@@ -65,5 +69,8 @@ begin
   Application.CreateForm(Tform_edit_prihod_GSM, form_edit_prihod_GSM);
   Application.CreateForm(Tform_prihod_GSM, form_prihod_GSM);
   Application.CreateForm(Tform_edit_pusk, form_edit_pusk);
+  Application.CreateForm(Tform_vid_rabota, form_vid_rabota);
+  Application.CreateForm(Tform_edit_rabota, form_edit_rabota);
+  Application.CreateForm(Tform_vybor_ispolnitel, form_vybor_ispolnitel);
   Application.Run;
 end.
