@@ -209,6 +209,14 @@
             <Form>form_prihod_GSM</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="unit_pusk.pas">
+            <Form>form_pusk</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="unit_edit_pusk.pas">
+            <Form>form_edit_pusk</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

@@ -769,7 +769,7 @@ object DM: TDM
       item
         Name = 'ID_GSM'
         DataType = ftInteger
-        Value = Null
+        Value = 1
       end>
     SQL.Strings = (
       'Select * From Prihod_GSM'
@@ -810,5 +810,38 @@ object DM: TDM
       FieldName = 'Primechanie'
       BlobType = ftWideMemo
     end
+  end
+  object q_pusk: TADOQuery
+    Active = True
+    Connection = conn_main
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'Select * From Pusk')
+    Left = 104
+    Top = 416
+    object q_puskID_pusk: TAutoIncField
+      FieldName = 'ID_pusk'
+      ReadOnly = True
+    end
+    object q_puskNaimenovanie: TWideStringField
+      FieldName = 'Naimenovanie'
+      Size = 255
+    end
+    object q_puskData_nachalo: TDateTimeField
+      FieldName = 'Data_nachalo'
+    end
+    object q_puskData_okonchanie: TDateTimeField
+      FieldName = 'Data_okonchanie'
+    end
+    object q_puskPrimechanie: TWideMemoField
+      FieldName = 'Primechanie'
+      BlobType = ftWideMemo
+    end
+  end
+  object ds_pusk: TDataSource
+    DataSet = q_pusk
+    Left = 104
+    Top = 464
   end
 end

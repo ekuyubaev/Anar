@@ -146,6 +146,13 @@ type
     q_prihod_GSMPrimechanie: TWideMemoField;
     q_prihod_GSMEI: TStringField;
     q_GSMNaimenovanie: TWideStringField;
+    q_pusk: TADOQuery;
+    ds_pusk: TDataSource;
+    q_puskID_pusk: TAutoIncField;
+    q_puskNaimenovanie: TWideStringField;
+    q_puskData_nachalo: TDateTimeField;
+    q_puskData_okonchanie: TDateTimeField;
+    q_puskPrimechanie: TWideMemoField;
     procedure q_narabotkaBeforePost(DataSet: TDataSet);
     procedure q_prihod_MTOBeforePost(DataSet: TDataSet);
     procedure q_prihod_GSMBeforePost(DataSet: TDataSet);

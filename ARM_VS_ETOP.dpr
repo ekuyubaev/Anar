@@ -32,7 +32,9 @@ uses
   unit_GSM in 'unit_GSM.pas' {form_GSM},
   unit_edit_GSM in 'unit_edit_GSM.pas' {form_edit_GSM},
   unit_edit_prihod_GSM in 'unit_edit_prihod_GSM.pas' {form_edit_prihod_GSM},
-  unit_prihod_GSM in 'unit_prihod_GSM.pas' {form_prihod_GSM};
+  unit_prihod_GSM in 'unit_prihod_GSM.pas' {form_prihod_GSM},
+  unit_pusk in 'unit_pusk.pas' {form_pusk},
+  unit_edit_pusk in 'unit_edit_pusk.pas' {form_edit_pusk};
 
 {$R *.res}
 
@@ -62,5 +64,6 @@ begin
   Application.CreateForm(Tform_edit_GSM, form_edit_GSM);
   Application.CreateForm(Tform_edit_prihod_GSM, form_edit_prihod_GSM);
   Application.CreateForm(Tform_prihod_GSM, form_prihod_GSM);
+  Application.CreateForm(Tform_edit_pusk, form_edit_pusk);
   Application.Run;
 end.
