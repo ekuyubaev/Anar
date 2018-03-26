@@ -48,6 +48,12 @@ type
     BitBtn6: TBitBtn;
     DBGridEh2: TDBGridEh;
     BitBtn7: TBitBtn;
+    GroupBox7: TGroupBox;
+    GroupBox8: TGroupBox;
+    DBGridEh3: TDBGridEh;
+    BitBtn8: TBitBtn;
+    BitBtn9: TBitBtn;
+    BitBtn10: TBitBtn;
     procedure FormResize(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -57,6 +63,9 @@ type
     procedure BitBtn5Click(Sender: TObject);
     procedure BitBtn7Click(Sender: TObject);
     procedure BitBtn6Click(Sender: TObject);
+    procedure BitBtn8Click(Sender: TObject);
+    procedure BitBtn10Click(Sender: TObject);
+    procedure BitBtn9Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -70,7 +79,14 @@ implementation
 
 {$R *.dfm}
 
-uses unit_datamodule, DB, unit_vybor_ispolnitel, unit_vybor_material;
+uses unit_datamodule, DB, unit_vybor_ispolnitel, unit_vybor_material,
+  unit_vybor_GSM;
+
+procedure Tform_edit_rabota.BitBtn10Click(Sender: TObject);
+begin
+  DM.q_rashod_GSM.Edit;
+  form_vybor_GSM.ShowModal;
+end;
 
 procedure Tform_edit_rabota.BitBtn1Click(Sender: TObject);
 begin
@@ -134,6 +150,18 @@ procedure Tform_edit_rabota.BitBtn7Click(Sender: TObject);
 begin
   DM.q_rashod_MTO.Edit;
   form_vybor_material.ShowModal;
+end;
+
+procedure Tform_edit_rabota.BitBtn8Click(Sender: TObject);
+begin
+  DM.q_rashod_GSM.Insert;
+  form_vybor_GSM.ShowModal;
+end;
+
+procedure Tform_edit_rabota.BitBtn9Click(Sender: TObject);
+begin
+  if (MessageDlg('Удалить запись?', mtConfirmation, [mbYes,mbNo], 0) = mrYes)
+    then DM.q_rashod_GSM.Delete;
 end;
 
 procedure Tform_edit_rabota.FormClose(Sender: TObject;

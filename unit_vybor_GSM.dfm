@@ -1,11 +1,11 @@
-object form_vybor_material: Tform_vybor_material
+object form_vybor_GSM: Tform_vybor_GSM
   Left = 0
   Top = 0
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  Caption = #1042#1099#1073#1086#1088' '#1084#1072#1090#1077#1088#1080#1072#1083#1072
-  ClientHeight = 348
-  ClientWidth = 347
+  Caption = #1042#1099#1073#1086#1088' '#1043#1057#1052
+  ClientHeight = 308
+  ClientWidth = 344
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -21,12 +21,16 @@ object form_vybor_material: Tform_vybor_material
   object GroupBox1: TGroupBox
     Left = 0
     Top = 0
-    Width = 347
-    Height = 317
+    Width = 344
+    Height = 276
     Align = alClient
     TabOrder = 0
+    ExplicitLeft = 112
+    ExplicitTop = 56
+    ExplicitWidth = 185
+    ExplicitHeight = 105
     object Label1: TLabel
-      Left = 16
+      Left = 17
       Top = 16
       Width = 84
       Height = 13
@@ -39,7 +43,7 @@ object form_vybor_material: Tform_vybor_material
       ParentFont = False
     end
     object Label2: TLabel
-      Left = 20
+      Left = 21
       Top = 56
       Width = 80
       Height = 13
@@ -52,7 +56,7 @@ object form_vybor_material: Tform_vybor_material
       ParentFont = False
     end
     object Label3: TLabel
-      Left = 32
+      Left = 33
       Top = 96
       Width = 68
       Height = 13
@@ -65,7 +69,7 @@ object form_vybor_material: Tform_vybor_material
       ParentFont = False
     end
     object Label4: TLabel
-      Left = 18
+      Left = 19
       Top = 136
       Width = 82
       Height = 13
@@ -78,21 +82,8 @@ object form_vybor_material: Tform_vybor_material
       ParentFont = False
     end
     object Label5: TLabel
-      Left = 21
+      Left = 31
       Top = 176
-      Width = 79
-      Height = 13
-      Caption = #1050#1086#1084#1091' '#1074#1099#1076#1072#1085#1086
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
-      ParentFont = False
-    end
-    object Label6: TLabel
-      Left = 30
-      Top = 216
       Width = 70
       Height = 13
       Caption = #1055#1088#1080#1084#1077#1095#1072#1085#1080#1077
@@ -104,28 +95,28 @@ object form_vybor_material: Tform_vybor_material
       ParentFont = False
     end
     object DBLookupComboboxEh1: TDBLookupComboboxEh
-      Left = 106
+      Left = 107
       Top = 13
-      Width = 223
+      Width = 222
       Height = 21
       DynProps = <>
-      DataField = 'ID_MTO'
-      DataSource = DM.ds_rashod_MTO
+      DataField = 'ID_GSM'
+      DataSource = DM.ds_rashod_GSM
       EditButtons = <>
-      KeyField = 'ID_MTO'
+      KeyField = 'ID_GSM'
       ListField = 'Naimenovanie'
-      ListSource = DM.ds_MTO
+      ListSource = DM.ds_GSM
       TabOrder = 0
       Visible = True
       OnChange = DBLookupComboboxEh1Change
     end
     object DBDateTimeEditEh1: TDBDateTimeEditEh
-      Left = 106
+      Left = 107
       Top = 53
       Width = 121
       Height = 21
       DataField = 'Data_vydano'
-      DataSource = DM.ds_rashod_MTO
+      DataSource = DM.ds_rashod_GSM
       DynProps = <>
       EditButtons = <>
       Kind = dtkDateEh
@@ -133,25 +124,25 @@ object form_vybor_material: Tform_vybor_material
       Visible = True
     end
     object DBEditEh1: TDBEditEh
-      Left = 106
+      Left = 107
       Top = 93
       Width = 121
       Height = 21
       DataField = 'Kolichestvo'
-      DataSource = DM.ds_rashod_MTO
+      DataSource = DM.ds_rashod_GSM
       DynProps = <>
       EditButtons = <>
       TabOrder = 2
       Visible = True
     end
     object DBLookupComboboxEh2: TDBLookupComboboxEh
-      Left = 106
+      Left = 107
       Top = 133
       Width = 121
       Height = 21
       DynProps = <>
       DataField = 'ID_EI'
-      DataSource = DM.ds_rashod_MTO
+      DataSource = DM.ds_rashod_GSM
       EditButtons = <>
       KeyField = 'ID_EI'
       ListField = 'Oboznachenie'
@@ -160,41 +151,30 @@ object form_vybor_material: Tform_vybor_material
       TabOrder = 3
       Visible = True
     end
-    object DBEditEh2: TDBEditEh
-      Left = 106
+    object DBMemoEh1: TDBMemoEh
+      Left = 107
       Top = 173
-      Width = 223
-      Height = 21
-      DataField = 'Vydano_komu'
-      DataSource = DM.ds_rashod_MTO
+      Width = 222
+      Height = 89
+      AutoSize = False
+      DataField = 'Primechanie'
+      DataSource = DM.ds_rashod_GSM
       DynProps = <>
       EditButtons = <>
       TabOrder = 4
       Visible = True
     end
-    object DBMemoEh1: TDBMemoEh
-      Left = 106
-      Top = 213
-      Width = 223
-      Height = 89
-      AutoSize = False
-      DataField = 'Primechanie'
-      DataSource = DM.ds_rashod_MTO
-      DynProps = <>
-      EditButtons = <>
-      TabOrder = 5
-      Visible = True
-    end
   end
   object GroupBox2: TGroupBox
     Left = 0
-    Top = 317
-    Width = 347
-    Height = 31
+    Top = 276
+    Width = 344
+    Height = 32
     Align = alBottom
     TabOrder = 1
+    ExplicitTop = 320
     object BitBtn1: TBitBtn
-      Left = 16
+      Left = 11
       Top = 3
       Width = 90
       Height = 25

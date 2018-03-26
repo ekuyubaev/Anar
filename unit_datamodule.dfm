@@ -981,6 +981,7 @@ object DM: TDM
     Active = True
     Connection = conn_main
     CursorType = ctStatic
+    BeforePost = q_rashod_GSMBeforePost
     DataSource = ds_rabota
     Parameters = <
       item
