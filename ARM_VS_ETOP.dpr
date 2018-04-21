@@ -42,7 +42,9 @@ uses
   unit_vybor_material in 'unit_vybor_material.pas' {form_vybor_material},
   unit_vybor_GSM in 'unit_vybor_GSM.pas' {form_vybor_GSM},
   unit_uvedomlenie in 'unit_uvedomlenie.pas',
-  unit_uvedomlenie_attestacia in 'unit_uvedomlenie_attestacia.pas' {form_uvedomlenie_attestacia};
+  unit_uvedomlenie_attestacia in 'unit_uvedomlenie_attestacia.pas' {form_uvedomlenie_attestacia},
+  unit_naimenovanie_rabot in 'unit_naimenovanie_rabot.pas' {form_naimenovanie_rabot},
+  unit_uvedomlenie_rabota in 'unit_uvedomlenie_rabota.pas' {form_uvedomlenie_rabota};
 
 {$R *.res}
 
@@ -79,5 +81,7 @@ begin
   Application.CreateForm(Tform_vybor_material, form_vybor_material);
   Application.CreateForm(Tform_vybor_GSM, form_vybor_GSM);
   Application.CreateForm(Tform_uvedomlenie_attestacia, form_uvedomlenie_attestacia);
+  Application.CreateForm(Tform_naimenovanie_rabot, form_naimenovanie_rabot);
+  Application.CreateForm(Tform_uvedomlenie_rabota, form_uvedomlenie_rabota);
   Application.Run;
 end.

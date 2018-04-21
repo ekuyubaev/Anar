@@ -15,6 +15,7 @@ object form_uvedomlenie_attestacia: Tform_uvedomlenie_attestacia
   OldCreateOrder = False
   WindowState = wsMaximized
   OnActivate = FormActivate
+  OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 13
   object GroupBox1: TGroupBox
@@ -24,10 +25,6 @@ object form_uvedomlenie_attestacia: Tform_uvedomlenie_attestacia
     Height = 276
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = 152
-    ExplicitTop = 72
-    ExplicitWidth = 185
-    ExplicitHeight = 105
     object DBGridEh1: TDBGridEh
       Left = 2
       Top = 15
@@ -198,8 +195,6 @@ object form_uvedomlenie_attestacia: Tform_uvedomlenie_attestacia
     Height = 41
     Align = alBottom
     TabOrder = 1
-    ExplicitTop = 272
-    ExplicitWidth = 457
     DesignSize = (
       881
       41)
@@ -209,7 +204,7 @@ object form_uvedomlenie_attestacia: Tform_uvedomlenie_attestacia
       Width = 90
       Height = 25
       Anchors = [akTop, akRight]
-      Caption = 'btnClose'
+      Caption = #1047#1072#1082#1088#1099#1090#1100
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11

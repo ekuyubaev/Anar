@@ -34,6 +34,7 @@ type
     N19: TMenuItem;
     N20: TMenuItem;
     N21: TMenuItem;
+    N22: TMenuItem;
     procedure N4Click(Sender: TObject);
     procedure N5Click(Sender: TObject);
     procedure N6Click(Sender: TObject);
@@ -52,6 +53,7 @@ type
     procedure N19Click(Sender: TObject);
     procedure N20Click(Sender: TObject);
     procedure N21Click(Sender: TObject);
+    procedure N22Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -78,17 +80,18 @@ implementation
 
 uses unit_dolzhnost, unit_vid_attestacia, unit_rezultat_attestacia,
   unit_sostoianie, unit_rezultat_poverka, unit_datamodule,
-  unit_EI, unit_vid_rabota;
+  unit_EI, unit_vid_rabota, unit_naimenovanie_rabot;
 
 procedure Tform_main.FormActivate(Sender: TObject);
 begin
   DM.connect;
 
-  {uvedomlenie :=TUvedomlenie.Create(true);
+  uvedomlenie :=TUvedomlenie.Create(true);
   uvedomlenie.FreeOnTerminate:=true;
   uvedomlenie.Priority:=tpLowest;
-  uvedomlenie.skrytDoSledRaza := false;
-  uvedomlenie.Resume; }
+  uvedomlenie.skrytAttestacia := false;
+  uvedomlenie.skrytRabota := false;
+  uvedomlenie.Resume;
 end;
 
 procedure Tform_main.N10Click(Sender: TObject);
@@ -189,6 +192,11 @@ end;
 procedure Tform_main.N21Click(Sender: TObject);
 begin
   form_vid_rabota.ShowModal;
+end;
+
+procedure Tform_main.N22Click(Sender: TObject);
+begin
+  form_naimenovanie_rabot.ShowModal;
 end;
 
 procedure Tform_main.N4Click(Sender: TObject);

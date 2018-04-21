@@ -18,6 +18,7 @@ type
     procedure BitBtn1Click(Sender: TObject);
     procedure btnCloseClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -36,13 +37,19 @@ uses unit_datamodule, Unit1, unit_uvedomlenie;
 procedure Tform_uvedomlenie_attestacia.BitBtn1Click(Sender: TObject);
 begin
   form_main.N16.Click;
-  unit1.uvedomlenie.skrytDoSledRaza := true;
+  unit1.uvedomlenie.skrytAttestacia := true;
   close;
 end;
 
 procedure Tform_uvedomlenie_attestacia.FormActivate(Sender: TObject);
 begin
   DBGridEh1.DataSource := dm.ds_uvedomlenie;
+end;
+
+procedure Tform_uvedomlenie_attestacia.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+  DBGridEh1.DataSource := nil;
 end;
 
 procedure Tform_uvedomlenie_attestacia.btnCloseClick(Sender: TObject);

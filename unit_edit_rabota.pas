@@ -27,7 +27,6 @@ type
     Label5: TLabel;
     Label6: TLabel;
     Label10: TLabel;
-    DBEditEh1: TDBEditEh;
     DBLookupComboboxEh1: TDBLookupComboboxEh;
     DBLookupComboboxEh2: TDBLookupComboboxEh;
     DBDateTimeEditEh1: TDBDateTimeEditEh;
@@ -58,6 +57,8 @@ type
     DBEditEh2: TDBEditEh;
     DBEditEh3: TDBEditEh;
     DBEditEh4: TDBEditEh;
+    BitBtn11: TBitBtn;
+    DBLookupComboboxEh3: TDBLookupComboboxEh;
     procedure FormResize(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -70,6 +71,7 @@ type
     procedure BitBtn8Click(Sender: TObject);
     procedure BitBtn10Click(Sender: TObject);
     procedure BitBtn9Click(Sender: TObject);
+    procedure BitBtn11Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -84,12 +86,17 @@ implementation
 {$R *.dfm}
 
 uses unit_datamodule, DB, unit_vybor_ispolnitel, unit_vybor_material,
-  unit_vybor_GSM;
+  unit_vybor_GSM, unit_naimenovanie_rabot;
 
 procedure Tform_edit_rabota.BitBtn10Click(Sender: TObject);
 begin
   DM.q_rashod_GSM.Edit;
   form_vybor_GSM.ShowModal;
+end;
+
+procedure Tform_edit_rabota.BitBtn11Click(Sender: TObject);
+begin
+  form_naimenovanie_rabot.ShowModal;
 end;
 
 procedure Tform_edit_rabota.BitBtn1Click(Sender: TObject);

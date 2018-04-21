@@ -25,7 +25,6 @@ object form_edit_rabota: Tform_edit_rabota
     Height = 290
     Align = alClient
     TabOrder = 0
-    ExplicitHeight = 266
     object Panel3: TPanel
       Left = 1
       Top = 1
@@ -33,7 +32,6 @@ object form_edit_rabota: Tform_edit_rabota
       Height = 288
       Align = alLeft
       TabOrder = 0
-      ExplicitHeight = 264
       object GroupBox1: TGroupBox
         Left = 1
         Top = 1
@@ -152,20 +150,6 @@ object form_edit_rabota: Tform_edit_rabota
           ParentFont = False
           ExplicitLeft = 288
         end
-        object DBEditEh1: TDBEditEh
-          Left = 16
-          Top = 24
-          Width = 256
-          Height = 21
-          Anchors = [akLeft, akTop, akRight]
-          DataField = 'Naimenovanie'
-          DataSource = DM.ds_rabota
-          DynProps = <>
-          EditButtons = <>
-          TabOrder = 0
-          Visible = True
-          ExplicitWidth = 257
-        end
         object DBLookupComboboxEh1: TDBLookupComboboxEh
           Left = 16
           Top = 77
@@ -177,9 +161,8 @@ object form_edit_rabota: Tform_edit_rabota
           DataSource = DM.ds_rabota
           DropDownBox.Width = 200
           EditButtons = <>
-          TabOrder = 1
+          TabOrder = 0
           Visible = True
-          ExplicitWidth = 257
         end
         object DBLookupComboboxEh2: TDBLookupComboboxEh
           Left = 287
@@ -201,9 +184,8 @@ object form_edit_rabota: Tform_edit_rabota
             end>
           DropDownBox.Width = 300
           EditButtons = <>
-          TabOrder = 2
+          TabOrder = 1
           Visible = True
-          ExplicitLeft = 288
         end
         object DBDateTimeEditEh1: TDBDateTimeEditEh
           Left = 16
@@ -215,7 +197,7 @@ object form_edit_rabota: Tform_edit_rabota
           DynProps = <>
           EditButtons = <>
           Kind = dtkDateEh
-          TabOrder = 3
+          TabOrder = 2
           Visible = True
         end
         object DBDateTimeEditEh2: TDBDateTimeEditEh
@@ -228,7 +210,7 @@ object form_edit_rabota: Tform_edit_rabota
           DynProps = <>
           EditButtons = <>
           Kind = dtkDateEh
-          TabOrder = 4
+          TabOrder = 3
           Visible = True
         end
         object DBDateTimeEditEh3: TDBDateTimeEditEh
@@ -241,7 +223,7 @@ object form_edit_rabota: Tform_edit_rabota
           DynProps = <>
           EditButtons = <>
           Kind = dtkDateEh
-          TabOrder = 5
+          TabOrder = 4
           Visible = True
         end
         object DBCheckBoxEh1: TDBCheckBoxEh
@@ -260,8 +242,7 @@ object form_edit_rabota: Tform_edit_rabota
           Font.Name = 'Tahoma'
           Font.Style = [fsBold]
           ParentFont = False
-          TabOrder = 6
-          ExplicitLeft = 390
+          TabOrder = 5
         end
         object DBCheckBoxEh2: TDBCheckBoxEh
           Left = 16
@@ -278,7 +259,7 @@ object form_edit_rabota: Tform_edit_rabota
           Font.Name = 'Tahoma'
           Font.Style = [fsBold]
           ParentFont = False
-          TabOrder = 7
+          TabOrder = 6
         end
         object DBCheckBoxEh3: TDBCheckBoxEh
           Left = 242
@@ -296,8 +277,7 @@ object form_edit_rabota: Tform_edit_rabota
           Font.Name = 'Tahoma'
           Font.Style = [fsBold]
           ParentFont = False
-          TabOrder = 8
-          ExplicitLeft = 243
+          TabOrder = 7
         end
         object DBMemoEh1: TDBMemoEh
           Left = 16
@@ -310,13 +290,13 @@ object form_edit_rabota: Tform_edit_rabota
           DataSource = DM.ds_rabota
           DynProps = <>
           EditButtons = <>
-          TabOrder = 9
+          TabOrder = 8
           Visible = True
         end
         object DBEditEh2: TDBEditEh
           Left = 287
           Top = 75
-          Width = 185
+          Width = 179
           Height = 21
           Alignment = taCenter
           Anchors = [akTop, akRight]
@@ -324,9 +304,9 @@ object form_edit_rabota: Tform_edit_rabota
           DataSource = DM.ds_rabota
           DynProps = <>
           EditButtons = <>
-          TabOrder = 10
+          ReadOnly = True
+          TabOrder = 9
           Visible = True
-          ExplicitLeft = 288
         end
         object DBEditEh3: TDBEditEh
           Left = 167
@@ -338,9 +318,8 @@ object form_edit_rabota: Tform_edit_rabota
           DataSource = DM.ds_rabota
           DynProps = <>
           EditButtons = <>
-          TabOrder = 11
+          TabOrder = 10
           Visible = True
-          ExplicitWidth = 59
         end
         object DBEditEh4: TDBEditEh
           Left = 399
@@ -352,9 +331,40 @@ object form_edit_rabota: Tform_edit_rabota
           DataSource = DM.ds_rabota
           DynProps = <>
           EditButtons = <>
-          TabOrder = 12
+          TabOrder = 11
           Visible = True
-          ExplicitLeft = 400
+        end
+        object BitBtn11: TBitBtn
+          Left = 239
+          Top = 22
+          Width = 25
+          Height = 25
+          Anchors = [akTop, akRight]
+          Caption = '+'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 12
+          OnClick = BitBtn11Click
+        end
+        object DBLookupComboboxEh3: TDBLookupComboboxEh
+          Left = 16
+          Top = 24
+          Width = 217
+          Height = 21
+          Anchors = [akLeft, akTop, akRight]
+          DynProps = <>
+          DataField = 'ID_naimenovanie'
+          DataSource = DM.ds_rabota
+          EditButtons = <>
+          KeyField = 'ID_naimenovanie'
+          ListField = 'Naimnovanie'
+          ListSource = DM.ds_naimenovanie_rabot
+          TabOrder = 13
+          Visible = True
         end
       end
       object GroupBox2: TGroupBox
@@ -364,7 +374,6 @@ object form_edit_rabota: Tform_edit_rabota
         Height = 39
         Align = alBottom
         TabOrder = 1
-        ExplicitTop = 224
         object BitBtn1: TBitBtn
           Left = 16
           Top = 6
@@ -404,7 +413,6 @@ object form_edit_rabota: Tform_edit_rabota
       Height = 288
       Align = alClient
       TabOrder = 1
-      ExplicitHeight = 264
       object GroupBox3: TGroupBox
         Left = 1
         Top = 1
@@ -457,7 +465,6 @@ object form_edit_rabota: Tform_edit_rabota
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 1
-        ExplicitHeight = 230
         object DBGridEh1: TDBGridEh
           Left = 2
           Top = 15
@@ -594,7 +601,6 @@ object form_edit_rabota: Tform_edit_rabota
     Height = 266
     Align = alBottom
     TabOrder = 1
-    ExplicitTop = 266
     object Panel5: TPanel
       Left = 1
       Top = 1

@@ -196,7 +196,6 @@ type
     q_ispolnitelDolzhnost: TStringField;
     q_rashod_GSMEI: TStringField;
     q_rashod_MTOEI: TStringField;
-    q_rabotaNaimenovanie: TWideStringField;
     q_rabotaID_vid_rabota: TIntegerField;
     q_vid_rabota: TADOQuery;
     ds_vid_rabota: TDataSource;
@@ -211,7 +210,6 @@ type
     q_vybor_ispolnitelDolzhnost: TStringField;
     q_uvedomlenie: TADOQuery;
     ds_uvedomlenie: TDataSource;
-    q_rabotaPeriodichnost: TIntegerField;
     q_rabotaNomer_rasporiazhenie: TWideStringField;
     q_rabotaNomer_nariad: TWideStringField;
     q_sredstvo_izmereniaTip: TWideStringField;
@@ -220,6 +218,12 @@ type
     q_sredstvo_izmereniaPogreshnost: TWideStringField;
     q_poverka: TADOQuery;
     ds_poverka: TDataSource;
+    q_naimenovanie_rabot: TADOQuery;
+    ds_naimenovanie_rabot: TDataSource;
+    q_rabotaID_naimenovanie: TIntegerField;
+    q_rabotaPeriodichnost: TIntegerField;
+    q_uvedomlenie_rabota: TADOQuery;
+    ds_uvedomlenie_rabota: TDataSource;
     procedure q_narabotkaBeforePost(DataSet: TDataSet);
     procedure q_prihod_MTOBeforePost(DataSet: TDataSet);
     procedure q_prihod_GSMBeforePost(DataSet: TDataSet);
@@ -234,6 +238,7 @@ type
     Procedure refresh_GSM();
     Procedure refresh_dolzhnost();
     Procedure refresh_rabota();
+    Procedure refresh_naimenovanie_rabot();
   end;
 
 var
@@ -368,6 +373,13 @@ begin
   end;
   q_rabota.Open;
   q_rabota.RecNo := index;
+end;
+
+Procedure TDM.refresh_naimenovanie_rabot;
+begin
+  if q_naimenovanie_rabot.Active
+      then q_naimenovanie_rabot.Close;
+  q_naimenovanie_rabot.Open;
 end;
 
 Procedure TDM.refresh_dolzhnost;

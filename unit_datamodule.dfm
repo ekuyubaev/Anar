@@ -1,6 +1,6 @@
 object DM: TDM
   OldCreateOrder = False
-  Height = 562
+  Height = 649
   Width = 808
   object conn_main: TADOConnection
     Connected = True
@@ -851,9 +851,8 @@ object DM: TDM
       FieldName = 'ID_rabota'
       ReadOnly = True
     end
-    object q_rabotaNaimenovanie: TWideStringField
-      FieldName = 'Naimenovanie'
-      Size = 255
+    object q_rabotaID_naimenovanie: TIntegerField
+      FieldName = 'ID_naimenovanie'
     end
     object q_rabotaID_vid_rabota: TIntegerField
       FieldName = 'ID_vid_rabota'
@@ -888,7 +887,13 @@ object DM: TDM
       FieldName = 'Okonchanie'
     end
     object q_rabotaPeriodichnost: TIntegerField
+      FieldKind = fkLookup
       FieldName = 'Periodichnost'
+      LookupDataSet = q_naimenovanie_rabot
+      LookupKeyFields = 'ID_naimenovanie'
+      LookupResultField = 'Periodichnost'
+      KeyFields = 'ID_naimenovanie'
+      Lookup = True
     end
     object q_rabotaProdlen_po: TDateTimeField
       FieldName = 'Prodlen_po'
@@ -1178,15 +1183,24 @@ object DM: TDM
     Top = 464
   end
   object q_uvedomlenie: TADOQuery
+    Active = True
     Connection = conn_main
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
-      'Select * From Zachet as Z inner join Attestacia as A'
-      #9#9#9'on Z.ID_attestacia = A.ID_attestacia'
+      'Select * '
+      'From Rabota as R left join Naimenovanie_rabot as NR '
+      #9#9#9#9'on NR.ID_naimenovanie = R.ID_naimenovanie'
       
-        'Where (Z.ID_rezultat_attestacia is NULL or Z.ID_rezultat_attesta' +
-        'cia <> 1)')
+        'Where ( (R.Okonchanie is null or R.Okonchanie <= Now()) and R.Vy' +
+        'polnena <> 1)'
+      
+        #9'or ( ((Select max(okonchanie) from Rabota as R2 Where R2.ID_nai' +
+        'menovanie = R.ID_naimenovanie) '
+      #9#9#9'+ interval NR.Periodichnost day  <= Now())'
+      
+        '            and ((Select max(okonchanie) from Rabota as R2 Where' +
+        ' R2.ID_naimenovanie = R.ID_naimenovanie) = R.Okonchanie) )')
     Left = 656
     Top = 416
   end
@@ -1216,5 +1230,47 @@ object DM: TDM
     DataSet = q_poverka
     Left = 680
     Top = 208
+  end
+  object q_naimenovanie_rabot: TADOQuery
+    Active = True
+    Connection = conn_main
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'Select * From Naimenovanie_rabot')
+    Left = 104
+    Top = 544
+  end
+  object ds_naimenovanie_rabot: TDataSource
+    DataSet = q_naimenovanie_rabot
+    Left = 104
+    Top = 592
+  end
+  object q_uvedomlenie_rabota: TADOQuery
+    Connection = conn_main
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'Select * From Rabota as R left join Naimenovanie_rabot as NR '
+      
+        '                              on NR.ID_naimenovanie = R.ID_naime' +
+        'novanie '
+      
+        '                              Where ( (R.Okonchanie is null or R' +
+        '.Okonchanie <= Now()) and R.Vypolnena <> 1) '
+      
+        '                              or ( ((Select max(okonchanie) from' +
+        ' Rabota as R2 Where R2.ID_naimenovanie = R.ID_naimenovanie))) '
+      
+        '                              and ((Select max(okonchanie) from ' +
+        'Rabota as R2 Where R2.ID_naimenovanie = R.ID_naimenovanie) = R.O' +
+        'konchanie)')
+    Left = 224
+    Top = 544
+  end
+  object ds_uvedomlenie_rabota: TDataSource
+    DataSet = q_uvedomlenie_rabota
+    Left = 224
+    Top = 592
   end
 end
