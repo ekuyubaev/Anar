@@ -4,7 +4,7 @@ object form_sredstvo_izmerenia: Tform_sredstvo_izmerenia
   ActiveControl = DBGridEh1
   Caption = #1057#1088#1077#1076#1089#1090#1074#1072' '#1080#1079#1084#1077#1088#1077#1085#1080#1103
   ClientHeight = 323
-  ClientWidth = 776
+  ClientWidth = 802
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -22,14 +22,15 @@ object form_sredstvo_izmerenia: Tform_sredstvo_izmerenia
   object GroupBox1: TGroupBox
     Left = 0
     Top = 0
-    Width = 776
+    Width = 802
     Height = 288
     Align = alClient
     TabOrder = 0
+    ExplicitWidth = 776
     object DBGridEh1: TDBGridEh
       Left = 2
       Top = 15
-      Width = 772
+      Width = 798
       Height = 271
       Align = alClient
       AutoFitColWidths = True
@@ -180,10 +181,11 @@ object form_sredstvo_izmerenia: Tform_sredstvo_izmerenia
   object GroupBox2: TGroupBox
     Left = 0
     Top = 288
-    Width = 776
+    Width = 802
     Height = 35
     Align = alBottom
     TabOrder = 1
+    ExplicitWidth = 776
     object BitBtn1: TBitBtn
       Left = 16
       Top = 6

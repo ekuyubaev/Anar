@@ -5,14 +5,12 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, DB, DBGridEh,
-  DBCtrlsEh, DBLookupEh, Vcl.Mask;
+  DBCtrlsEh, DBLookupEh, Vcl.Mask, DBGridEhGrouping, ToolCtrlsEh,
+  DBGridEhToolCtrls, DynVarsEh, EhLibVCL, GridsEh, DBAxisGridsEh;
 
 type
   Tform_edit_sredstvo_izmerenia = class(TForm)
     GroupBox1: TGroupBox;
-    GroupBox2: TGroupBox;
-    BitBtn1: TBitBtn;
-    BitBtn2: TBitBtn;
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
@@ -27,6 +25,17 @@ type
     DBDateTimeEditEh1: TDBDateTimeEditEh;
     DBEditEh4: TDBEditEh;
     DBMemoEh1: TDBMemoEh;
+    DBEditEh5: TDBEditEh;
+    DBEditEh6: TDBEditEh;
+    DBEditEh7: TDBEditEh;
+    Label8: TLabel;
+    Label9: TLabel;
+    Label10: TLabel;
+    GroupBox3: TGroupBox;
+    GroupBox2: TGroupBox;
+    BitBtn1: TBitBtn;
+    BitBtn2: TBitBtn;
+    DBGridEh1: TDBGridEh;
     procedure BitBtn2Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure BitBtn1Click(Sender: TObject);

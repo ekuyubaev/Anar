@@ -6,15 +6,14 @@ object DM: TDM
     Connected = True
     ConnectionString = 
       'Provider=MSDASQL.1;Persist Security Info=True;Extended Propertie' +
-      's="Driver=MySQL ODBC 5.3 Unicode Driver;SERVER=localhost;UID=roo' +
-      't;PWD=gdx4852T;DATABASE=db_etop;PORT=3306;COLUMN_SIZE_S32=1";Ini' +
-      'tial Catalog=db_etop'
+      's="DRIVER={MySQL ODBC 5.3 Unicode Driver};UID=root;PWD=gdx4852T;' +
+      'SERVER=localhost;DATABASE=db_etop;PORT=3306;COLUMN_SIZE_S32=1;";' +
+      'Initial Catalog=db_etop;OPTION=2'
     LoginPrompt = False
     Left = 32
     Top = 24
   end
   object q_dolzhnost: TADOQuery
-    Active = True
     Connection = conn_main
     CursorType = ctStatic
     Parameters = <>
@@ -29,7 +28,6 @@ object DM: TDM
     Top = 72
   end
   object q_vid_attestacia: TADOQuery
-    Active = True
     Connection = conn_main
     CursorType = ctStatic
     Parameters = <>
@@ -44,7 +42,6 @@ object DM: TDM
     Top = 72
   end
   object q_rezultat_attestacia: TADOQuery
-    Active = True
     Connection = conn_main
     CursorType = ctStatic
     Parameters = <>
@@ -74,7 +71,6 @@ object DM: TDM
     Top = 72
   end
   object q_rezultat_poverka: TADOQuery
-    Active = True
     Connection = conn_main
     CursorType = ctStatic
     Parameters = <>
@@ -89,7 +85,6 @@ object DM: TDM
     Top = 72
   end
   object q_sotrudnik: TADOQuery
-    Active = True
     Connection = conn_main
     CursorType = ctStatic
     Parameters = <>
@@ -292,7 +287,6 @@ object DM: TDM
     Top = 208
   end
   object q_EI: TADOQuery
-    Active = True
     Connection = conn_main
     CursorType = ctStatic
     Parameters = <>
@@ -329,6 +323,10 @@ object DM: TDM
       FieldName = 'Naimenovanie'
       Size = 255
     end
+    object q_sredstvo_izmereniaTip: TWideStringField
+      FieldName = 'Tip'
+      Size = 64
+    end
     object q_sredstvo_izmereniaN_zavodskoi: TWideStringField
       FieldName = 'N_zavodskoi'
       Size = 64
@@ -350,12 +348,19 @@ object DM: TDM
     object q_sredstvo_izmereniaData_vvedeno: TDateTimeField
       FieldName = 'Data_vvedeno'
     end
-    object q_sredstvo_izmereniaPeriodichnost_poverka: TWideStringField
-      FieldName = 'Periodichnost_poverka'
-      Size = 255
-    end
     object q_sredstvo_izmereniaID_sostoianie: TIntegerField
       FieldName = 'ID_sostoianie'
+    end
+    object q_sredstvo_izmereniaPeriodichnost_poverka: TIntegerField
+      FieldName = 'Periodichnost_poverka'
+    end
+    object q_sredstvo_izmereniaDiapazon: TWideStringField
+      FieldName = 'Diapazon'
+      Size = 64
+    end
+    object q_sredstvo_izmereniaPogreshnost: TWideStringField
+      FieldName = 'Pogreshnost'
+      Size = 64
     end
     object q_sredstvo_izmereniaPrimechanie: TWideMemoField
       FieldName = 'Primechanie'
@@ -368,7 +373,6 @@ object DM: TDM
     Top = 208
   end
   object q_ZIP: TADOQuery
-    Active = True
     Connection = conn_main
     CursorType = ctStatic
     Parameters = <>
@@ -417,7 +421,6 @@ object DM: TDM
     end
   end
   object q_vydacha_ZIP: TADOQuery
-    Active = True
     Connection = conn_main
     CursorType = ctStatic
     DataSource = ds_ZIP
@@ -447,7 +450,6 @@ object DM: TDM
     Top = 208
   end
   object q_attestacia: TADOQuery
-    Active = True
     Connection = conn_main
     CursorType = ctStatic
     Parameters = <>
@@ -486,7 +488,6 @@ object DM: TDM
     Top = 336
   end
   object q_zachet: TADOQuery
-    Active = True
     Connection = conn_main
     CursorType = ctStatic
     DataSource = ds_attestacia
@@ -545,7 +546,6 @@ object DM: TDM
     Top = 336
   end
   object q_vybor_sotrudnik_attestacia: TADOQuery
-    Active = True
     Connection = conn_main
     CursorType = ctStatic
     Filter = 'Vybran <> true'
@@ -594,7 +594,6 @@ object DM: TDM
     Top = 336
   end
   object q_MTO: TADOQuery
-    Active = True
     Connection = conn_main
     CursorType = ctStatic
     Parameters = <>
@@ -637,7 +636,6 @@ object DM: TDM
     Top = 336
   end
   object q_list_MTO: TADOQuery
-    Active = True
     Connection = conn_main
     CursorType = ctStatic
     Parameters = <>
@@ -652,7 +650,6 @@ object DM: TDM
     Top = 336
   end
   object q_prihod_MTO: TADOQuery
-    Active = True
     Connection = conn_main
     CursorType = ctStatic
     BeforePost = q_prihod_MTOBeforePost
@@ -709,7 +706,6 @@ object DM: TDM
     Top = 336
   end
   object q_GSM: TADOQuery
-    Active = True
     Connection = conn_main
     CursorType = ctStatic
     Parameters = <>
@@ -760,7 +756,6 @@ object DM: TDM
     Top = 336
   end
   object q_prihod_GSM: TADOQuery
-    Active = True
     Connection = conn_main
     CursorType = ctStatic
     BeforePost = q_prihod_GSMBeforePost
@@ -812,7 +807,6 @@ object DM: TDM
     end
   end
   object q_pusk: TADOQuery
-    Active = True
     Connection = conn_main
     CursorType = ctStatic
     Parameters = <>
@@ -893,6 +887,9 @@ object DM: TDM
     object q_rabotaOkonchanie: TDateTimeField
       FieldName = 'Okonchanie'
     end
+    object q_rabotaPeriodichnost: TIntegerField
+      FieldName = 'Periodichnost'
+    end
     object q_rabotaProdlen_po: TDateTimeField
       FieldName = 'Prodlen_po'
     end
@@ -900,9 +897,17 @@ object DM: TDM
       DefaultExpression = 'false'
       FieldName = 'Po_rasporiazheniu'
     end
+    object q_rabotaNomer_rasporiazhenie: TWideStringField
+      FieldName = 'Nomer_rasporiazhenie'
+      Size = 64
+    end
     object q_rabotaPo_nariadu_dopusku: TBooleanField
       DefaultExpression = 'false'
       FieldName = 'Po_nariadu_dopusku'
+    end
+    object q_rabotaNomer_nariad: TWideStringField
+      FieldName = 'Nomer_nariad'
+      Size = 64
     end
     object q_rabotaVypolnena: TBooleanField
       FieldName = 'Vypolnena'
@@ -913,7 +918,6 @@ object DM: TDM
     end
   end
   object q_rashod_MTO: TADOQuery
-    Active = True
     Connection = conn_main
     CursorType = ctStatic
     BeforePost = q_rashod_MTOBeforePost
@@ -922,7 +926,7 @@ object DM: TDM
       item
         Name = 'ID_rabota'
         DataType = ftInteger
-        Value = 1
+        Value = 2
       end>
     SQL.Strings = (
       'Select * From Rashod_MTO'
@@ -978,7 +982,6 @@ object DM: TDM
     end
   end
   object q_rashod_GSM: TADOQuery
-    Active = True
     Connection = conn_main
     CursorType = ctStatic
     BeforePost = q_rashod_GSMBeforePost
@@ -987,7 +990,7 @@ object DM: TDM
       item
         Name = 'ID_rabota'
         DataType = ftInteger
-        Value = 1
+        Value = 2
       end>
     SQL.Strings = (
       'Select * From Rashod_GSM'
@@ -1046,7 +1049,7 @@ object DM: TDM
       item
         Name = 'ID_rabota'
         DataType = ftInteger
-        Value = 1
+        Value = 2
       end>
     SQL.Strings = (
       'Select * From Ispolnitel'
@@ -1127,7 +1130,6 @@ object DM: TDM
     Top = 464
   end
   object q_vybor_ispolnitel: TADOQuery
-    Active = True
     Connection = conn_main
     CursorType = ctStatic
     Filter = 'Vybran <> true'
@@ -1176,7 +1178,6 @@ object DM: TDM
     Top = 464
   end
   object q_uvedomlenie: TADOQuery
-    Active = True
     Connection = conn_main
     CursorType = ctStatic
     Parameters = <>
@@ -1193,5 +1194,27 @@ object DM: TDM
     DataSet = q_uvedomlenie
     Left = 656
     Top = 464
+  end
+  object q_poverka: TADOQuery
+    Active = True
+    Connection = conn_main
+    CursorType = ctStatic
+    DataSource = ds_sredstvo_izmerenia
+    Parameters = <
+      item
+        Name = 'ID_sredstvo_izmerenia'
+        DataType = ftInteger
+        Value = 1
+      end>
+    SQL.Strings = (
+      'Select * From Poverka'
+      'Where ID_sredstvo_izmerenia = :ID_sredstvo_izmerenia')
+    Left = 680
+    Top = 160
+  end
+  object ds_poverka: TDataSource
+    DataSet = q_poverka
+    Left = 680
+    Top = 208
   end
 end

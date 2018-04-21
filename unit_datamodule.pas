@@ -66,7 +66,6 @@ type
     q_sredstvo_izmereniaN_zavodskoi: TWideStringField;
     q_sredstvo_izmereniaN_inventarnyi: TWideStringField;
     q_sredstvo_izmereniaData_vvedeno: TDateTimeField;
-    q_sredstvo_izmereniaPeriodichnost_poverka: TWideStringField;
     q_sredstvo_izmereniaID_sostoianie: TIntegerField;
     q_sredstvo_izmereniaPrimechanie: TWideMemoField;
     q_sredstvo_izmereniaSostoianie: TStringField;
@@ -212,6 +211,15 @@ type
     q_vybor_ispolnitelDolzhnost: TStringField;
     q_uvedomlenie: TADOQuery;
     ds_uvedomlenie: TDataSource;
+    q_rabotaPeriodichnost: TIntegerField;
+    q_rabotaNomer_rasporiazhenie: TWideStringField;
+    q_rabotaNomer_nariad: TWideStringField;
+    q_sredstvo_izmereniaTip: TWideStringField;
+    q_sredstvo_izmereniaPeriodichnost_poverka: TIntegerField;
+    q_sredstvo_izmereniaDiapazon: TWideStringField;
+    q_sredstvo_izmereniaPogreshnost: TWideStringField;
+    q_poverka: TADOQuery;
+    ds_poverka: TDataSource;
     procedure q_narabotkaBeforePost(DataSet: TDataSet);
     procedure q_prihod_MTOBeforePost(DataSet: TDataSet);
     procedure q_prihod_GSMBeforePost(DataSet: TDataSet);

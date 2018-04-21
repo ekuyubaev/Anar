@@ -4,7 +4,7 @@ object form_rabota: Tform_rabota
   ActiveControl = DBGridEh1
   Caption = #1056#1072#1073#1086#1090#1099
   ClientHeight = 398
-  ClientWidth = 741
+  ClientWidth = 888
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -22,14 +22,15 @@ object form_rabota: Tform_rabota
   object GroupBox1: TGroupBox
     Left = 0
     Top = 0
-    Width = 741
+    Width = 888
     Height = 363
     Align = alClient
     TabOrder = 0
+    ExplicitWidth = 741
     object DBGridEh1: TDBGridEh
       Left = 2
       Top = 15
-      Width = 737
+      Width = 884
       Height = 346
       Align = alClient
       AutoFitColWidths = True
@@ -165,6 +166,21 @@ object form_rabota: Tform_rabota
           AutoFitColWidth = False
           DynProps = <>
           EditButtons = <>
+          FieldName = 'Periodichnost'
+          Footers = <>
+          Title.Caption = #1055#1077#1088#1080#1086#1076#1080#1095#1085#1086#1089#1090#1100', '#1076#1077#1085#1100
+          Title.Font.Charset = DEFAULT_CHARSET
+          Title.Font.Color = clWindowText
+          Title.Font.Height = -11
+          Title.Font.Name = 'Tahoma'
+          Title.Font.Style = [fsBold]
+          Title.TitleButton = True
+          Width = 140
+        end
+        item
+          AutoFitColWidth = False
+          DynProps = <>
+          EditButtons = <>
           FieldName = 'Prodlen_po'
           Footers = <>
           Title.Alignment = taCenter
@@ -247,10 +263,11 @@ object form_rabota: Tform_rabota
   object GroupBox2: TGroupBox
     Left = 0
     Top = 363
-    Width = 741
+    Width = 888
     Height = 35
     Align = alBottom
     TabOrder = 1
+    ExplicitWidth = 741
     object BitBtn1: TBitBtn
       Left = 16
       Top = 4

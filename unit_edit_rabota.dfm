@@ -3,7 +3,7 @@ object form_edit_rabota: Tform_edit_rabota
   Top = 0
   BorderIcons = [biSystemMenu, biMaximize]
   Caption = #1044#1086#1073#1072#1074#1083#1077#1085#1080#1077'/'#1088#1077#1076#1072#1082#1090#1080#1088#1086#1074#1072#1085#1080#1077' '#1088#1072#1073#1086#1090
-  ClientHeight = 532
+  ClientHeight = 556
   ClientWidth = 990
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -22,26 +22,28 @@ object form_edit_rabota: Tform_edit_rabota
     Left = 0
     Top = 0
     Width = 990
-    Height = 266
+    Height = 290
     Align = alClient
     TabOrder = 0
+    ExplicitHeight = 266
     object Panel3: TPanel
       Left = 1
       Top = 1
       Width = 494
-      Height = 264
+      Height = 288
       Align = alLeft
       TabOrder = 0
+      ExplicitHeight = 264
       object GroupBox1: TGroupBox
         Left = 1
         Top = 1
         Width = 492
-        Height = 223
+        Height = 247
         Align = alClient
         TabOrder = 0
         DesignSize = (
           492
-          223)
+          247)
         object Label1: TLabel
           Left = 16
           Top = 8
@@ -56,11 +58,10 @@ object form_edit_rabota: Tform_edit_rabota
           ParentFont = False
         end
         object Label2: TLabel
-          Left = 176
-          Top = 8
+          Left = 16
+          Top = 61
           Width = 70
           Height = 13
-          Anchors = [akTop, akRight]
           Caption = #1042#1080#1076' '#1088#1072#1073#1086#1090#1099
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
@@ -70,7 +71,7 @@ object form_edit_rabota: Tform_edit_rabota
           ParentFont = False
         end
         object Label3: TLabel
-          Left = 328
+          Left = 287
           Top = 8
           Width = 86
           Height = 13
@@ -82,10 +83,11 @@ object form_edit_rabota: Tform_edit_rabota
           Font.Name = 'Tahoma'
           Font.Style = [fsBold]
           ParentFont = False
+          ExplicitLeft = 288
         end
         object Label4: TLabel
           Left = 16
-          Top = 56
+          Top = 117
           Width = 43
           Height = 13
           Caption = #1053#1072#1095#1072#1083#1086
@@ -97,8 +99,8 @@ object form_edit_rabota: Tform_edit_rabota
           ParentFont = False
         end
         object Label5: TLabel
-          Left = 176
-          Top = 56
+          Left = 136
+          Top = 117
           Width = 63
           Height = 13
           Caption = #1054#1082#1086#1085#1095#1072#1085#1080#1077
@@ -110,8 +112,8 @@ object form_edit_rabota: Tform_edit_rabota
           ParentFont = False
         end
         object Label6: TLabel
-          Left = 328
-          Top = 56
+          Left = 263
+          Top = 117
           Width = 69
           Height = 13
           Caption = #1055#1088#1086#1076#1083#1077#1085' '#1087#1086
@@ -124,7 +126,7 @@ object form_edit_rabota: Tform_edit_rabota
         end
         object Label10: TLabel
           Left = 16
-          Top = 152
+          Top = 205
           Width = 70
           Height = 13
           Caption = #1055#1088#1080#1084#1077#1095#1072#1085#1080#1077
@@ -135,10 +137,25 @@ object form_edit_rabota: Tform_edit_rabota
           Font.Style = [fsBold]
           ParentFont = False
         end
+        object Label7: TLabel
+          Left = 287
+          Top = 61
+          Width = 126
+          Height = 13
+          Anchors = [akTop, akRight]
+          Caption = #1055#1077#1088#1080#1086#1076#1080#1095#1085#1086#1089#1090#1100', '#1076#1085#1077#1081
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = [fsBold]
+          ParentFont = False
+          ExplicitLeft = 288
+        end
         object DBEditEh1: TDBEditEh
           Left = 16
           Top = 24
-          Width = 145
+          Width = 256
           Height = 21
           Anchors = [akLeft, akTop, akRight]
           DataField = 'Naimenovanie'
@@ -147,13 +164,14 @@ object form_edit_rabota: Tform_edit_rabota
           EditButtons = <>
           TabOrder = 0
           Visible = True
+          ExplicitWidth = 257
         end
         object DBLookupComboboxEh1: TDBLookupComboboxEh
-          Left = 176
-          Top = 24
-          Width = 145
+          Left = 16
+          Top = 77
+          Width = 256
           Height = 21
-          Anchors = [akTop, akRight]
+          Anchors = [akLeft, akTop, akRight]
           DynProps = <>
           DataField = 'Vid_rabota'
           DataSource = DM.ds_rabota
@@ -161,11 +179,12 @@ object form_edit_rabota: Tform_edit_rabota
           EditButtons = <>
           TabOrder = 1
           Visible = True
+          ExplicitWidth = 257
         end
         object DBLookupComboboxEh2: TDBLookupComboboxEh
-          Left = 328
+          Left = 287
           Top = 24
-          Width = 145
+          Width = 185
           Height = 21
           Anchors = [akTop, akRight]
           DynProps = <>
@@ -184,11 +203,12 @@ object form_edit_rabota: Tform_edit_rabota
           EditButtons = <>
           TabOrder = 2
           Visible = True
+          ExplicitLeft = 288
         end
         object DBDateTimeEditEh1: TDBDateTimeEditEh
           Left = 16
-          Top = 72
-          Width = 121
+          Top = 133
+          Width = 90
           Height = 21
           DataField = 'Nachalo'
           DataSource = DM.ds_rabota
@@ -199,9 +219,9 @@ object form_edit_rabota: Tform_edit_rabota
           Visible = True
         end
         object DBDateTimeEditEh2: TDBDateTimeEditEh
-          Left = 176
-          Top = 72
-          Width = 121
+          Left = 136
+          Top = 133
+          Width = 90
           Height = 21
           DataField = 'Okonchanie'
           DataSource = DM.ds_rabota
@@ -212,9 +232,9 @@ object form_edit_rabota: Tform_edit_rabota
           Visible = True
         end
         object DBDateTimeEditEh3: TDBDateTimeEditEh
-          Left = 328
-          Top = 72
-          Width = 121
+          Left = 263
+          Top = 133
+          Width = 90
           Height = 21
           DataField = 'Prodlen_po'
           DataSource = DM.ds_rabota
@@ -225,10 +245,11 @@ object form_edit_rabota: Tform_edit_rabota
           Visible = True
         end
         object DBCheckBoxEh1: TDBCheckBoxEh
-          Left = 16
-          Top = 115
-          Width = 97
+          Left = 389
+          Top = 135
+          Width = 83
           Height = 17
+          Anchors = [akTop, akRight]
           Caption = #1074#1099#1087#1086#1083#1085#1077#1085#1072
           DataField = 'Vypolnena'
           DataSource = DM.ds_rabota
@@ -240,13 +261,14 @@ object form_edit_rabota: Tform_edit_rabota
           Font.Style = [fsBold]
           ParentFont = False
           TabOrder = 6
+          ExplicitLeft = 390
         end
         object DBCheckBoxEh2: TDBCheckBoxEh
-          Left = 176
-          Top = 115
-          Width = 137
+          Left = 16
+          Top = 171
+          Width = 145
           Height = 17
-          Caption = #1087#1086' '#1088#1072#1089#1087#1086#1088#1103#1078#1077#1085#1080#1102
+          Caption = #1087#1086' '#1088#1072#1089#1087#1086#1088#1103#1078#1077#1085#1080#1102' '#8470
           DataField = 'Po_rasporiazheniu'
           DataSource = DM.ds_rabota
           DynProps = <>
@@ -259,11 +281,12 @@ object form_edit_rabota: Tform_edit_rabota
           TabOrder = 7
         end
         object DBCheckBoxEh3: TDBCheckBoxEh
-          Left = 328
-          Top = 115
-          Width = 145
+          Left = 242
+          Top = 171
+          Width = 151
           Height = 17
-          Caption = #1087#1086' '#1085#1072#1088#1103#1076#1091'-'#1076#1086#1087#1091#1089#1082#1091
+          Anchors = [akTop, akRight]
+          Caption = #1087#1086' '#1085#1072#1088#1103#1076#1091'-'#1076#1086#1087#1091#1089#1082#1091' '#8470
           DataField = 'Po_nariadu_dopusku'
           DataSource = DM.ds_rabota
           DynProps = <>
@@ -274,12 +297,13 @@ object form_edit_rabota: Tform_edit_rabota
           Font.Style = [fsBold]
           ParentFont = False
           TabOrder = 8
+          ExplicitLeft = 243
         end
         object DBMemoEh1: TDBMemoEh
           Left = 16
-          Top = 168
+          Top = 224
           Width = 457
-          Height = 49
+          Height = 17
           Anchors = [akLeft, akTop, akBottom]
           AutoSize = False
           DataField = 'Primechanie'
@@ -289,14 +313,58 @@ object form_edit_rabota: Tform_edit_rabota
           TabOrder = 9
           Visible = True
         end
+        object DBEditEh2: TDBEditEh
+          Left = 287
+          Top = 75
+          Width = 185
+          Height = 21
+          Alignment = taCenter
+          Anchors = [akTop, akRight]
+          DataField = 'Periodichnost'
+          DataSource = DM.ds_rabota
+          DynProps = <>
+          EditButtons = <>
+          TabOrder = 10
+          Visible = True
+          ExplicitLeft = 288
+        end
+        object DBEditEh3: TDBEditEh
+          Left = 167
+          Top = 169
+          Width = 58
+          Height = 21
+          Anchors = [akLeft, akTop, akRight]
+          DataField = 'Nomer_rasporiazhenie'
+          DataSource = DM.ds_rabota
+          DynProps = <>
+          EditButtons = <>
+          TabOrder = 11
+          Visible = True
+          ExplicitWidth = 59
+        end
+        object DBEditEh4: TDBEditEh
+          Left = 399
+          Top = 169
+          Width = 73
+          Height = 21
+          Anchors = [akTop, akRight]
+          DataField = 'Nomer_nariad'
+          DataSource = DM.ds_rabota
+          DynProps = <>
+          EditButtons = <>
+          TabOrder = 12
+          Visible = True
+          ExplicitLeft = 400
+        end
       end
       object GroupBox2: TGroupBox
         Left = 1
-        Top = 224
+        Top = 248
         Width = 492
         Height = 39
         Align = alBottom
         TabOrder = 1
+        ExplicitTop = 224
         object BitBtn1: TBitBtn
           Left = 16
           Top = 6
@@ -333,9 +401,10 @@ object form_edit_rabota: Tform_edit_rabota
       Left = 495
       Top = 1
       Width = 494
-      Height = 264
+      Height = 288
       Align = alClient
       TabOrder = 1
+      ExplicitHeight = 264
       object GroupBox3: TGroupBox
         Left = 1
         Top = 1
@@ -378,7 +447,7 @@ object form_edit_rabota: Tform_edit_rabota
         Left = 1
         Top = 33
         Width = 492
-        Height = 230
+        Height = 254
         Align = alClient
         Caption = #1048#1089#1087#1086#1083#1085#1080#1090#1077#1083#1080
         Font.Charset = DEFAULT_CHARSET
@@ -388,11 +457,12 @@ object form_edit_rabota: Tform_edit_rabota
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 1
+        ExplicitHeight = 230
         object DBGridEh1: TDBGridEh
           Left = 2
           Top = 15
           Width = 488
-          Height = 213
+          Height = 237
           Align = alClient
           AutoFitColWidths = True
           DataSource = DM.ds_ispolnitel
@@ -519,11 +589,12 @@ object form_edit_rabota: Tform_edit_rabota
   end
   object Panel2: TPanel
     Left = 0
-    Top = 266
+    Top = 290
     Width = 990
     Height = 266
     Align = alBottom
     TabOrder = 1
+    ExplicitTop = 266
     object Panel5: TPanel
       Left = 1
       Top = 1
