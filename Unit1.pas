@@ -7,7 +7,8 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, DBGridEhGrouping,
   ToolCtrlsEh, DBGridEhToolCtrls, DynVarsEh, EhLibVCL, GridsEh, DBAxisGridsEh,
   DBGridEh, unit_attestacia, unit_oborudovanie, unit_sotrudnik, unit_sooruzhenie,
-  unit_sredstvo_izmerenia, unit_ZIP, unit_MTO, unit_GSM, unit_pusk, unit_rabota;
+  unit_sredstvo_izmerenia, unit_ZIP, unit_MTO, unit_GSM, unit_pusk, unit_rabota,
+  unit_uvedomlenie_attestacia, unit_uvedomlenie;
 
 type
   Tform_main = class(TForm)
@@ -69,6 +70,7 @@ var
   form_GSM: Tform_GSM;
   form_pusk: Tform_pusk;
   form_rabota: Tform_rabota;
+  uvedomlenie: TUvedomlenie;
 
 implementation
 
@@ -81,6 +83,12 @@ uses unit_dolzhnost, unit_vid_attestacia, unit_rezultat_attestacia,
 procedure Tform_main.FormActivate(Sender: TObject);
 begin
   DM.connect;
+
+  {uvedomlenie :=TUvedomlenie.Create(true);
+  uvedomlenie.FreeOnTerminate:=true;
+  uvedomlenie.Priority:=tpLowest;
+  uvedomlenie.skrytDoSledRaza := false;
+  uvedomlenie.Resume; }
 end;
 
 procedure Tform_main.N10Click(Sender: TObject);

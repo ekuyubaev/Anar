@@ -210,6 +210,8 @@ type
     q_vybor_ispolnitelVybran: TSmallintField;
     q_vybor_ispolnitelSotrudnik: TStringField;
     q_vybor_ispolnitelDolzhnost: TStringField;
+    q_uvedomlenie: TADOQuery;
+    ds_uvedomlenie: TDataSource;
     procedure q_narabotkaBeforePost(DataSet: TDataSet);
     procedure q_prihod_MTOBeforePost(DataSet: TDataSet);
     procedure q_prihod_GSMBeforePost(DataSet: TDataSet);

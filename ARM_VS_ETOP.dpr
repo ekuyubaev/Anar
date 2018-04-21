@@ -40,7 +40,9 @@ uses
   unit_edit_rabota in 'unit_edit_rabota.pas' {form_edit_rabota},
   unit_vybor_ispolnitel in 'unit_vybor_ispolnitel.pas' {form_vybor_ispolnitel},
   unit_vybor_material in 'unit_vybor_material.pas' {form_vybor_material},
-  unit_vybor_GSM in 'unit_vybor_GSM.pas' {form_vybor_GSM};
+  unit_vybor_GSM in 'unit_vybor_GSM.pas' {form_vybor_GSM},
+  unit_uvedomlenie in 'unit_uvedomlenie.pas',
+  unit_uvedomlenie_attestacia in 'unit_uvedomlenie_attestacia.pas' {form_uvedomlenie_attestacia};
 
 {$R *.res}
 
@@ -76,5 +78,6 @@ begin
   Application.CreateForm(Tform_vybor_ispolnitel, form_vybor_ispolnitel);
   Application.CreateForm(Tform_vybor_material, form_vybor_material);
   Application.CreateForm(Tform_vybor_GSM, form_vybor_GSM);
+  Application.CreateForm(Tform_uvedomlenie_attestacia, form_uvedomlenie_attestacia);
   Application.Run;
 end.

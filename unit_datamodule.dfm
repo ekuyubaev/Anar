@@ -1175,4 +1175,23 @@ object DM: TDM
     Left = 568
     Top = 464
   end
+  object q_uvedomlenie: TADOQuery
+    Active = True
+    Connection = conn_main
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'Select * From Zachet as Z inner join Attestacia as A'
+      #9#9#9'on Z.ID_attestacia = A.ID_attestacia'
+      
+        'Where (Z.ID_rezultat_attestacia is NULL or Z.ID_rezultat_attesta' +
+        'cia <> 1)')
+    Left = 656
+    Top = 416
+  end
+  object ds_uvedomlenie: TDataSource
+    DataSet = q_uvedomlenie
+    Left = 656
+    Top = 464
+  end
 end

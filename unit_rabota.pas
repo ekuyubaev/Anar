@@ -50,7 +50,22 @@ end;
 procedure Tform_rabota.BitBtn3Click(Sender: TObject);
 begin
   if (MessageDlg('Удалить запись?', mtConfirmation, [mbYes,mbNo], 0) = mrYes)
-    then DM.q_rabota.Delete;
+    then
+  begin
+    DM.q_temp.SQL.Text := 'Delete From vydacha_zip '
+                        + 'Where ID_rabota = ' + DM.q_rabota.FieldByName('ID_rabota').AsString;
+    DM.q_temp.ExecSQL;
+
+    DM.q_temp.SQL.Text := 'Delete From rashod_mto '
+                        + 'Where ID_rabota = ' + DM.q_rabota.FieldByName('ID_rabota').AsString;
+    DM.q_temp.ExecSQL;
+
+    DM.q_temp.SQL.Text := 'Delete From rashod_gsm '
+                        + 'Where ID_rabota = ' + DM.q_rabota.FieldByName('ID_rabota').AsString;
+    DM.q_temp.ExecSQL;
+
+    DM.q_rabota.Delete;
+  end;
 end;
 
 procedure Tform_rabota.FormClose(Sender: TObject; var Action: TCloseAction);
