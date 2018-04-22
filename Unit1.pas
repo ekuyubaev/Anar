@@ -54,6 +54,7 @@ type
     procedure N20Click(Sender: TObject);
     procedure N21Click(Sender: TObject);
     procedure N22Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -85,12 +86,16 @@ uses unit_dolzhnost, unit_vid_attestacia, unit_rezultat_attestacia,
 procedure Tform_main.FormActivate(Sender: TObject);
 begin
   DM.connect;
+end;
 
+procedure Tform_main.FormCreate(Sender: TObject);
+begin
   uvedomlenie :=TUvedomlenie.Create(true);
   uvedomlenie.FreeOnTerminate:=true;
   uvedomlenie.Priority:=tpLowest;
   uvedomlenie.skrytAttestacia := false;
   uvedomlenie.skrytRabota := false;
+  uvedomlenie.skrytPoverka := false;
   uvedomlenie.Resume;
 end;
 

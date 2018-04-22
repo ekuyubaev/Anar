@@ -3,7 +3,7 @@ object form_uvedomlenie_attestacia: Tform_uvedomlenie_attestacia
   Top = 0
   BorderIcons = [biMinimize, biMaximize]
   BorderStyle = bsSingle
-  Caption = #1059#1074#1077#1076#1077#1084#1083#1077#1085#1080#1077' '#1086#1073' '#1072#1090#1090#1077#1089#1090#1072#1094#1080#1103
+  Caption = #1059#1074#1077#1076#1077#1084#1083#1077#1085#1080#1077' '#1086#1073' '#1072#1090#1090#1077#1089#1090#1072#1094#1080#1103#1093
   ClientHeight = 317
   ClientWidth = 881
   Color = clBtnFace

@@ -18,6 +18,7 @@ object form_main: Tform_main
   Position = poDesktopCenter
   WindowState = wsMaximized
   OnActivate = FormActivate
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object MainMenu1: TMainMenu

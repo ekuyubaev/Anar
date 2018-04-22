@@ -224,6 +224,8 @@ type
     q_rabotaPeriodichnost: TIntegerField;
     q_uvedomlenie_rabota: TADOQuery;
     ds_uvedomlenie_rabota: TDataSource;
+    q_uvedomlenie_poverka: TADOQuery;
+    ds_uvedomlenie_poverka: TDataSource;
     procedure q_narabotkaBeforePost(DataSet: TDataSet);
     procedure q_prihod_MTOBeforePost(DataSet: TDataSet);
     procedure q_prihod_GSMBeforePost(DataSet: TDataSet);

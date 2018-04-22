@@ -1273,4 +1273,26 @@ object DM: TDM
     Left = 224
     Top = 592
   end
+  object q_uvedomlenie_poverka: TADOQuery
+    Active = True
+    Connection = conn_main
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'Select *'
+      
+        'From sredstvo_izmerenia as SI left join (Select ID_sredstvo_izme' +
+        'renia, max(Data_poverka) as MDP From Poverka) as P '
+      'on SI.ID_sredstvo_izmerenia = P.ID_sredstvo_izmerenia'
+      
+        'Where MDP is null or ( (MDP + interval SI.Periodichnost_poverka ' +
+        'month) < now())')
+    Left = 344
+    Top = 544
+  end
+  object ds_uvedomlenie_poverka: TDataSource
+    DataSet = q_uvedomlenie_poverka
+    Left = 344
+    Top = 592
+  end
 end

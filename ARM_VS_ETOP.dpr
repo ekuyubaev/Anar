@@ -44,7 +44,8 @@ uses
   unit_uvedomlenie in 'unit_uvedomlenie.pas',
   unit_uvedomlenie_attestacia in 'unit_uvedomlenie_attestacia.pas' {form_uvedomlenie_attestacia},
   unit_naimenovanie_rabot in 'unit_naimenovanie_rabot.pas' {form_naimenovanie_rabot},
-  unit_uvedomlenie_rabota in 'unit_uvedomlenie_rabota.pas' {form_uvedomlenie_rabota};
+  unit_uvedomlenie_rabota in 'unit_uvedomlenie_rabota.pas' {form_uvedomlenie_rabota},
+  unit_uvedomlenie_poverka in 'unit_uvedomlenie_poverka.pas' {form_uvedomlenie_poverka};
 
 {$R *.res}
 
@@ -83,5 +84,6 @@ begin
   Application.CreateForm(Tform_uvedomlenie_attestacia, form_uvedomlenie_attestacia);
   Application.CreateForm(Tform_naimenovanie_rabot, form_naimenovanie_rabot);
   Application.CreateForm(Tform_uvedomlenie_rabota, form_uvedomlenie_rabota);
+  Application.CreateForm(Tform_uvedomlenie_poverka, form_uvedomlenie_poverka);
   Application.Run;
 end.
