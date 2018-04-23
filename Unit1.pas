@@ -8,7 +8,7 @@ uses
   ToolCtrlsEh, DBGridEhToolCtrls, DynVarsEh, EhLibVCL, GridsEh, DBAxisGridsEh,
   DBGridEh, unit_attestacia, unit_oborudovanie, unit_sotrudnik, unit_sooruzhenie,
   unit_sredstvo_izmerenia, unit_ZIP, unit_MTO, unit_GSM, unit_pusk, unit_rabota,
-  unit_uvedomlenie_attestacia, unit_uvedomlenie;
+  unit_uvedomlenie_attestacia, unit_uvedomlenie, unit_otchety;
 
 type
   Tform_main = class(TForm)
@@ -35,6 +35,8 @@ type
     N20: TMenuItem;
     N21: TMenuItem;
     N22: TMenuItem;
+    N23: TMenuItem;
+    N24: TMenuItem;
     procedure N4Click(Sender: TObject);
     procedure N5Click(Sender: TObject);
     procedure N6Click(Sender: TObject);
@@ -55,6 +57,7 @@ type
     procedure N21Click(Sender: TObject);
     procedure N22Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure N24Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -73,6 +76,7 @@ var
   form_GSM: Tform_GSM;
   form_pusk: Tform_pusk;
   form_rabota: Tform_rabota;
+  form_otchety: Tform_otchety;
   uvedomlenie: TUvedomlenie;
 
 implementation
@@ -202,6 +206,16 @@ end;
 procedure Tform_main.N22Click(Sender: TObject);
 begin
   form_naimenovanie_rabot.ShowModal;
+end;
+
+procedure Tform_main.N24Click(Sender: TObject);
+begin
+  if form_otchety = nil then
+  begin
+    form_otchety := Tform_otchety.Create(Application);
+    form_otchety.Show;
+    form_otchety.PageControl1.ActivePage := form_otchety.ts_TO;
+  end;
 end;
 
 procedure Tform_main.N4Click(Sender: TObject);

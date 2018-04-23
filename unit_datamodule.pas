@@ -226,6 +226,7 @@ type
     ds_uvedomlenie_rabota: TDataSource;
     q_uvedomlenie_poverka: TADOQuery;
     ds_uvedomlenie_poverka: TDataSource;
+    q_otchety: TADOQuery;
     procedure q_narabotkaBeforePost(DataSet: TDataSet);
     procedure q_prihod_MTOBeforePost(DataSet: TDataSet);
     procedure q_prihod_GSMBeforePost(DataSet: TDataSet);

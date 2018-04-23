@@ -1295,4 +1295,10 @@ object DM: TDM
     Left = 344
     Top = 592
   end
+  object q_otchety: TADOQuery
+    Connection = conn_main
+    Parameters = <>
+    Left = 456
+    Top = 544
+  end
 end
