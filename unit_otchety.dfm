@@ -1,8 +1,9 @@
 object form_otchety: Tform_otchety
   Left = 0
   Top = 0
+  BorderStyle = bsSingle
   Caption = #1054#1090#1095#1077#1090#1099
-  ClientHeight = 163
+  ClientHeight = 161
   ClientWidth = 185
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -22,16 +23,14 @@ object form_otchety: Tform_otchety
     Left = 0
     Top = 0
     Width = 185
-    Height = 163
+    Height = 161
     ActivePage = ts_TO
     Align = alClient
     TabOrder = 0
-    ExplicitWidth = 570
-    ExplicitHeight = 318
+    ExplicitHeight = 163
     object ts_TO: TTabSheet
       Caption = 'ts_TO'
-      ExplicitWidth = 562
-      ExplicitHeight = 290
+      ExplicitHeight = 135
       object Label1: TLabel
         Left = 16
         Top = 16

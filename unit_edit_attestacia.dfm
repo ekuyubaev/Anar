@@ -24,7 +24,6 @@ object form_edit_attestacia: Tform_edit_attestacia
     Height = 185
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 457
     object Label1: TLabel
       Left = 16
       Top = 16
@@ -117,10 +116,6 @@ object form_edit_attestacia: Tform_edit_attestacia
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 1
-    ExplicitLeft = 216
-    ExplicitTop = 232
-    ExplicitWidth = 185
-    ExplicitHeight = 105
     object GroupBox4: TGroupBox
       Left = 2
       Top = 15
@@ -128,7 +123,6 @@ object form_edit_attestacia: Tform_edit_attestacia
       Height = 34
       Align = alTop
       TabOrder = 0
-      ExplicitWidth = 453
       object BitBtn3: TBitBtn
         Left = 354
         Top = 3
@@ -178,7 +172,6 @@ object form_edit_attestacia: Tform_edit_attestacia
       IndicatorOptions = [gioShowRowIndicatorEh]
       OptionsEh = [dghFixed3D, dghHighlightFocus, dghClearSelection, dghAutoSortMarking, dghDialogFind, dghColumnResize, dghColumnMove, dghExtendVertLines]
       ParentFont = False
-      ReadOnly = True
       SortLocal = True
       TabOrder = 1
       VertScrollBar.VisibleMode = sbAlwaysShowEh
@@ -240,6 +233,7 @@ object form_edit_attestacia: Tform_edit_attestacia
           EditButtons = <>
           FieldName = 'Sotrudnik'
           Footers = <>
+          ReadOnly = True
           Title.Caption = #1057#1086#1090#1088#1091#1076#1085#1080#1082
           Title.Font.Charset = DEFAULT_CHARSET
           Title.Font.Color = clWindowText
@@ -285,7 +279,6 @@ object form_edit_attestacia: Tform_edit_attestacia
     Height = 41
     Align = alBottom
     TabOrder = 2
-    ExplicitWidth = 457
     object BitBtn1: TBitBtn
       Left = 16
       Top = 6

@@ -46,7 +46,8 @@ uses
   unit_naimenovanie_rabot in 'unit_naimenovanie_rabot.pas' {form_naimenovanie_rabot},
   unit_uvedomlenie_rabota in 'unit_uvedomlenie_rabota.pas' {form_uvedomlenie_rabota},
   unit_uvedomlenie_poverka in 'unit_uvedomlenie_poverka.pas' {form_uvedomlenie_poverka},
-  unit_otchety in 'unit_otchety.pas' {form_otchety};
+  unit_otchety in 'unit_otchety.pas' {form_otchety},
+  unit_login in 'unit_login.pas' {form_login};
 
 {$R *.res}
 

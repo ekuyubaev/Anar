@@ -59,6 +59,7 @@ type
     DBEditEh4: TDBEditEh;
     BitBtn11: TBitBtn;
     DBLookupComboboxEh3: TDBLookupComboboxEh;
+    BitBtn12: TBitBtn;
     procedure FormResize(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -72,6 +73,7 @@ type
     procedure BitBtn10Click(Sender: TObject);
     procedure BitBtn9Click(Sender: TObject);
     procedure BitBtn11Click(Sender: TObject);
+    procedure BitBtn12Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -97,6 +99,21 @@ end;
 procedure Tform_edit_rabota.BitBtn11Click(Sender: TObject);
 begin
   form_naimenovanie_rabot.ShowModal;
+end;
+
+procedure Tform_edit_rabota.BitBtn12Click(Sender: TObject);
+begin
+  dm.q_temp.SQL.Text := 'Insert Into Rabota (ID_naimenovanie, ID_vid_rabota, ID_oborudovanie) '
+                      +'Select ID_naimenovanie, ID_vid_rabota, ID_oborudovanie From Rabota '
+                      +'Where ID_rabota = ' + dm.q_rabota.FieldByName('ID_rabota').AsString;
+  dm.q_temp.ExecSQL;
+  if DM.q_rabota.State in [dsEdit, dsInsert] then DM.q_rabota.Post;
+  DM.refresh_rabota;
+  dm.q_temp.SQL.Text := 'Select LAST_INSERT_ID() as ID From Rabota';
+  dm.q_temp.Open;
+
+  DM.q_rabota.recNo := dm.q_temp.FieldByName('ID').AsInteger;
+  DM.q_rabota.Edit;
 end;
 
 procedure Tform_edit_rabota.BitBtn1Click(Sender: TObject);

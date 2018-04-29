@@ -3,13 +3,13 @@ object DM: TDM
   Height = 649
   Width = 808
   object conn_main: TADOConnection
-    Connected = True
     ConnectionString = 
       'Provider=MSDASQL.1;Persist Security Info=True;Extended Propertie' +
       's="DRIVER={MySQL ODBC 5.3 Unicode Driver};UID=root;PWD=gdx4852T;' +
       'SERVER=localhost;DATABASE=db_etop;PORT=3306;COLUMN_SIZE_S32=1;";' +
       'Initial Catalog=db_etop;OPTION=2'
     LoginPrompt = False
+    Provider = 'MSDASQL.1'
     Left = 32
     Top = 24
   end
@@ -56,7 +56,6 @@ object DM: TDM
     Top = 72
   end
   object q_sostoianie: TADOQuery
-    Active = True
     Connection = conn_main
     CursorType = ctStatic
     Parameters = <>
@@ -136,7 +135,6 @@ object DM: TDM
     Top = 72
   end
   object q_sooruzhenie: TADOQuery
-    Active = True
     Connection = conn_main
     CursorType = ctStatic
     Parameters = <>
@@ -163,7 +161,6 @@ object DM: TDM
     Top = 72
   end
   object q_oborudovanie: TADOQuery
-    Active = True
     Connection = conn_main
     CursorType = ctStatic
     Parameters = <>
@@ -307,7 +304,6 @@ object DM: TDM
     Top = 160
   end
   object q_sredstvo_izmerenia: TADOQuery
-    Active = True
     Connection = conn_main
     CursorType = ctStatic
     Parameters = <>
@@ -839,7 +835,6 @@ object DM: TDM
     Top = 464
   end
   object q_rabota: TADOQuery
-    Active = True
     Connection = conn_main
     CursorType = ctStatic
     Parameters = <>
@@ -882,6 +877,7 @@ object DM: TDM
     end
     object q_rabotaNachalo: TDateTimeField
       FieldName = 'Nachalo'
+      DisplayFormat = 'dd.mm.yyyy'
     end
     object q_rabotaOkonchanie: TDateTimeField
       FieldName = 'Okonchanie'
@@ -1054,7 +1050,7 @@ object DM: TDM
       item
         Name = 'ID_rabota'
         DataType = ftInteger
-        Value = 2
+        Value = Null
       end>
     SQL.Strings = (
       'Select * From Ispolnitel'
@@ -1120,7 +1116,6 @@ object DM: TDM
     Top = 464
   end
   object q_vid_rabota: TADOQuery
-    Active = True
     Connection = conn_main
     CursorType = ctStatic
     Parameters = <>
@@ -1183,7 +1178,6 @@ object DM: TDM
     Top = 464
   end
   object q_uvedomlenie: TADOQuery
-    Active = True
     Connection = conn_main
     CursorType = ctStatic
     Parameters = <>
@@ -1210,7 +1204,6 @@ object DM: TDM
     Top = 464
   end
   object q_poverka: TADOQuery
-    Active = True
     Connection = conn_main
     CursorType = ctStatic
     DataSource = ds_sredstvo_izmerenia
@@ -1232,7 +1225,6 @@ object DM: TDM
     Top = 208
   end
   object q_naimenovanie_rabot: TADOQuery
-    Active = True
     Connection = conn_main
     CursorType = ctStatic
     Parameters = <>
@@ -1274,7 +1266,6 @@ object DM: TDM
     Top = 592
   end
   object q_uvedomlenie_poverka: TADOQuery
-    Active = True
     Connection = conn_main
     CursorType = ctStatic
     Parameters = <>
@@ -1300,5 +1291,11 @@ object DM: TDM
     Parameters = <>
     Left = 456
     Top = 544
+  end
+  object q_temp_reps: TADOQuery
+    Connection = conn_main
+    Parameters = <>
+    Left = 456
+    Top = 600
   end
 end

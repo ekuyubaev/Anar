@@ -46,6 +46,7 @@ uses unit_datamodule;
 procedure Tform_edit_sotrudnik.BitBtn1Click(Sender: TObject);
 begin
   if (DM.q_sotrudnik.State in [dsEdit, dsInsert]) then DM.q_sotrudnik.Post;
+  dm.refresh_sotrudnik;
   self.Close;
 end;
 

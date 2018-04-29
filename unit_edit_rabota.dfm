@@ -233,6 +233,7 @@ object form_edit_rabota: Tform_edit_rabota
           Height = 17
           Anchors = [akTop, akRight]
           Caption = #1074#1099#1087#1086#1083#1085#1077#1085#1072
+          Checked = True
           DataField = 'Vypolnena'
           DataSource = DM.ds_rabota
           DynProps = <>
@@ -374,6 +375,9 @@ object form_edit_rabota: Tform_edit_rabota
         Height = 39
         Align = alBottom
         TabOrder = 1
+        DesignSize = (
+          492
+          39)
         object BitBtn1: TBitBtn
           Left = 16
           Top = 6
@@ -403,6 +407,22 @@ object form_edit_rabota: Tform_edit_rabota
           ParentFont = False
           TabOrder = 1
           OnClick = BitBtn2Click
+        end
+        object BitBtn12: TBitBtn
+          Left = 383
+          Top = 6
+          Width = 90
+          Height = 25
+          Anchors = [akTop, akRight]
+          Caption = #1050#1086#1087#1080#1103
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 2
+          OnClick = BitBtn12Click
         end
       end
     end

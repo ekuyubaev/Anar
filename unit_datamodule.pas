@@ -227,6 +227,7 @@ type
     q_uvedomlenie_poverka: TADOQuery;
     ds_uvedomlenie_poverka: TDataSource;
     q_otchety: TADOQuery;
+    q_temp_reps: TADOQuery;
     procedure q_narabotkaBeforePost(DataSet: TDataSet);
     procedure q_prihod_MTOBeforePost(DataSet: TDataSet);
     procedure q_prihod_GSMBeforePost(DataSet: TDataSet);
@@ -242,6 +243,7 @@ type
     Procedure refresh_dolzhnost();
     Procedure refresh_rabota();
     Procedure refresh_naimenovanie_rabot();
+    Procedure refresh_sotrudnik();
   end;
 
 var
@@ -284,6 +286,9 @@ begin
   if not q_ispolnitel.Active then q_ispolnitel.Open;
   if not q_vybor_ispolnitel.Active then q_vybor_ispolnitel.Open;
   if not q_vid_rabota.Active then q_vid_rabota.Open;
+  if not q_naimenovanie_rabot.Active then q_naimenovanie_rabot.Open;
+  if not q_poverka.Active then q_poverka.Open;
+
 end;
 
 procedure TDM.q_narabotkaBeforePost(DataSet: TDataSet);
@@ -354,6 +359,17 @@ begin
   end;
   q_MTO.Open;
   q_MTO.RecNo := index;
+end;
+
+Procedure TDM.refresh_sotrudnik;
+begin
+  if q_sotrudnik.Active then
+  begin
+    index := q_sotrudnik.RecNo;
+    q_sotrudnik.Close;
+  end;
+  q_sotrudnik.Open;
+  q_sotrudnik.RecNo := index;
 end;
 
 Procedure TDM.refresh_GSM;

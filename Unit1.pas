@@ -8,7 +8,7 @@ uses
   ToolCtrlsEh, DBGridEhToolCtrls, DynVarsEh, EhLibVCL, GridsEh, DBAxisGridsEh,
   DBGridEh, unit_attestacia, unit_oborudovanie, unit_sotrudnik, unit_sooruzhenie,
   unit_sredstvo_izmerenia, unit_ZIP, unit_MTO, unit_GSM, unit_pusk, unit_rabota,
-  unit_uvedomlenie_attestacia, unit_uvedomlenie, unit_otchety;
+  unit_uvedomlenie_attestacia, unit_uvedomlenie, unit_otchety, unit_login;
 
 type
   Tform_main = class(TForm)
@@ -78,6 +78,7 @@ var
   form_rabota: Tform_rabota;
   form_otchety: Tform_otchety;
   uvedomlenie: TUvedomlenie;
+  form_login: Tform_login;
 
 implementation
 
@@ -89,18 +90,18 @@ uses unit_dolzhnost, unit_vid_attestacia, unit_rezultat_attestacia,
 
 procedure Tform_main.FormActivate(Sender: TObject);
 begin
-  DM.connect;
+  if form_login = nil then
+  begin
+    form_login := Tform_login.Create(Application);
+    form_login.Show;
+  end;
 end;
 
 procedure Tform_main.FormCreate(Sender: TObject);
+var i:integer;
 begin
-  uvedomlenie :=TUvedomlenie.Create(true);
-  uvedomlenie.FreeOnTerminate:=true;
-  uvedomlenie.Priority:=tpLowest;
-  uvedomlenie.skrytAttestacia := false;
-  uvedomlenie.skrytRabota := false;
-  uvedomlenie.skrytPoverka := false;
-  uvedomlenie.Resume;
+  for i := 0 to MainMenu1.Items.Count-1 do
+      MainMenu1.Items.Items[i].Enabled := false;
 end;
 
 procedure Tform_main.N10Click(Sender: TObject);
