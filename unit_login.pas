@@ -65,7 +65,7 @@ begin
                                 +'DATABASE=db_etop;'
                                 +'PORT=3306;'
                                 +'COLUMN_SIZE_S32=1;";'
-                                +'Initial Catalog=db_etop';
+                                +'Initial Catalog=db_etop;OPTION=2';
   try
     dm.connect;
 
