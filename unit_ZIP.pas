@@ -17,11 +17,19 @@ type
     BitBtn2: TBitBtn;
     BitBtn3: TBitBtn;
     BitBtn4: TBitBtn;
+    BitBtn6: TBitBtn;
+    BitBtn7: TBitBtn;
+    BitBtn8: TBitBtn;
+    BitBtn5: TBitBtn;
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
     procedure BitBtn3Click(Sender: TObject);
     procedure BitBtn4Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure BitBtn5Click(Sender: TObject);
+    procedure BitBtn6Click(Sender: TObject);
+    procedure BitBtn7Click(Sender: TObject);
+    procedure BitBtn8Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -58,6 +66,26 @@ end;
 procedure Tform_ZIP.BitBtn4Click(Sender: TObject);
 begin
   form_vydacha_ZIP.ShowModal;
+end;
+
+procedure Tform_ZIP.BitBtn5Click(Sender: TObject);
+begin
+  dm.q_ZIP.First;
+end;
+
+procedure Tform_ZIP.BitBtn6Click(Sender: TObject);
+begin
+  dm.q_ZIP.Prior;
+end;
+
+procedure Tform_ZIP.BitBtn7Click(Sender: TObject);
+begin
+  dm.q_ZIP.Next;
+end;
+
+procedure Tform_ZIP.BitBtn8Click(Sender: TObject);
+begin
+  dm.q_ZIP.Last;
 end;
 
 procedure Tform_ZIP.FormClose(Sender: TObject; var Action: TCloseAction);

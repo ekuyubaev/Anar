@@ -79,6 +79,7 @@ var
   form_otchety: Tform_otchety;
   uvedomlenie: TUvedomlenie;
   form_login: Tform_login;
+  authorized: boolean = false;
 
 implementation
 
@@ -90,10 +91,11 @@ uses unit_dolzhnost, unit_vid_attestacia, unit_rezultat_attestacia,
 
 procedure Tform_main.FormActivate(Sender: TObject);
 begin
-  if form_login = nil then
+  if (form_login = nil) and (not authorized) then
   begin
     form_login := Tform_login.Create(Application);
     form_login.Show;
+    authorized := true;
   end;
 end;
 
@@ -102,6 +104,8 @@ var i:integer;
 begin
   for i := 0 to MainMenu1.Items.Count-1 do
       MainMenu1.Items.Items[i].Enabled := false;
+
+  form_login := nil;
 end;
 
 procedure Tform_main.N10Click(Sender: TObject);

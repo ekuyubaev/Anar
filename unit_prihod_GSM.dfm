@@ -22,10 +22,6 @@ object form_prihod_GSM: Tform_prihod_GSM
     Height = 294
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = 160
-    ExplicitTop = 8
-    ExplicitWidth = 185
-    ExplicitHeight = 105
     object DBGridEh1: TDBGridEh
       Left = 2
       Top = 15
@@ -169,8 +165,6 @@ object form_prihod_GSM: Tform_prihod_GSM
     Height = 37
     Align = alBottom
     TabOrder = 1
-    ExplicitTop = 304
-    ExplicitWidth = 678
     object BitBtn1: TBitBtn
       Left = 16
       Top = 6
@@ -191,7 +185,7 @@ object form_prihod_GSM: Tform_prihod_GSM
       Top = 6
       Width = 90
       Height = 25
-      Caption = #1055#1088#1086#1089#1084#1086#1090#1088#1077#1090#1100
+      Caption = #1048#1079#1084#1077#1085#1080#1090#1100
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11

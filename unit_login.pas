@@ -54,6 +54,9 @@ begin
   user := settings.ReadString('database','user','root');
   pass := settings.ReadString('database','pass','gdx4852T');
 
+  if dm.conn_main.Connected then dm.conn_main.Close;
+
+
   dm.conn_main.ConnectionString := 'Provider=MSDASQL.1;'
                                 +'Password='+pass+';'
                                 +'Persist Security Info=True;'
@@ -82,7 +85,7 @@ begin
 
     close;
   except
-    ShowMessage('Не удалось установиь связь с БД.');
+    ShowMessage('Не удалось установить связь с БД.');
     exit;
   end;
 end;

@@ -60,6 +60,8 @@ type
     BitBtn11: TBitBtn;
     DBLookupComboboxEh3: TDBLookupComboboxEh;
     BitBtn12: TBitBtn;
+    DBEditEh1: TDBEditEh;
+    Label8: TLabel;
     procedure FormResize(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);

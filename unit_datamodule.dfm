@@ -3,13 +3,13 @@ object DM: TDM
   Height = 649
   Width = 808
   object conn_main: TADOConnection
+    Connected = True
     ConnectionString = 
       'Provider=MSDASQL.1;Persist Security Info=True;Extended Propertie' +
       's="DRIVER={MySQL ODBC 5.3 Unicode Driver};UID=root;PWD=gdx4852T;' +
       'SERVER=localhost;DATABASE=db_etop;PORT=3306;COLUMN_SIZE_S32=1;";' +
       'Initial Catalog=db_etop;OPTION=2'
     LoginPrompt = False
-    Provider = 'MSDASQL.1'
     Left = 32
     Top = 24
   end
@@ -56,6 +56,7 @@ object DM: TDM
     Top = 72
   end
   object q_sostoianie: TADOQuery
+    Active = True
     Connection = conn_main
     CursorType = ctStatic
     Parameters = <>
@@ -135,6 +136,7 @@ object DM: TDM
     Top = 72
   end
   object q_sooruzhenie: TADOQuery
+    Active = True
     Connection = conn_main
     CursorType = ctStatic
     Parameters = <>
@@ -161,6 +163,7 @@ object DM: TDM
     Top = 72
   end
   object q_oborudovanie: TADOQuery
+    Active = True
     Connection = conn_main
     CursorType = ctStatic
     Parameters = <>
@@ -917,6 +920,10 @@ object DM: TDM
       FieldName = 'Primechanie'
       BlobType = ftWideMemo
     end
+    object q_rabotaOtvetstvennyi: TWideStringField
+      FieldName = 'Otvetstvennyi'
+      Size = 45
+    end
   end
   object q_rashod_MTO: TADOQuery
     Connection = conn_main
@@ -1116,6 +1123,7 @@ object DM: TDM
     Top = 464
   end
   object q_vid_rabota: TADOQuery
+    Active = True
     Connection = conn_main
     CursorType = ctStatic
     Parameters = <>
@@ -1225,6 +1233,7 @@ object DM: TDM
     Top = 208
   end
   object q_naimenovanie_rabot: TADOQuery
+    Active = True
     Connection = conn_main
     CursorType = ctStatic
     Parameters = <>

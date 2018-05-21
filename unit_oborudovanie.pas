@@ -17,11 +17,19 @@ type
     BitBtn3: TBitBtn;
     BitBtn4: TBitBtn;
     DBGridEh1: TDBGridEh;
+    BitBtn6: TBitBtn;
+    BitBtn7: TBitBtn;
+    BitBtn8: TBitBtn;
+    BitBtn5: TBitBtn;
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
     procedure BitBtn3Click(Sender: TObject);
     procedure BitBtn4Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure BitBtn6Click(Sender: TObject);
+    procedure BitBtn8Click(Sender: TObject);
+    procedure BitBtn7Click(Sender: TObject);
+    procedure BitBtn5Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -58,6 +66,26 @@ end;
 procedure Tform_oborudovanie.BitBtn4Click(Sender: TObject);
 begin
   form_narabotka.ShowModal;
+end;
+
+procedure Tform_oborudovanie.BitBtn5Click(Sender: TObject);
+begin
+  dm.q_oborudovanie.First;
+end;
+
+procedure Tform_oborudovanie.BitBtn6Click(Sender: TObject);
+begin
+  dm.q_oborudovanie.Prior;
+end;
+
+procedure Tform_oborudovanie.BitBtn7Click(Sender: TObject);
+begin
+  dm.q_oborudovanie.Next;
+end;
+
+procedure Tform_oborudovanie.BitBtn8Click(Sender: TObject);
+begin
+  dm.q_oborudovanie.Last;
 end;
 
 procedure Tform_oborudovanie.FormClose(Sender: TObject;

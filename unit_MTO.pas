@@ -16,10 +16,18 @@ type
     BitBtn1: TBitBtn;
     BitBtn2: TBitBtn;
     BitBtn4: TBitBtn;
+    BitBtn5: TBitBtn;
+    BitBtn6: TBitBtn;
+    BitBtn7: TBitBtn;
+    BitBtn3: TBitBtn;
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
     procedure BitBtn4Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure BitBtn3Click(Sender: TObject);
+    procedure BitBtn5Click(Sender: TObject);
+    procedure BitBtn6Click(Sender: TObject);
+    procedure BitBtn7Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -47,9 +55,29 @@ begin
   form_edit_MTO.ShowModal;
 end;
 
+procedure Tform_MTO.BitBtn3Click(Sender: TObject);
+begin
+  dm.q_MTO.First;
+end;
+
 procedure Tform_MTO.BitBtn4Click(Sender: TObject);
 begin
   form_prihod_MTO.ShowModal;
+end;
+
+procedure Tform_MTO.BitBtn5Click(Sender: TObject);
+begin
+  dm.q_MTO.Prior;
+end;
+
+procedure Tform_MTO.BitBtn6Click(Sender: TObject);
+begin
+  dm.q_MTO.Next;
+end;
+
+procedure Tform_MTO.BitBtn7Click(Sender: TObject);
+begin
+  dm.q_MTO.Last;
 end;
 
 procedure Tform_MTO.FormClose(Sender: TObject; var Action: TCloseAction);

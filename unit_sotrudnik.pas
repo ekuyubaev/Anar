@@ -15,10 +15,18 @@ type
     BitBtn1: TBitBtn;
     BitBtn2: TBitBtn;
     BitBtn3: TBitBtn;
+    BitBtn4: TBitBtn;
+    BitBtn5: TBitBtn;
+    BitBtn6: TBitBtn;
+    BitBtn7: TBitBtn;
     procedure BitBtn3Click(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure BitBtn4Click(Sender: TObject);
+    procedure BitBtn7Click(Sender: TObject);
+    procedure BitBtn5Click(Sender: TObject);
+    procedure BitBtn6Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -50,6 +58,26 @@ procedure Tform_sotrudnik.BitBtn3Click(Sender: TObject);
 begin
   if (MessageDlg('Удалить запись?', mtConfirmation, [mbYes,mbNo], 0) = mrYes)
     then DM.q_sotrudnik.Delete;
+end;
+
+procedure Tform_sotrudnik.BitBtn4Click(Sender: TObject);
+begin
+  dm.q_sotrudnik.First;
+end;
+
+procedure Tform_sotrudnik.BitBtn5Click(Sender: TObject);
+begin
+  dm.q_sotrudnik.Prior;
+end;
+
+procedure Tform_sotrudnik.BitBtn6Click(Sender: TObject);
+begin
+  dm.q_sotrudnik.Next;
+end;
+
+procedure Tform_sotrudnik.BitBtn7Click(Sender: TObject);
+begin
+  dm.q_sotrudnik.Last;
 end;
 
 procedure Tform_sotrudnik.FormClose(Sender: TObject; var Action: TCloseAction);

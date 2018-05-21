@@ -228,6 +228,7 @@ type
     ds_uvedomlenie_poverka: TDataSource;
     q_otchety: TADOQuery;
     q_temp_reps: TADOQuery;
+    q_rabotaOtvetstvennyi: TWideStringField;
     procedure q_narabotkaBeforePost(DataSet: TDataSet);
     procedure q_prihod_MTOBeforePost(DataSet: TDataSet);
     procedure q_prihod_GSMBeforePost(DataSet: TDataSet);

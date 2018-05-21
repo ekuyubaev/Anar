@@ -16,10 +16,18 @@ type
     BitBtn2: TBitBtn;
     BitBtn3: TBitBtn;
     DBGridEh1: TDBGridEh;
+    BitBtn5: TBitBtn;
+    BitBtn6: TBitBtn;
+    BitBtn7: TBitBtn;
+    BitBtn4: TBitBtn;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
     procedure BitBtn3Click(Sender: TObject);
+    procedure BitBtn5Click(Sender: TObject);
+    procedure BitBtn4Click(Sender: TObject);
+    procedure BitBtn6Click(Sender: TObject);
+    procedure BitBtn7Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -52,6 +60,26 @@ end;
 procedure Tform_GSM.BitBtn3Click(Sender: TObject);
 begin
   form_prihod_GSM.ShowModal;
+end;
+
+procedure Tform_GSM.BitBtn4Click(Sender: TObject);
+begin
+  dm.q_GSM.First;
+end;
+
+procedure Tform_GSM.BitBtn5Click(Sender: TObject);
+begin
+  dm.q_GSM.Prior;
+end;
+
+procedure Tform_GSM.BitBtn6Click(Sender: TObject);
+begin
+  dm.q_GSM.Next;
+end;
+
+procedure Tform_GSM.BitBtn7Click(Sender: TObject);
+begin
+  dm.q_GSM.Last;
 end;
 
 procedure Tform_GSM.FormClose(Sender: TObject; var Action: TCloseAction);
