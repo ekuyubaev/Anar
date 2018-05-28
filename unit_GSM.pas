@@ -20,6 +20,7 @@ type
     BitBtn6: TBitBtn;
     BitBtn7: TBitBtn;
     BitBtn4: TBitBtn;
+    BitBtn8: TBitBtn;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
@@ -28,6 +29,7 @@ type
     procedure BitBtn4Click(Sender: TObject);
     procedure BitBtn6Click(Sender: TObject);
     procedure BitBtn7Click(Sender: TObject);
+    procedure BitBtn8Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -41,7 +43,7 @@ implementation
 
 {$R *.dfm}
 
-uses Unit1, unit_datamodule, unit_edit_GSM, unit_prihod_GSM;
+uses Unit1, unit_datamodule, unit_edit_GSM, unit_prihod_GSM, unit_otchety;
 
 procedure Tform_GSM.BitBtn1Click(Sender: TObject);
 begin
@@ -80,6 +82,11 @@ end;
 procedure Tform_GSM.BitBtn7Click(Sender: TObject);
 begin
   dm.q_GSM.Last;
+end;
+
+procedure Tform_GSM.BitBtn8Click(Sender: TObject);
+begin
+  form_otchety.Zaiavka_GSM;
 end;
 
 procedure Tform_GSM.FormClose(Sender: TObject; var Action: TCloseAction);

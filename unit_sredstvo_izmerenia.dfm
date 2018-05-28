@@ -48,6 +48,7 @@ object form_sredstvo_izmerenia: Tform_sredstvo_izmerenia
           EditButtons = <>
           FieldName = 'ID_sredstvo_izmerenia'
           Footers = <>
+          Title.Alignment = taCenter
           Title.Font.Charset = DEFAULT_CHARSET
           Title.Font.Color = clWindowText
           Title.Font.Height = -11
@@ -62,6 +63,7 @@ object form_sredstvo_izmerenia: Tform_sredstvo_izmerenia
           EditButtons = <>
           FieldName = 'Naimenovanie'
           Footers = <>
+          Title.Alignment = taCenter
           Title.Caption = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077
           Title.Font.Charset = DEFAULT_CHARSET
           Title.Font.Color = clWindowText
@@ -72,11 +74,13 @@ object form_sredstvo_izmerenia: Tform_sredstvo_izmerenia
           Width = 150
         end
         item
+          Alignment = taCenter
           AutoFitColWidth = False
           DynProps = <>
           EditButtons = <>
           FieldName = 'N_zavodskoi'
           Footers = <>
+          Title.Alignment = taCenter
           Title.Caption = 'N '#1079#1072#1074#1086#1076#1089#1082#1086#1081
           Title.Font.Charset = DEFAULT_CHARSET
           Title.Font.Color = clWindowText
@@ -87,11 +91,13 @@ object form_sredstvo_izmerenia: Tform_sredstvo_izmerenia
           Width = 100
         end
         item
+          Alignment = taCenter
           AutoFitColWidth = False
           DynProps = <>
           EditButtons = <>
           FieldName = 'N_inventarnyi'
           Footers = <>
+          Title.Alignment = taCenter
           Title.Caption = 'N '#1080#1085#1074#1077#1085#1090#1072#1088#1085'.'
           Title.Font.Charset = DEFAULT_CHARSET
           Title.Font.Color = clWindowText
@@ -102,10 +108,13 @@ object form_sredstvo_izmerenia: Tform_sredstvo_izmerenia
           Width = 100
         end
         item
+          Alignment = taCenter
+          AutoFitColWidth = False
           DynProps = <>
           EditButtons = <>
           FieldName = 'Sostoianie'
           Footers = <>
+          Title.Alignment = taCenter
           Title.Caption = #1058#1077#1093'. '#1089#1086#1089#1090#1086#1103#1085#1080#1077
           Title.Font.Charset = DEFAULT_CHARSET
           Title.Font.Color = clWindowText
@@ -116,11 +125,13 @@ object form_sredstvo_izmerenia: Tform_sredstvo_izmerenia
           Width = 130
         end
         item
+          Alignment = taCenter
           AutoFitColWidth = False
           DynProps = <>
           EditButtons = <>
           FieldName = 'Data_vvedeno'
           Footers = <>
+          Title.Alignment = taCenter
           Title.Caption = #1044#1072#1090#1072' '#1074#1074#1086#1076#1072' '#1074' '#1101#1082#1089#1087#1083'.'
           Title.Font.Charset = DEFAULT_CHARSET
           Title.Font.Color = clWindowText
@@ -131,11 +142,13 @@ object form_sredstvo_izmerenia: Tform_sredstvo_izmerenia
           Width = 125
         end
         item
+          Alignment = taCenter
           AutoFitColWidth = False
           DynProps = <>
           EditButtons = <>
           FieldName = 'Periodichnost_poverka'
           Footers = <>
+          Title.Alignment = taCenter
           Title.Caption = #1055#1077#1088#1080#1086#1076#1080#1095#1085#1086#1089#1090#1100' '#1087#1086#1074#1077#1088#1082#1080
           Title.Font.Charset = DEFAULT_CHARSET
           Title.Font.Color = clWindowText
@@ -146,10 +159,13 @@ object form_sredstvo_izmerenia: Tform_sredstvo_izmerenia
           Width = 150
         end
         item
+          Alignment = taCenter
+          AutoFitColWidth = False
           DynProps = <>
           EditButtons = <>
           FieldName = 'ID_sostoianie'
           Footers = <>
+          Title.Alignment = taCenter
           Title.Font.Charset = DEFAULT_CHARSET
           Title.Font.Color = clWindowText
           Title.Font.Height = -11
@@ -164,6 +180,7 @@ object form_sredstvo_izmerenia: Tform_sredstvo_izmerenia
           EditButtons = <>
           FieldName = 'Primechanie'
           Footers = <>
+          Title.Alignment = taCenter
           Title.Caption = #1055#1088#1080#1084#1077#1095#1072#1085#1080#1077
           Title.Font.Charset = DEFAULT_CHARSET
           Title.Font.Color = clWindowText
@@ -184,10 +201,13 @@ object form_sredstvo_izmerenia: Tform_sredstvo_izmerenia
     Height = 35
     Align = alBottom
     TabOrder = 1
+    DesignSize = (
+      802
+      35)
     object BitBtn1: TBitBtn
       Left = 16
       Top = 6
-      Width = 90
+      Width = 70
       Height = 25
       Caption = #1044#1086#1073#1072#1074#1080#1090#1100
       Font.Charset = DEFAULT_CHARSET
@@ -200,11 +220,11 @@ object form_sredstvo_izmerenia: Tform_sredstvo_izmerenia
       OnClick = BitBtn1Click
     end
     object BitBtn2: TBitBtn
-      Left = 120
+      Left = 104
       Top = 6
-      Width = 90
+      Width = 70
       Height = 25
-      Caption = #1055#1088#1086#1089#1084#1086#1090#1088#1077#1090#1100
+      Caption = #1048#1079#1084#1077#1085#1080#1090#1100
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
@@ -215,9 +235,9 @@ object form_sredstvo_izmerenia: Tform_sredstvo_izmerenia
       OnClick = BitBtn2Click
     end
     object BitBtn3: TBitBtn
-      Left = 224
+      Left = 192
       Top = 6
-      Width = 90
+      Width = 70
       Height = 25
       Caption = #1059#1076#1072#1083#1080#1090#1100
       Font.Charset = DEFAULT_CHARSET
@@ -230,7 +250,7 @@ object form_sredstvo_izmerenia: Tform_sredstvo_izmerenia
       OnClick = BitBtn3Click
     end
     object BitBtn4: TBitBtn
-      Left = 368
+      Left = 304
       Top = 6
       Width = 40
       Height = 25
@@ -279,7 +299,7 @@ object form_sredstvo_izmerenia: Tform_sredstvo_izmerenia
       OnClick = BitBtn4Click
     end
     object BitBtn5: TBitBtn
-      Left = 424
+      Left = 350
       Top = 6
       Width = 40
       Height = 25
@@ -328,7 +348,7 @@ object form_sredstvo_izmerenia: Tform_sredstvo_izmerenia
       OnClick = BitBtn5Click
     end
     object BitBtn6: TBitBtn
-      Left = 480
+      Left = 396
       Top = 6
       Width = 40
       Height = 25
@@ -378,7 +398,7 @@ object form_sredstvo_izmerenia: Tform_sredstvo_izmerenia
       OnClick = BitBtn6Click
     end
     object BitBtn7: TBitBtn
-      Left = 536
+      Left = 442
       Top = 6
       Width = 40
       Height = 25
@@ -425,6 +445,40 @@ object form_sredstvo_izmerenia: Tform_sredstvo_izmerenia
         FFFFFFFFFFFFFFFFFFFF}
       TabOrder = 6
       OnClick = BitBtn7Click
+    end
+    object BitBtn8: TBitBtn
+      Left = 595
+      Top = 6
+      Width = 120
+      Height = 25
+      Anchors = [akTop, akRight]
+      Caption = #1043#1088#1072#1092#1080#1082' '#1087#1086#1074#1077#1088#1082#1080' '#1085#1072
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 7
+      OnClick = BitBtn8Click
+    end
+    object ComboBox1: TComboBox
+      Left = 721
+      Top = 8
+      Width = 56
+      Height = 21
+      Anchors = [akTop, akRight]
+      ItemIndex = 0
+      TabOrder = 8
+      Text = '2019'
+      Items.Strings = (
+        '2019'
+        '2020'
+        '2021'
+        '2022'
+        '2023'
+        '2024'
+        '2025')
     end
   end
 end

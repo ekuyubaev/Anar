@@ -287,6 +287,7 @@ object DM: TDM
     Top = 208
   end
   object q_EI: TADOQuery
+    Active = True
     Connection = conn_main
     CursorType = ctStatic
     Parameters = <>
@@ -307,6 +308,7 @@ object DM: TDM
     Top = 160
   end
   object q_sredstvo_izmerenia: TADOQuery
+    Active = True
     Connection = conn_main
     CursorType = ctStatic
     Parameters = <>
@@ -360,6 +362,14 @@ object DM: TDM
     object q_sredstvo_izmereniaPogreshnost: TWideStringField
       FieldName = 'Pogreshnost'
       Size = 64
+    end
+    object q_sredstvo_izmereniaOtvetstvennyi: TWideStringField
+      FieldName = 'Otvetstvennyi'
+      Size = 45
+    end
+    object q_sredstvo_izmereniaIzgotovitel: TWideStringField
+      FieldName = 'Izgotovitel'
+      Size = 256
     end
     object q_sredstvo_izmereniaPrimechanie: TWideMemoField
       FieldName = 'Primechanie'
@@ -624,6 +634,14 @@ object DM: TDM
       Size = 64
       Lookup = True
     end
+    object q_MTOTip: TWideStringField
+      FieldName = 'Tip'
+      Size = 45
+    end
+    object q_MTOGOST: TWideStringField
+      FieldName = 'GOST'
+      Size = 45
+    end
     object q_MTONaimenovanie: TWideStringField
       FieldName = 'Naimenovanie'
       Size = 255
@@ -739,6 +757,14 @@ object DM: TDM
     object q_GSMID_EI: TIntegerField
       FieldName = 'ID_EI'
     end
+    object q_GSMTip: TWideStringField
+      FieldName = 'Tip'
+      Size = 45
+    end
+    object q_GSMGOST: TWideStringField
+      FieldName = 'GOST'
+      Size = 45
+    end
     object q_GSMPrimechanie: TWideMemoField
       FieldName = 'Primechanie'
       BlobType = ftWideMemo
@@ -840,6 +866,7 @@ object DM: TDM
   object q_rabota: TADOQuery
     Connection = conn_main
     CursorType = ctStatic
+    BeforePost = q_rabotaBeforePost
     Parameters = <>
     SQL.Strings = (
       'Select * From Rabota')
@@ -1218,12 +1245,18 @@ object DM: TDM
     Parameters = <
       item
         Name = 'ID_sredstvo_izmerenia'
-        DataType = ftInteger
-        Value = 1
+        Attributes = [paNullable]
+        DataType = ftString
+        NumericScale = 128
+        Precision = 255
+        Size = 255
+        Value = '1'
       end>
     SQL.Strings = (
       'Select * From Poverka'
-      'Where ID_sredstvo_izmerenia = :ID_sredstvo_izmerenia')
+      'Where ID_sredstvo_izmerenia = :ID_sredstvo_izmerenia'
+      'Order by Data_poverka'
+      '')
     Left = 680
     Top = 160
   end
@@ -1306,5 +1339,17 @@ object DM: TDM
     Parameters = <>
     Left = 456
     Top = 600
+  end
+  object q_prognoz_gsm: TADOQuery
+    Connection = conn_main
+    Parameters = <>
+    Left = 560
+    Top = 536
+  end
+  object q_prognoz: TADOQuery
+    Connection = conn_main
+    Parameters = <>
+    Left = 560
+    Top = 592
   end
 end

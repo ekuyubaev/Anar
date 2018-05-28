@@ -25,7 +25,6 @@ object form_edit_rabota: Tform_edit_rabota
     Height = 326
     Align = alClient
     TabOrder = 0
-    ExplicitHeight = 290
     object Panel3: TPanel
       Left = 1
       Top = 1
@@ -33,7 +32,6 @@ object form_edit_rabota: Tform_edit_rabota
       Height = 324
       Align = alLeft
       TabOrder = 0
-      ExplicitHeight = 288
       object GroupBox1: TGroupBox
         Left = 1
         Top = 1
@@ -41,7 +39,6 @@ object form_edit_rabota: Tform_edit_rabota
         Height = 283
         Align = alClient
         TabOrder = 0
-        ExplicitHeight = 247
         DesignSize = (
           492
           283)
@@ -262,9 +259,9 @@ object form_edit_rabota: Tform_edit_rabota
         object DBCheckBoxEh2: TDBCheckBoxEh
           Left = 16
           Top = 165
-          Width = 145
+          Width = 177
           Height = 17
-          Caption = #1087#1086' '#1088#1072#1089#1087#1086#1088#1103#1078#1077#1085#1080#1102' '#8470
+          Caption = #1087#1086' '#1088#1072#1089#1087#1086#1088#1103#1078#1077#1085#1080#1102'  '#1056#1077#1075'. '#8470
           DataField = 'Po_rasporiazheniu'
           DataSource = DM.ds_rabota
           DynProps = <>
@@ -277,12 +274,12 @@ object form_edit_rabota: Tform_edit_rabota
           TabOrder = 6
         end
         object DBCheckBoxEh3: TDBCheckBoxEh
-          Left = 242
+          Left = 215
           Top = 165
-          Width = 151
+          Width = 186
           Height = 17
           Anchors = [akTop, akRight]
-          Caption = #1087#1086' '#1085#1072#1088#1103#1076#1091'-'#1076#1086#1087#1091#1089#1082#1091' '#8470
+          Caption = #1087#1086' '#1085#1072#1088#1103#1076#1091'-'#1076#1086#1087#1091#1089#1082#1091'  '#1056#1077#1075'. '#8470
           DataField = 'Po_nariadu_dopusku'
           DataSource = DM.ds_rabota
           DynProps = <>
@@ -324,9 +321,9 @@ object form_edit_rabota: Tform_edit_rabota
           Visible = True
         end
         object DBEditEh3: TDBEditEh
-          Left = 161
+          Left = 191
           Top = 163
-          Width = 58
+          Width = 8
           Height = 21
           Anchors = [akLeft, akTop, akRight]
           DataField = 'Nomer_rasporiazhenie'
@@ -337,7 +334,7 @@ object form_edit_rabota: Tform_edit_rabota
           Visible = True
         end
         object DBEditEh4: TDBEditEh
-          Left = 396
+          Left = 400
           Top = 163
           Width = 73
           Height = 21
@@ -401,7 +398,6 @@ object form_edit_rabota: Tform_edit_rabota
         Height = 39
         Align = alBottom
         TabOrder = 1
-        ExplicitTop = 248
         DesignSize = (
           492
           39)
@@ -460,7 +456,6 @@ object form_edit_rabota: Tform_edit_rabota
       Height = 324
       Align = alClient
       TabOrder = 1
-      ExplicitHeight = 288
       object GroupBox3: TGroupBox
         Left = 1
         Top = 1
@@ -513,7 +508,6 @@ object form_edit_rabota: Tform_edit_rabota
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 1
-        ExplicitHeight = 254
         object DBGridEh1: TDBGridEh
           Left = 2
           Top = 15
@@ -657,7 +651,6 @@ object form_edit_rabota: Tform_edit_rabota
       Height = 228
       Align = alLeft
       TabOrder = 0
-      ExplicitHeight = 264
       object GroupBox5: TGroupBox
         Left = 1
         Top = 1
@@ -725,7 +718,6 @@ object form_edit_rabota: Tform_edit_rabota
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 1
-        ExplicitHeight = 230
         object DBGridEh2: TDBGridEh
           Left = 2
           Top = 15
@@ -899,7 +891,6 @@ object form_edit_rabota: Tform_edit_rabota
       Height = 228
       Align = alClient
       TabOrder = 1
-      ExplicitHeight = 264
       object GroupBox7: TGroupBox
         Left = 1
         Top = 1
@@ -967,7 +958,6 @@ object form_edit_rabota: Tform_edit_rabota
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 1
-        ExplicitHeight = 230
         object DBGridEh3: TDBGridEh
           Left = 2
           Top = 15

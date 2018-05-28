@@ -23,6 +23,10 @@ type
     DBLookupComboboxEh1: TDBLookupComboboxEh;
     DBEditEh3: TDBEditEh;
     DBMemoEh1: TDBMemoEh;
+    DBEditEh4: TDBEditEh;
+    DBEditEh5: TDBEditEh;
+    Label6: TLabel;
+    Label7: TLabel;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);

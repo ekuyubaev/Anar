@@ -8,7 +8,8 @@ uses
   ToolCtrlsEh, DBGridEhToolCtrls, DynVarsEh, EhLibVCL, GridsEh, DBAxisGridsEh,
   DBGridEh, unit_attestacia, unit_oborudovanie, unit_sotrudnik, unit_sooruzhenie,
   unit_sredstvo_izmerenia, unit_ZIP, unit_MTO, unit_GSM, unit_pusk, unit_rabota,
-  unit_uvedomlenie_attestacia, unit_uvedomlenie, unit_otchety, unit_login;
+  unit_uvedomlenie_attestacia, unit_uvedomlenie, unit_otchety, unit_login, unit_prognoz,
+  unit_gant;
 
 type
   Tform_main = class(TForm)
@@ -37,6 +38,8 @@ type
     N22: TMenuItem;
     N23: TMenuItem;
     N24: TMenuItem;
+    N25: TMenuItem;
+    N26: TMenuItem;
     procedure N4Click(Sender: TObject);
     procedure N5Click(Sender: TObject);
     procedure N6Click(Sender: TObject);
@@ -58,6 +61,8 @@ type
     procedure N22Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure N24Click(Sender: TObject);
+    procedure N25Click(Sender: TObject);
+    procedure N26Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -79,6 +84,8 @@ var
   form_otchety: Tform_otchety;
   uvedomlenie: TUvedomlenie;
   form_login: Tform_login;
+  form_prognoz: Tform_prognoz;
+  form_gant : Tform_gant;
   authorized: boolean = false;
 
 implementation
@@ -220,6 +227,24 @@ begin
     form_otchety := Tform_otchety.Create(Application);
     form_otchety.Show;
     form_otchety.PageControl1.ActivePage := form_otchety.ts_TO;
+  end;
+end;
+
+procedure Tform_main.N25Click(Sender: TObject);
+begin
+  if form_prognoz = nil then
+  begin
+    form_prognoz := Tform_prognoz.Create(Application);
+    form_prognoz.Show;
+  end;
+end;
+
+procedure Tform_main.N26Click(Sender: TObject);
+begin
+  if form_gant = nil then
+  begin
+    form_gant := Tform_gant.Create(Application);
+    form_gant.Show;
   end;
 end;
 

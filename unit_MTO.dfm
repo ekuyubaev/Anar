@@ -73,6 +73,39 @@ object form_MTO: Tform_MTO
           Width = 200
         end
         item
+          Alignment = taCenter
+          AutoFitColWidth = False
+          DynProps = <>
+          EditButtons = <>
+          FieldName = 'Tip'
+          Footers = <>
+          Title.Alignment = taCenter
+          Title.Caption = #1058#1080#1087
+          Title.Font.Charset = DEFAULT_CHARSET
+          Title.Font.Color = clWindowText
+          Title.Font.Height = -11
+          Title.Font.Name = 'Tahoma'
+          Title.Font.Style = [fsBold]
+          Width = 200
+        end
+        item
+          Alignment = taCenter
+          AutoFitColWidth = False
+          DynProps = <>
+          EditButtons = <>
+          FieldName = 'GOST'
+          Footers = <>
+          Title.Alignment = taCenter
+          Title.Caption = #1043#1054#1057#1058', '#1058#1059' '#1080' '#1076#1088'.'
+          Title.Font.Charset = DEFAULT_CHARSET
+          Title.Font.Color = clWindowText
+          Title.Font.Height = -11
+          Title.Font.Name = 'Tahoma'
+          Title.Font.Style = [fsBold]
+          Width = 150
+        end
+        item
+          Alignment = taCenter
           AutoFitColWidth = False
           DynProps = <>
           EditButtons = <>
@@ -89,6 +122,7 @@ object form_MTO: Tform_MTO
           Width = 90
         end
         item
+          Alignment = taCenter
           AutoFitColWidth = False
           DynProps = <>
           EditButtons = <>
@@ -151,7 +185,7 @@ object form_MTO: Tform_MTO
     object BitBtn1: TBitBtn
       Left = 16
       Top = 6
-      Width = 90
+      Width = 70
       Height = 25
       Caption = #1044#1086#1073#1072#1074#1080#1090#1100
       Font.Charset = DEFAULT_CHARSET
@@ -164,9 +198,9 @@ object form_MTO: Tform_MTO
       OnClick = BitBtn1Click
     end
     object BitBtn2: TBitBtn
-      Left = 120
+      Left = 104
       Top = 6
-      Width = 90
+      Width = 70
       Height = 25
       Caption = #1048#1079#1084#1077#1085#1080#1090#1100
       Font.Charset = DEFAULT_CHARSET
@@ -179,11 +213,10 @@ object form_MTO: Tform_MTO
       OnClick = BitBtn2Click
     end
     object BitBtn4: TBitBtn
-      Left = 568
+      Left = 416
       Top = 6
-      Width = 90
+      Width = 70
       Height = 25
-      Anchors = [akTop, akRight]
       Caption = #1055#1088#1080#1093#1086#1076
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -195,7 +228,7 @@ object form_MTO: Tform_MTO
       OnClick = BitBtn4Click
     end
     object BitBtn5: TBitBtn
-      Left = 312
+      Left = 254
       Top = 6
       Width = 40
       Height = 25
@@ -244,7 +277,7 @@ object form_MTO: Tform_MTO
       OnClick = BitBtn5Click
     end
     object BitBtn6: TBitBtn
-      Left = 368
+      Left = 300
       Top = 6
       Width = 40
       Height = 25
@@ -294,7 +327,7 @@ object form_MTO: Tform_MTO
       OnClick = BitBtn6Click
     end
     object BitBtn7: TBitBtn
-      Left = 424
+      Left = 346
       Top = 6
       Width = 40
       Height = 25
@@ -343,7 +376,7 @@ object form_MTO: Tform_MTO
       OnClick = BitBtn7Click
     end
     object BitBtn3: TBitBtn
-      Left = 256
+      Left = 208
       Top = 6
       Width = 40
       Height = 25
@@ -390,6 +423,22 @@ object form_MTO: Tform_MTO
         FFFFFFFFFFFFFFFFFFFF}
       TabOrder = 6
       OnClick = BitBtn3Click
+    end
+    object BitBtn8: TBitBtn
+      Left = 576
+      Top = 6
+      Width = 75
+      Height = 25
+      Anchors = [akTop, akRight]
+      Caption = #1047#1072#1103#1074#1082#1072
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 7
+      OnClick = BitBtn8Click
     end
   end
 end

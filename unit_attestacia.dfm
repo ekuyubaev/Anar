@@ -121,10 +121,13 @@ object form_attestacia: Tform_attestacia
     Height = 35
     Align = alBottom
     TabOrder = 1
+    DesignSize = (
+      753
+      35)
     object BitBtn1: TBitBtn
       Left = 16
       Top = 6
-      Width = 90
+      Width = 70
       Height = 25
       Caption = #1044#1086#1073#1072#1074#1080#1090#1100
       Font.Charset = DEFAULT_CHARSET
@@ -137,9 +140,9 @@ object form_attestacia: Tform_attestacia
       OnClick = BitBtn1Click
     end
     object BitBtn2: TBitBtn
-      Left = 120
+      Left = 92
       Top = 6
-      Width = 90
+      Width = 70
       Height = 25
       Caption = #1048#1079#1084#1077#1085#1080#1090#1100
       Font.Charset = DEFAULT_CHARSET
@@ -152,9 +155,9 @@ object form_attestacia: Tform_attestacia
       OnClick = BitBtn2Click
     end
     object BitBtn3: TBitBtn
-      Left = 224
+      Left = 168
       Top = 6
-      Width = 90
+      Width = 70
       Height = 25
       Caption = #1059#1076#1072#1083#1080#1090#1100
       Font.Charset = DEFAULT_CHARSET
@@ -167,7 +170,7 @@ object form_attestacia: Tform_attestacia
       OnClick = BitBtn3Click
     end
     object BitBtn4: TBitBtn
-      Left = 368
+      Left = 280
       Top = 6
       Width = 40
       Height = 25
@@ -216,7 +219,7 @@ object form_attestacia: Tform_attestacia
       OnClick = BitBtn4Click
     end
     object BitBtn5: TBitBtn
-      Left = 424
+      Left = 326
       Top = 6
       Width = 40
       Height = 25
@@ -265,8 +268,8 @@ object form_attestacia: Tform_attestacia
       OnClick = BitBtn5Click
     end
     object BitBtn6: TBitBtn
-      Left = 480
-      Top = 6
+      Left = 372
+      Top = 7
       Width = 40
       Height = 25
       Glyph.Data = {
@@ -315,7 +318,7 @@ object form_attestacia: Tform_attestacia
       OnClick = BitBtn6Click
     end
     object BitBtn7: TBitBtn
-      Left = 536
+      Left = 418
       Top = 6
       Width = 40
       Height = 25
@@ -362,6 +365,22 @@ object form_attestacia: Tform_attestacia
         FFFFFFFFFFFFFFFFFFFF}
       TabOrder = 6
       OnClick = BitBtn7Click
+    end
+    object BitBtn8: TBitBtn
+      Left = 576
+      Top = 4
+      Width = 155
+      Height = 25
+      Anchors = [akTop, akRight]
+      Caption = #1047#1072#1103#1074#1082#1072' '#1085#1072' '#1072#1090#1090#1077#1089#1090#1072#1094#1080#1102
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 7
+      OnClick = BitBtn8Click
     end
   end
 end

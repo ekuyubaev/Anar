@@ -21,6 +21,10 @@ type
     BitBtn1: TBitBtn;
     BitBtn2: TBitBtn;
     DBEditEh1: TDBEditEh;
+    Label5: TLabel;
+    Label6: TLabel;
+    DBEditEh3: TDBEditEh;
+    DBEditEh4: TDBEditEh;
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);

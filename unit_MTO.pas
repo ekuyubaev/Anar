@@ -20,6 +20,7 @@ type
     BitBtn6: TBitBtn;
     BitBtn7: TBitBtn;
     BitBtn3: TBitBtn;
+    BitBtn8: TBitBtn;
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
     procedure BitBtn4Click(Sender: TObject);
@@ -28,6 +29,7 @@ type
     procedure BitBtn5Click(Sender: TObject);
     procedure BitBtn6Click(Sender: TObject);
     procedure BitBtn7Click(Sender: TObject);
+    procedure BitBtn8Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -41,7 +43,7 @@ implementation
 
 {$R *.dfm}
 
-uses unit_datamodule, unit_edit_MTO, unit_prihod_MTO, Unit1;
+uses unit_datamodule, unit_edit_MTO, unit_prihod_MTO, Unit1, unit_otchety;
 
 procedure Tform_MTO.BitBtn1Click(Sender: TObject);
 begin
@@ -78,6 +80,11 @@ end;
 procedure Tform_MTO.BitBtn7Click(Sender: TObject);
 begin
   dm.q_MTO.Last;
+end;
+
+procedure Tform_MTO.BitBtn8Click(Sender: TObject);
+begin
+  form_otchety.Zaiavka_MTO;
 end;
 
 procedure Tform_MTO.FormClose(Sender: TObject; var Action: TCloseAction);

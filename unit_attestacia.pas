@@ -20,6 +20,7 @@ type
     BitBtn5: TBitBtn;
     BitBtn6: TBitBtn;
     BitBtn7: TBitBtn;
+    BitBtn8: TBitBtn;
     procedure BitBtn3Click(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
@@ -28,6 +29,7 @@ type
     procedure BitBtn5Click(Sender: TObject);
     procedure BitBtn6Click(Sender: TObject);
     procedure BitBtn7Click(Sender: TObject);
+    procedure BitBtn8Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -41,7 +43,7 @@ implementation
 
 {$R *.dfm}
 
-uses unit_datamodule, unit_edit_attestacia, Unit1;
+uses unit_datamodule, unit_edit_attestacia, Unit1, unit_otchety;
 
 procedure Tform_attestacia.BitBtn1Click(Sender: TObject);
 begin
@@ -79,6 +81,17 @@ end;
 procedure Tform_attestacia.BitBtn7Click(Sender: TObject);
 begin
   dm.q_attestacia.Last;
+end;
+
+procedure Tform_attestacia.BitBtn8Click(Sender: TObject);
+begin
+  if form_otchety = nil then
+  begin
+    form_otchety := Tform_otchety.Create(Application);
+    form_otchety.WindowState := wsNormal;
+    form_otchety.Show;
+    form_otchety.PageControl1.ActivePage := form_otchety.ts_attest;
+  end;
 end;
 
 procedure Tform_attestacia.FormClose(Sender: TObject; var Action: TCloseAction);

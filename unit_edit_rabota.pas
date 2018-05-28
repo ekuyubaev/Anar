@@ -90,7 +90,7 @@ implementation
 {$R *.dfm}
 
 uses unit_datamodule, DB, unit_vybor_ispolnitel, unit_vybor_material,
-  unit_vybor_GSM, unit_naimenovanie_rabot;
+  unit_vybor_GSM, unit_naimenovanie_rabot, Unit1;
 
 procedure Tform_edit_rabota.BitBtn10Click(Sender: TObject);
 begin

@@ -4,7 +4,7 @@ object form_edit_MTO: Tform_edit_MTO
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = #1044#1086#1073#1072#1074#1083#1077#1085#1080#1077'/'#1088#1077#1076#1072#1082#1090#1080#1088#1086#1074#1072#1085#1080#1077' '#1052#1058#1054
-  ClientHeight = 265
+  ClientHeight = 334
   ClientWidth = 356
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -21,11 +21,10 @@ object form_edit_MTO: Tform_edit_MTO
     Left = 0
     Top = 0
     Width = 356
-    Height = 228
+    Height = 297
     Align = alClient
     TabOrder = 0
-    ExplicitWidth = 457
-    ExplicitHeight = 369
+    ExplicitHeight = 228
     object Label1: TLabel
       Left = 22
       Top = 19
@@ -41,7 +40,7 @@ object form_edit_MTO: Tform_edit_MTO
     end
     object Label2: TLabel
       Left = 38
-      Top = 56
+      Top = 128
       Width = 68
       Height = 13
       Caption = #1050#1086#1083#1080#1095#1077#1089#1090#1074#1086
@@ -54,7 +53,7 @@ object form_edit_MTO: Tform_edit_MTO
     end
     object Label3: TLabel
       Left = 24
-      Top = 91
+      Top = 163
       Width = 82
       Height = 13
       Caption = #1045#1076'. '#1080#1079#1084#1077#1088#1077#1085#1080#1103
@@ -67,7 +66,7 @@ object form_edit_MTO: Tform_edit_MTO
     end
     object Label4: TLabel
       Left = 36
-      Top = 128
+      Top = 200
       Width = 70
       Height = 13
       Caption = #1055#1088#1080#1084#1077#1095#1072#1085#1080#1077
@@ -78,9 +77,35 @@ object form_edit_MTO: Tform_edit_MTO
       Font.Style = [fsBold]
       ParentFont = False
     end
+    object Label5: TLabel
+      Left = 86
+      Top = 56
+      Width = 20
+      Height = 13
+      Caption = #1058#1080#1087
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label6: TLabel
+      Left = 26
+      Top = 91
+      Width = 80
+      Height = 13
+      Caption = #1043#1054#1057#1058', '#1058#1059' '#1080' '#1076#1088'.'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
     object DBEditEh2: TDBEditEh
       Left = 120
-      Top = 53
+      Top = 125
       Width = 121
       Height = 21
       DataField = 'Kolichestvo'
@@ -93,7 +118,7 @@ object form_edit_MTO: Tform_edit_MTO
     end
     object DBLookupComboboxEh1: TDBLookupComboboxEh
       Left = 120
-      Top = 88
+      Top = 160
       Width = 121
       Height = 21
       DynProps = <>
@@ -105,7 +130,7 @@ object form_edit_MTO: Tform_edit_MTO
     end
     object DBMemoEh1: TDBMemoEh
       Left = 120
-      Top = 125
+      Top = 197
       Width = 217
       Height = 89
       AutoSize = False
@@ -128,16 +153,39 @@ object form_edit_MTO: Tform_edit_MTO
       TabOrder = 3
       Visible = True
     end
+    object DBEditEh3: TDBEditEh
+      Left = 120
+      Top = 53
+      Width = 121
+      Height = 21
+      DataField = 'Tip'
+      DataSource = DM.ds_MTO
+      DynProps = <>
+      EditButtons = <>
+      TabOrder = 4
+      Visible = True
+    end
+    object DBEditEh4: TDBEditEh
+      Left = 120
+      Top = 88
+      Width = 121
+      Height = 21
+      DataField = 'GOST'
+      DataSource = DM.ds_MTO
+      DynProps = <>
+      EditButtons = <>
+      TabOrder = 5
+      Visible = True
+    end
   end
   object GroupBox2: TGroupBox
     Left = 0
-    Top = 228
+    Top = 297
     Width = 356
     Height = 37
     Align = alBottom
     TabOrder = 1
-    ExplicitTop = 350
-    ExplicitWidth = 457
+    ExplicitTop = 228
     object BitBtn1: TBitBtn
       Left = 16
       Top = 6

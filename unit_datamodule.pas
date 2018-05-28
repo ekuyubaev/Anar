@@ -3,7 +3,7 @@ unit unit_datamodule;
 interface
 
 uses
-  System.SysUtils, System.Classes, Data.DB, Data.Win.ADODB;
+  System.SysUtils, System.Classes, Data.DB, Data.Win.ADODB, Dialogs;
 
 type
   TDM = class(TDataModule)
@@ -229,11 +229,20 @@ type
     q_otchety: TADOQuery;
     q_temp_reps: TADOQuery;
     q_rabotaOtvetstvennyi: TWideStringField;
+    q_prognoz_gsm: TADOQuery;
+    q_prognoz: TADOQuery;
+    q_sredstvo_izmereniaOtvetstvennyi: TWideStringField;
+    q_sredstvo_izmereniaIzgotovitel: TWideStringField;
+    q_GSMTip: TWideStringField;
+    q_GSMGOST: TWideStringField;
+    q_MTOTip: TWideStringField;
+    q_MTOGOST: TWideStringField;
     procedure q_narabotkaBeforePost(DataSet: TDataSet);
     procedure q_prihod_MTOBeforePost(DataSet: TDataSet);
     procedure q_prihod_GSMBeforePost(DataSet: TDataSet);
     procedure q_rashod_MTOBeforePost(DataSet: TDataSet);
     procedure q_rashod_GSMBeforePost(DataSet: TDataSet);
+    procedure q_rabotaBeforePost(DataSet: TDataSet);
   private
     { Private declarations }
   public
@@ -324,6 +333,26 @@ begin
                       + DataSet.FieldByName('Kolichestvo').AsString
                       + ' Where ID_MTO = ' + q_MTO.FieldByName('ID_MTO').AsString;
       q_temp.ExecSQL;
+  end;
+end;
+
+procedure TDM.q_rabotaBeforePost(DataSet: TDataSet);
+begin
+  if DataSet.State = dsInsert then
+  begin
+    if q_temp.Active then q_temp.Close;
+    q_temp.SQL.Text := 'Select * From Pusk ' +
+                       'Where Data_okonchanie >= ' + QuotedStr(FormatDateTime('yyyy-mm-dd', DataSet.FieldByName('Nachalo').AsDateTime)) + ' ' +
+                       'and Data_nachalo <= ' +  QuotedStr(FormatDateTime('yyyy-mm-dd', DataSet.FieldByName('Okonchanie').AsDateTime));
+    q_temp.Open;
+
+    if (q_temp.RecordCount > 0) then
+    begin
+      ShowMessage('На выбранный период запланированы пуски.' + #13 +
+                  'Пожалуйста измените даты' + #13 +
+                  'Вы можете просмотреть диаграмму Ганта для выбора подходящей даты.');
+      Abort;
+    end;
   end;
 end;
 

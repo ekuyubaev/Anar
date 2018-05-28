@@ -273,7 +273,7 @@ object form_rabota: Tform_rabota
     object BitBtn1: TBitBtn
       Left = 16
       Top = 4
-      Width = 90
+      Width = 70
       Height = 25
       Caption = #1044#1086#1073#1072#1074#1080#1090#1100
       Font.Charset = DEFAULT_CHARSET
@@ -286,9 +286,9 @@ object form_rabota: Tform_rabota
       OnClick = BitBtn1Click
     end
     object BitBtn2: TBitBtn
-      Left = 120
+      Left = 92
       Top = 4
-      Width = 90
+      Width = 70
       Height = 25
       Caption = #1048#1079#1084#1077#1085#1080#1090#1100
       Font.Charset = DEFAULT_CHARSET
@@ -301,9 +301,9 @@ object form_rabota: Tform_rabota
       OnClick = BitBtn2Click
     end
     object BitBtn3: TBitBtn
-      Left = 224
+      Left = 168
       Top = 4
-      Width = 90
+      Width = 70
       Height = 25
       Caption = #1059#1076#1072#1083#1080#1090#1100
       Font.Charset = DEFAULT_CHARSET
@@ -316,8 +316,8 @@ object form_rabota: Tform_rabota
       OnClick = BitBtn3Click
     end
     object BitBtn4: TBitBtn
-      Left = 368
-      Top = 6
+      Left = 264
+      Top = 4
       Width = 40
       Height = 25
       Glyph.Data = {
@@ -365,8 +365,8 @@ object form_rabota: Tform_rabota
       OnClick = BitBtn4Click
     end
     object BitBtn5: TBitBtn
-      Left = 424
-      Top = 6
+      Left = 320
+      Top = 4
       Width = 40
       Height = 25
       Glyph.Data = {
@@ -414,8 +414,8 @@ object form_rabota: Tform_rabota
       OnClick = BitBtn5Click
     end
     object BitBtn6: TBitBtn
-      Left = 480
-      Top = 6
+      Left = 376
+      Top = 4
       Width = 40
       Height = 25
       Glyph.Data = {
@@ -464,8 +464,8 @@ object form_rabota: Tform_rabota
       OnClick = BitBtn6Click
     end
     object BitBtn7: TBitBtn
-      Left = 536
-      Top = 6
+      Left = 432
+      Top = 4
       Width = 40
       Height = 25
       Glyph.Data = {

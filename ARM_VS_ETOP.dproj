@@ -266,6 +266,14 @@
             <Form>form_login</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="unit_prognoz.pas">
+            <Form>form_prognoz</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="unit_gant.pas">
+            <Form>form_gant</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

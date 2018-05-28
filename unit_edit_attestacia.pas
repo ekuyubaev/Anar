@@ -76,19 +76,30 @@ end;
 
 procedure Tform_edit_attestacia.BitBtn3Click(Sender: TObject);
 Var ID_vid_attestacia :String;
+    attestDateStr : String;
 begin
   if DBLookupComboBoxEh1.IsEmpty or DBDateTimeEditEh1.IsEmpty then
   begin
     ShowMessage('Введите дату и вид аттестации');
     exit;
   end;
-  if DM.q_attestacia.State in [dsInsert] then DM.q_attestacia.Post;
 
+  if DBDateTimeEditEh1.Value < now() then
+  begin
+    ShowMessage('Нельзя менять данные для прошедшей аттестации!');
+    exit;
+  end;
+
+  if DM.q_attestacia.State in [dsInsert] then DM.q_attestacia.Post;
+  attestDateStr := FormatDateTime('yyyy-mm-dd', dm.q_attestacia.FieldByName('Data_attestacia').AsDateTime);
   ID_vid_attestacia := self.DBLookupComboboxEh1.KeyValue;
+
   if DM.q_vybor_sotrudnik_attestacia.active then  DM.q_vybor_sotrudnik_attestacia.Close;
+
   if DM.q_temp.Active then DM.q_temp.Close;
   DM.q_temp.SQL.Text := 'Delete From Vybor';
   DM.q_temp.ExecSQL;
+
   DM.q_temp.SQL.Text := 'Insert into Vybor (ID_sotrudnik, ID_dolzhnost)'
                       +' Select ID_sotrudnik, ID_dolzhnost'
                       +' From Sotrudnik S '
@@ -96,7 +107,7 @@ begin
                       +' (Select Distinct ID_sotrudnik'
                       +' From Zachet Z inner join Attestacia A'
                       +' on Z.ID_attestacia = A.ID_attestacia'
-                      +' Where A.Data_attestacia > ADDDATE(curdate(),INTERVAL -12 MONTH)'
+                      +' Where A.Data_attestacia > ADDDATE('+ QuotedStr(attestDateStr) +',INTERVAL -12 MONTH)'
                       +' and A.ID_vid_attestacia = '+ ID_vid_attestacia +')';
   DM.q_temp.ExecSQL;
   DM.q_vybor_sotrudnik_attestacia.Open;
