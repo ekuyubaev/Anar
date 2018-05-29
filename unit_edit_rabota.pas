@@ -62,6 +62,7 @@ type
     BitBtn12: TBitBtn;
     DBEditEh1: TDBEditEh;
     Label8: TLabel;
+    BitBtn13: TBitBtn;
     procedure FormResize(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -76,6 +77,7 @@ type
     procedure BitBtn9Click(Sender: TObject);
     procedure BitBtn11Click(Sender: TObject);
     procedure BitBtn12Click(Sender: TObject);
+    procedure BitBtn13Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -90,7 +92,7 @@ implementation
 {$R *.dfm}
 
 uses unit_datamodule, DB, unit_vybor_ispolnitel, unit_vybor_material,
-  unit_vybor_GSM, unit_naimenovanie_rabot, Unit1;
+  unit_vybor_GSM, unit_naimenovanie_rabot, Unit1, ComObj, DateUtils;
 
 procedure Tform_edit_rabota.BitBtn10Click(Sender: TObject);
 begin
@@ -116,6 +118,100 @@ begin
 
   DM.q_rabota.recNo := dm.q_temp.FieldByName('ID').AsInteger;
   DM.q_rabota.Edit;
+end;
+
+procedure Tform_edit_rabota.BitBtn13Click(Sender: TObject);
+var MSWord, bookmarks: Variant;
+    pathToTemplate, tempStr: String;
+    i : integer;
+
+begin
+  MsWord := CreateOleObject('Word.Application');
+  pathToTemplate := ExtractFilePath(Application.ExeName) + 'otchety\Наряд-допуск.dot';
+  MsWord.Documents.Add(pathToTemplate);
+
+  MsWord.selection.end := 0;
+  MsWord.selection.start := MsWord.selection.end;
+  tempStr := DBEditEh4.Text;
+  MsWord.Selection.find.execute (FindText := 'REGNUM', replacewith := tempStr);
+
+  MsWord.selection.end := 0;
+  MsWord.selection.start := MsWord.selection.end;
+  MsWord.Selection.find.execute (FindText := 'NARIADNUM', replacewith := tempStr);
+
+
+  MsWord.selection.end := 0;
+  MsWord.selection.start := MsWord.selection.end;
+  tempStr := dm.q_rabota.fieldbyName('Otvetstvennyi').AsString;
+  MsWord.Selection.find.execute (FindText := 'OTVETSTVENNYI', replacewith := tempStr);
+
+  MsWord.selection.end := 0;
+  MsWord.selection.start := MsWord.selection.end;
+  MsWord.Selection.find.execute (FindText := 'OTVETSTVENNYI', replacewith := tempStr);
+
+
+  MsWord.selection.end := 0;
+  MsWord.selection.start := MsWord.selection.end;
+  tempStr := IntToStr(dm.q_ispolnitel.RecordCount);
+  MsWord.Selection.find.execute (FindText := 'KOLBRIG', replacewith := tempStr);
+
+  MsWord.selection.end := 0;
+  MsWord.selection.start := MsWord.selection.end;
+  MsWord.Selection.find.execute (FindText := 'KOLBRIG', replacewith := tempStr);
+
+  MsWord.selection.end := 0;
+  MsWord.selection.start := MsWord.selection.end;
+  tempStr := DBLookupComboboxEh3.Text;
+  MsWord.Selection.find.execute (FindText := 'NAIMENOVANIERABOTY', replacewith := tempStr);
+
+  MsWord.selection.end := 0;
+  MsWord.selection.start := MsWord.selection.end;
+  tempStr := '';
+  if (not DBDateTimeEditEh1.IsEmpty) then tempStr := Format('%.*d',[2,DayOf(DBDateTimeEditEh1.Value)]);
+  MsWord.Selection.find.execute (FindText := 'startd', replacewith := tempStr);
+
+  MsWord.selection.end := 0;
+  MsWord.selection.start := MsWord.selection.end;
+  tempStr := '';
+  if (not DBDateTimeEditEh1.IsEmpty) then tempStr := Format('%.*d',[2, MonthOf(DBDateTimeEditEh1.Value)]);
+  MsWord.Selection.find.execute (FindText := 'startm', replacewith := tempStr);
+
+  MsWord.selection.end := 0;
+  MsWord.selection.start := MsWord.selection.end;
+  tempStr := '';
+  if (not DBDateTimeEditEh1.IsEmpty) then tempStr := IntToStr(YearOf(DBDateTimeEditEh1.Value));
+  MsWord.Selection.find.execute (FindText := 'starty', replacewith := tempStr);
+
+  MsWord.selection.end := 0;
+  MsWord.selection.start := MsWord.selection.end;
+  tempStr := '';
+  if (not DBDateTimeEditEh2.IsEmpty) then tempStr := Format('%.*d',[2,DayOf(DBDateTimeEditEh2.Value)]);
+  MsWord.Selection.find.execute (FindText := 'endd', replacewith := tempStr);
+
+  MsWord.selection.end := 0;
+  MsWord.selection.start := MsWord.selection.end;
+  tempStr := '';
+  if (not DBDateTimeEditEh2.IsEmpty) then tempStr := Format('%.*d',[2,MonthOf(DBDateTimeEditEh2.Value)]);
+  MsWord.Selection.find.execute (FindText := 'endm', replacewith := tempStr);
+
+  MsWord.selection.end := 0;
+  MsWord.selection.start := MsWord.selection.end;
+  tempStr := '';
+  if (not DBDateTimeEditEh2.IsEmpty) then tempStr := IntToStr(YearOf(DBDateTimeEditEh2.Value));
+  MsWord.Selection.find.execute (FindText := 'endy', replacewith := tempStr);
+
+  for i := 1 to dm.q_ispolnitel.RecordCount do
+  begin
+      dm.q_ispolnitel.RecNo := i;
+
+      MsWord.ActiveDocument.Tables.Item(2).Rows.Add(EmptyParam);
+
+      MsWord.ActiveDocument.Tables.Item(2).Cell(i+1,1).Range.Text := dm.q_ispolnitel.FieldByName('Sotrudnik').AsString;
+      MsWord.ActiveDocument.Tables.Item(2).Cell(i+1,2).Range.Text := dm.q_ispolnitel.FieldByName('Dolzhnost').AsString;
+  end;
+
+  MsWord.ActiveDocument.Range(0, 0).Select;
+  MsWord.Visible := True;
 end;
 
 procedure Tform_edit_rabota.BitBtn1Click(Sender: TObject);

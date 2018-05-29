@@ -404,7 +404,7 @@ object form_edit_rabota: Tform_edit_rabota
         object BitBtn1: TBitBtn
           Left = 16
           Top = 6
-          Width = 90
+          Width = 80
           Height = 25
           Caption = #1057#1086#1093#1088#1072#1085#1080#1090#1100
           Font.Charset = DEFAULT_CHARSET
@@ -417,9 +417,9 @@ object form_edit_rabota: Tform_edit_rabota
           OnClick = BitBtn1Click
         end
         object BitBtn2: TBitBtn
-          Left = 120
+          Left = 102
           Top = 6
-          Width = 90
+          Width = 80
           Height = 25
           Caption = #1054#1090#1084#1077#1085#1080#1090#1100
           Font.Charset = DEFAULT_CHARSET
@@ -432,11 +432,10 @@ object form_edit_rabota: Tform_edit_rabota
           OnClick = BitBtn2Click
         end
         object BitBtn12: TBitBtn
-          Left = 383
+          Left = 188
           Top = 6
-          Width = 90
+          Width = 80
           Height = 25
-          Anchors = [akTop, akRight]
           Caption = #1050#1086#1087#1080#1103
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
@@ -446,6 +445,22 @@ object form_edit_rabota: Tform_edit_rabota
           ParentFont = False
           TabOrder = 2
           OnClick = BitBtn12Click
+        end
+        object BitBtn13: TBitBtn
+          Left = 372
+          Top = 6
+          Width = 100
+          Height = 25
+          Anchors = [akTop, akRight]
+          Caption = #1053#1072#1088#1103#1076'-'#1076#1086#1087#1091#1089#1082
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 3
+          OnClick = BitBtn13Click
         end
       end
     end
