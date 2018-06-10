@@ -15,6 +15,7 @@ object form_edit_rabota: Tform_edit_rabota
   Position = poMainFormCenter
   WindowState = wsMaximized
   OnClose = FormClose
+  OnCreate = FormCreate
   OnResize = FormResize
   PixelsPerInch = 96
   TextHeight = 13
@@ -378,15 +379,18 @@ object form_edit_rabota: Tform_edit_rabota
           TabOrder = 13
           Visible = True
         end
-        object DBEditEh1: TDBEditEh
+        object DBLookupComboboxEh4: TDBLookupComboboxEh
           Left = 16
-          Top = 210
+          Top = 208
           Width = 256
           Height = 21
+          DynProps = <>
           DataField = 'Otvetstvennyi'
           DataSource = DM.ds_rabota
-          DynProps = <>
           EditButtons = <>
+          KeyField = 'FIO'
+          ListField = 'FIO'
+          ListSource = DM.ds_sotrudnik
           TabOrder = 14
           Visible = True
         end

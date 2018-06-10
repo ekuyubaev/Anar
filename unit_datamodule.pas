@@ -237,6 +237,8 @@ type
     q_GSMGOST: TWideStringField;
     q_MTOTip: TWideStringField;
     q_MTOGOST: TWideStringField;
+    qTempJobs: TADOQuery;
+    qTempLaunches: TADOQuery;
     procedure q_narabotkaBeforePost(DataSet: TDataSet);
     procedure q_prihod_MTOBeforePost(DataSet: TDataSet);
     procedure q_prihod_GSMBeforePost(DataSet: TDataSet);

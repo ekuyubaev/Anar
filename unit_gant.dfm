@@ -47,8 +47,8 @@ object form_gant: Tform_gant
         Marks.Callout.Arrow.Visible = True
         Marks.Visible = False
         ClickableLine = False
-        Pointer.Brush.Gradient.EndColor = 10708548
-        Pointer.Gradient.EndColor = 10708548
+        Pointer.Brush.Gradient.EndColor = 11048782
+        Pointer.Gradient.EndColor = 11048782
         Pointer.InflateMargins = True
         Pointer.Style = psRectangle
         Pointer.Visible = True
@@ -130,6 +130,37 @@ object form_gant: Tform_gant
       Date = 43246.806280266200000000
       Time = 43246.806280266200000000
       TabOrder = 2
+    end
+    object BitBtn2: TBitBtn
+      Left = 400
+      Top = 18
+      Width = 169
+      Height = 25
+      Caption = #1055#1088#1086#1074#1077#1088#1080#1090#1100' '#1085#1072' '#1085#1072#1082#1083#1072#1076#1082#1080
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 3
+      OnClick = BitBtn2Click
+    end
+    object BitBtn3: TBitBtn
+      Left = 592
+      Top = 18
+      Width = 97
+      Height = 25
+      Caption = #1055#1077#1088#1077#1089#1095#1080#1090#1072#1090#1100
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 4
+      Visible = False
+      OnClick = BitBtn3Click
     end
   end
 end

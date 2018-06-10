@@ -24,7 +24,6 @@ object form_edit_sredstvo_izmerenia: Tform_edit_sredstvo_izmerenia
     Height = 540
     Align = alLeft
     TabOrder = 0
-    ExplicitHeight = 486
     object Label1: TLabel
       Left = 74
       Top = 19
@@ -311,7 +310,6 @@ object form_edit_sredstvo_izmerenia: Tform_edit_sredstvo_izmerenia
       Height = 40
       Align = alBottom
       TabOrder = 10
-      ExplicitTop = 444
       object BitBtn1: TBitBtn
         Left = 16
         Top = 6
@@ -382,7 +380,6 @@ object form_edit_sredstvo_izmerenia: Tform_edit_sredstvo_izmerenia
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 1
-    ExplicitHeight = 486
     object DBGridEh1: TDBGridEh
       Left = 2
       Top = 15

@@ -14,6 +14,7 @@ object form_vybor_ispolnitel: Tform_vybor_ispolnitel
   Font.Style = []
   OldCreateOrder = False
   Position = poMainFormCenter
+  OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 13
   object DBGridEh1: TDBGridEh
@@ -159,6 +160,7 @@ object form_vybor_ispolnitel: Tform_vybor_ispolnitel
         EditButtons = <>
         FieldName = 'Dolzhnost'
         Footers = <>
+        ReadOnly = True
         Title.Alignment = taCenter
         Title.Caption = #1044#1086#1083#1078#1085#1086#1089#1090#1100
         Title.Font.Charset = DEFAULT_CHARSET
@@ -193,7 +195,6 @@ object form_vybor_ispolnitel: Tform_vybor_ispolnitel
     Height = 296
     Align = alLeft
     TabOrder = 2
-    ExplicitHeight = 272
     object BitBtn1: TBitBtn
       Left = 6
       Top = 72

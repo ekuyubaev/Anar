@@ -1352,4 +1352,16 @@ object DM: TDM
     Left = 560
     Top = 592
   end
+  object qTempJobs: TADOQuery
+    Connection = conn_main
+    Parameters = <>
+    Left = 632
+    Top = 536
+  end
+  object qTempLaunches: TADOQuery
+    Connection = conn_main
+    Parameters = <>
+    Left = 696
+    Top = 536
+  end
 end

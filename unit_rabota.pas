@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls,
   DBGridEhGrouping, ToolCtrlsEh, DBGridEhToolCtrls, DynVarsEh, EhLibVCL,
-  GridsEh, DBAxisGridsEh, DBGridEh, Vcl.Buttons;
+  GridsEh, DBAxisGridsEh, DBGridEh, Vcl.Buttons, Data.Win.ADODB;
 
 type
   Tform_rabota = class(TForm)
@@ -53,6 +53,11 @@ procedure Tform_rabota.BitBtn2Click(Sender: TObject);
 begin
   DM.q_rabota.Edit;
   form_edit_rabota.ShowModal;
+  if (not dm.q_rabota.FieldByName('Nomer_nariad').IsNull)
+    and (Length(dm.q_rabota.FieldByName('Nomer_nariad').AsString) > 0) then
+  begin
+    form_edit_rabota.editable := false;
+  end;
 end;
 
 procedure Tform_rabota.BitBtn3Click(Sender: TObject);

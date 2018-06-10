@@ -60,10 +60,10 @@ type
     BitBtn11: TBitBtn;
     DBLookupComboboxEh3: TDBLookupComboboxEh;
     BitBtn12: TBitBtn;
-    DBEditEh1: TDBEditEh;
     Label8: TLabel;
     BitBtn13: TBitBtn;
     BitBtn14: TBitBtn;
+    DBLookupComboboxEh4: TDBLookupComboboxEh;
     procedure FormResize(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -80,10 +80,12 @@ type
     procedure BitBtn12Click(Sender: TObject);
     procedure BitBtn13Click(Sender: TObject);
     procedure BitBtn14Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
     { Public declarations }
+    editable : boolean;
   end;
 
 var
@@ -98,6 +100,12 @@ uses unit_datamodule, DB, unit_vybor_ispolnitel, unit_vybor_material,
 
 procedure Tform_edit_rabota.BitBtn10Click(Sender: TObject);
 begin
+  if not editable then
+  begin
+    ShowMessage('Редактирование работ по нарядам не допускается!');
+    Exit;
+  end;
+
   DM.q_rashod_GSM.Edit;
   form_vybor_GSM.ShowModal;
 end;
@@ -233,7 +241,7 @@ begin
 
   MsWord.selection.end := 0;
   MsWord.selection.start := MsWord.selection.end;
-  tempStr := DBEditEh1.Text;
+  tempStr := DBLookupcomboBoxEh4.Text;
   MsWord.Selection.find.execute (FindText := 'OTVETSTVENNYI', replacewith := tempStr);
 
   MsWord.selection.end := 0;
@@ -335,6 +343,12 @@ end;
 
 procedure Tform_edit_rabota.BitBtn1Click(Sender: TObject);
 begin
+  if not editable then
+  begin
+    ShowMessage('Редактирование работ по нарядам не допускается!');
+    Exit;
+  end;
+
   if DM.q_rabota.State in [dsEdit, dsInsert] then DM.q_rabota.Post;
   DM.refresh_rabota;
   self.Close;
@@ -347,6 +361,12 @@ end;
 
 procedure Tform_edit_rabota.BitBtn3Click(Sender: TObject);
 begin
+  if not editable then
+  begin
+    ShowMessage('Редактирование работ по нарядам не допускается!');
+    Exit;
+  end;
+
   if DM.q_rabota.State in [dsInsert] then DM.q_rabota.Post;
 
   if DM.q_temp.Active then DM.q_temp.Close;
@@ -360,10 +380,10 @@ begin
                       +' (Select Distinct ID_sotrudnik'
                       +' From Ispolnitel I inner join Rabota R'
                       +' on I.ID_rabota = R.ID_rabota'
-                      +' Where R.Okonchanie >= str_to_date("'
-                      + DM.q_rabota.FieldByName('Nachalo').AsString + '", "%d.%m.%Y")'
-                      +' and R.Nachalo  <= str_to_date("'
-                      + DM.q_rabota.FieldByName('Okonchanie').AsString + '","%d.%m.%Y") '
+                      +' Where R.Okonchanie >= '
+                      + QuotedStr(FormatDateTime('yyyy-mm-dd',DM.q_rabota.FieldByName('Nachalo').AsDateTime))
+                      +' and R.Nachalo  <= '
+                      + QuotedStr(FormatDateTime('yyyy-mm-dd',DM.q_rabota.FieldByName('Okonchanie').AsDateTime))
                       +' and R.Vypolnena is false)';
   DM.q_temp.ExecSQL;
 
@@ -375,36 +395,71 @@ end;
 
 procedure Tform_edit_rabota.BitBtn4Click(Sender: TObject);
 begin
+  if not editable then
+  begin
+    ShowMessage('Редактирование работ по нарядам не допускается!');
+    Exit;
+  end;
+
   if (MessageDlg('Удалить запись?', mtConfirmation, [mbYes,mbNo], 0) = mrYes)
     then DM.q_ispolnitel.Delete;
 end;
 
 procedure Tform_edit_rabota.BitBtn5Click(Sender: TObject);
 begin
+  if not editable then
+  begin
+    ShowMessage('Редактирование работ по нарядам не допускается!');
+    Exit;
+  end;
+
   DM.q_rashod_MTO.Insert;
   form_vybor_material.ShowModal;
 end;
 
 procedure Tform_edit_rabota.BitBtn6Click(Sender: TObject);
 begin
+  if not editable then
+  begin
+    ShowMessage('Редактирование работ по нарядам не допускается!');
+    Exit;
+  end;
+
   if (MessageDlg('Удалить запись?', mtConfirmation, [mbYes,mbNo], 0) = mrYes)
     then DM.q_rashod_MTO.Delete;
 end;
 
 procedure Tform_edit_rabota.BitBtn7Click(Sender: TObject);
 begin
+  if not editable then
+  begin
+    ShowMessage('Редактирование работ по нарядам не допускается!');
+    Exit;
+  end;
   DM.q_rashod_MTO.Edit;
   form_vybor_material.ShowModal;
 end;
 
 procedure Tform_edit_rabota.BitBtn8Click(Sender: TObject);
 begin
+  if not editable then
+  begin
+    ShowMessage('Редактирование работ по нарядам не допускается!');
+    Exit;
+  end;
+
   DM.q_rashod_GSM.Insert;
   form_vybor_GSM.ShowModal;
 end;
 
 procedure Tform_edit_rabota.BitBtn9Click(Sender: TObject);
 begin
+  if not editable then
+  begin
+    ShowMessage('Редактирование работ по нарядам не допускается!');
+    Exit;
+  end;
+
   if (MessageDlg('Удалить запись?', mtConfirmation, [mbYes,mbNo], 0) = mrYes)
     then DM.q_rashod_GSM.Delete;
 end;
@@ -413,6 +468,12 @@ procedure Tform_edit_rabota.FormClose(Sender: TObject;
   var Action: TCloseAction);
 begin
   if DM.q_rabota.State in [dsEdit, dsInsert] then DM.q_rabota.Cancel;
+  editable := true;
+end;
+
+procedure Tform_edit_rabota.FormCreate(Sender: TObject);
+begin
+  editable := true;
 end;
 
 procedure Tform_edit_rabota.FormResize(Sender: TObject);

@@ -60,6 +60,7 @@ uses unit_datamodule;
 
 procedure Tform_edit_sredstvo_izmerenia.BitBtn1Click(Sender: TObject);
 begin
+  if DM.q_poverka.State in [dsEdit, dsInsert] then DM.q_poverka.Post;
   if DM.q_sredstvo_izmerenia.State in [dsEdit, dsInsert] then DM.q_sredstvo_izmerenia.Post;
   self.Close;
 end;
