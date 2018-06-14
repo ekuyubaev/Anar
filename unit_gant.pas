@@ -157,10 +157,10 @@ begin
 
   if isOverlaps then
   begin
-    ShowMessage('Есть накладки по датам.');
+    ShowMessage('Есть наложения по датам.');
     BitBtn3.Visible := true;
   end
-    else ShowMessage('Накладок по датам нет.');
+    else ShowMessage('наложений по датам нет.');
 end;
 
 

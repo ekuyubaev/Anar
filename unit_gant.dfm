@@ -47,8 +47,8 @@ object form_gant: Tform_gant
         Marks.Callout.Arrow.Visible = True
         Marks.Visible = False
         ClickableLine = False
-        Pointer.Brush.Gradient.EndColor = 11048782
-        Pointer.Gradient.EndColor = 11048782
+        Pointer.Brush.Gradient.EndColor = 9300723
+        Pointer.Gradient.EndColor = 9300723
         Pointer.InflateMargins = True
         Pointer.Style = psRectangle
         Pointer.Visible = True
@@ -136,7 +136,7 @@ object form_gant: Tform_gant
       Top = 18
       Width = 169
       Height = 25
-      Caption = #1055#1088#1086#1074#1077#1088#1080#1090#1100' '#1085#1072' '#1085#1072#1082#1083#1072#1076#1082#1080
+      Caption = #1055#1088#1086#1074#1077#1088#1080#1090#1100' '#1085#1072' '#1085#1072#1083#1086#1078#1077#1085#1080#1103
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
