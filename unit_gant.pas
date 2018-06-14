@@ -145,7 +145,9 @@ begin
       if ((dm.qTempJobs.FieldByName('Nachalo').AsDateTime >= dm.qTempLaunches.FieldByName('Data_nachalo').AsDateTime)
         and  (dm.qTempJobs.FieldByName('Nachalo').AsDateTime <= dm.qTempLaunches.FieldByName('Data_okonchanie').AsDateTime))
         or ((dm.qTempJobs.FieldByName('Okonchanie').AsDateTime >= dm.qTempLaunches.FieldByName('Data_nachalo').AsDateTime)
-        and  (dm.qTempJobs.FieldByName('Okonchanie').AsDateTime <= dm.qTempLaunches.FieldByName('Data_okonchanie').AsDateTime))  then
+        and  (dm.qTempJobs.FieldByName('Okonchanie').AsDateTime <= dm.qTempLaunches.FieldByName('Data_okonchanie').AsDateTime))
+        or ((dm.qTempJobs.FieldByName('Nachalo').AsDateTime <= dm.qTempLaunches.FieldByName('Data_nachalo').AsDateTime)
+        and  (dm.qTempJobs.FieldByName('Okonchanie').AsDateTime >= dm.qTempLaunches.FieldByName('Data_okonchanie').AsDateTime)) then
       begin
         isOverlaps := true;
       end;

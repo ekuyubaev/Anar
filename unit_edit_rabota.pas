@@ -384,7 +384,9 @@ begin
                       + QuotedStr(FormatDateTime('yyyy-mm-dd',DM.q_rabota.FieldByName('Nachalo').AsDateTime))
                       +' and R.Nachalo  <= '
                       + QuotedStr(FormatDateTime('yyyy-mm-dd',DM.q_rabota.FieldByName('Okonchanie').AsDateTime))
-                      +' and R.Vypolnena is false)';
+                      +' and R.Vypolnena is false) and ('
+                      +'ID_sotrudnik not in (Select ID_sotrudnik From Ispolnitel '
+                      +'Where ID_rabota = '+ DM.q_rabota.FieldByName('ID_rabota').asstring +'))';
   DM.q_temp.ExecSQL;
 
   if DM.q_vybor_ispolnitel.active then  DM.q_vybor_ispolnitel.Close;
