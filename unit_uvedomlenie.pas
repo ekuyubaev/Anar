@@ -53,14 +53,10 @@ begin
       and not form_uvedomlenie_poverka.Active then
   begin
     dm.q_uvedomlenie_rabota.SQL.Text := 'Select * '
-                  +'From (Select ID_oborudovanie, ID_naimenovanie, ID_vid_rabota, Nachalo, Vypolnena, max(Okonchanie) as MOR '
-                        +'From Rabota '
-                        +'Group by ID_oborudovanie, ID_naimenovanie) as R '
-                  +'left join naimenovanie_rabot as NR '
+                  +'From Rabota R left join naimenovanie_rabot as NR '
                   +'on NR.ID_naimenovanie = R.ID_naimenovanie '
                   +'Where (R.ID_vid_rabota = 1) and '
-                  +'( ( (R.MOR is null or R.MOR <= Now()) and R.Vypolnena <> 1) '
-                  +'or ( (MOR + interval NR.Periodichnost day) <= now() ) )';
+                  +'( (R.Okonchanie is null or R.Okonchanie <= Now()) and R.Vypolnena <> 1)';
     dm.q_uvedomlenie_rabota.Open;
 
     if dm.q_uvedomlenie_rabota.RecordCount > 0 then

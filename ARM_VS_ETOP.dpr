@@ -49,7 +49,9 @@ uses
   unit_otchety in 'unit_otchety.pas' {form_otchety},
   unit_login in 'unit_login.pas' {form_login},
   unit_prognoz in 'unit_prognoz.pas' {form_prognoz},
-  unit_gant in 'unit_gant.pas' {form_gant};
+  unit_gant in 'unit_gant.pas' {form_gant},
+  unit_edit_vydacha_ZIP in 'unit_edit_vydacha_ZIP.pas' {form_edit_vydacha_ZIP},
+  unit_napravlenie in 'unit_napravlenie.pas' {form_napravlenie};
 
 {$R *.res}
 
@@ -89,5 +91,7 @@ begin
   Application.CreateForm(Tform_naimenovanie_rabot, form_naimenovanie_rabot);
   Application.CreateForm(Tform_uvedomlenie_rabota, form_uvedomlenie_rabota);
   Application.CreateForm(Tform_uvedomlenie_poverka, form_uvedomlenie_poverka);
+  Application.CreateForm(Tform_edit_vydacha_ZIP, form_edit_vydacha_ZIP);
+  Application.CreateForm(Tform_napravlenie, form_napravlenie);
   Application.Run;
 end.

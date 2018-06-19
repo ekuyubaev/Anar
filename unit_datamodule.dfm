@@ -28,6 +28,7 @@ object DM: TDM
     Top = 72
   end
   object q_vid_attestacia: TADOQuery
+    Active = True
     Connection = conn_main
     CursorType = ctStatic
     Parameters = <>
@@ -430,6 +431,7 @@ object DM: TDM
     end
   end
   object q_vydacha_ZIP: TADOQuery
+    Active = True
     Connection = conn_main
     CursorType = ctStatic
     DataSource = ds_ZIP
@@ -447,6 +449,30 @@ object DM: TDM
       'Where ID_ZIP = :ID_ZIP')
     Left = 600
     Top = 160
+    object q_vydacha_ZIPID_vydacha_ZIP: TAutoIncField
+      FieldName = 'ID_vydacha_ZIP'
+      ReadOnly = True
+    end
+    object q_vydacha_ZIPID_ZIP: TIntegerField
+      FieldName = 'ID_ZIP'
+    end
+    object q_vydacha_ZIPID_rabota: TIntegerField
+      FieldName = 'ID_rabota'
+    end
+    object q_vydacha_ZIPData_vydano: TDateTimeField
+      FieldName = 'Data_vydano'
+    end
+    object q_vydacha_ZIPData_vozvrata: TDateTimeField
+      FieldName = 'Data_vozvrata'
+    end
+    object q_vydacha_ZIPOtvetstvennyi: TWideStringField
+      FieldName = 'Otvetstvennyi'
+      Size = 255
+    end
+    object q_vydacha_ZIPPrimechanie: TWideMemoField
+      FieldName = 'Primechanie'
+      BlobType = ftWideMemo
+    end
   end
   object ds_ZIP: TDataSource
     DataSet = q_ZIP
@@ -489,6 +515,9 @@ object DM: TDM
       KeyFields = 'ID_vid_attestacia'
       Size = 255
       Lookup = True
+    end
+    object q_attestaciaID_napravlenie: TIntegerField
+      FieldName = 'ID_napravlenie'
     end
   end
   object ds_attestacia: TDataSource
@@ -1363,5 +1392,21 @@ object DM: TDM
     Parameters = <>
     Left = 696
     Top = 536
+  end
+  object q_napravlenie: TADOQuery
+    Active = True
+    Connection = conn_main
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'Select * '
+      'From Napravlenie')
+    Left = 24
+    Top = 416
+  end
+  object ds_napravlenie: TDataSource
+    DataSet = q_napravlenie
+    Left = 24
+    Top = 472
   end
 end

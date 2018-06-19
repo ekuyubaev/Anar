@@ -103,18 +103,6 @@ object form_edit_prihod_MTO: Tform_edit_prihod_MTO
       TabOrder = 0
       Visible = True
     end
-    object DBEditEh1: TDBEditEh
-      Left = 120
-      Top = 55
-      Width = 185
-      Height = 21
-      DataField = 'Priniato_kem'
-      DataSource = DM.ds_prihod_MTO
-      DynProps = <>
-      EditButtons = <>
-      TabOrder = 1
-      Visible = True
-    end
     object DBEditEh2: TDBEditEh
       Left = 120
       Top = 96
@@ -124,7 +112,7 @@ object form_edit_prihod_MTO: Tform_edit_prihod_MTO
       DataSource = DM.ds_prihod_MTO
       DynProps = <>
       EditButtons = <>
-      TabOrder = 2
+      TabOrder = 1
       Visible = True
     end
     object DBLookupComboboxEh1: TDBLookupComboboxEh
@@ -136,7 +124,8 @@ object form_edit_prihod_MTO: Tform_edit_prihod_MTO
       DataField = 'EI'
       DataSource = DM.ds_prihod_MTO
       EditButtons = <>
-      TabOrder = 3
+      ReadOnly = True
+      TabOrder = 2
       Visible = True
     end
     object DBMemoEh1: TDBMemoEh
@@ -149,6 +138,21 @@ object form_edit_prihod_MTO: Tform_edit_prihod_MTO
       DataSource = DM.ds_prihod_MTO
       DynProps = <>
       EditButtons = <>
+      TabOrder = 3
+      Visible = True
+    end
+    object DBLookupComboboxEh2: TDBLookupComboboxEh
+      Left = 120
+      Top = 55
+      Width = 185
+      Height = 21
+      DynProps = <>
+      DataField = 'Priniato_kem'
+      DataSource = DM.ds_prihod_MTO
+      EditButtons = <>
+      KeyField = 'FIO'
+      ListField = 'FIO'
+      ListSource = DM.ds_sotrudnik
       TabOrder = 4
       Visible = True
     end

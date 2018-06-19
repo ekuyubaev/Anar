@@ -85,7 +85,6 @@ begin
 
     close;
   except
-    ShowMessage('Не удалось установить связь с БД.');
     exit;
   end;
 end;

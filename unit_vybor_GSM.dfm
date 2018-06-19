@@ -25,10 +25,6 @@ object form_vybor_GSM: Tform_vybor_GSM
     Height = 276
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = 112
-    ExplicitTop = 56
-    ExplicitWidth = 185
-    ExplicitHeight = 105
     object Label1: TLabel
       Left = 17
       Top = 16
@@ -172,7 +168,6 @@ object form_vybor_GSM: Tform_vybor_GSM
     Height = 32
     Align = alBottom
     TabOrder = 1
-    ExplicitTop = 320
     object BitBtn1: TBitBtn
       Left = 11
       Top = 3

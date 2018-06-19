@@ -3,7 +3,7 @@ object form_otchety: Tform_otchety
   Top = 0
   BorderStyle = bsSingle
   Caption = #1054#1090#1095#1077#1090#1099
-  ClientHeight = 226
+  ClientHeight = 274
   ClientWidth = 196
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -23,16 +23,14 @@ object form_otchety: Tform_otchety
     Left = 0
     Top = 0
     Width = 196
-    Height = 226
+    Height = 274
     ActivePage = ts_attest
     Align = alClient
     TabOrder = 0
-    ExplicitWidth = 185
-    ExplicitHeight = 161
+    ExplicitHeight = 226
     object ts_TO: TTabSheet
       Caption = 'ts_TO'
-      ExplicitWidth = 177
-      ExplicitHeight = 133
+      ExplicitHeight = 258
       object Label1: TLabel
         Left = 24
         Top = 16
@@ -90,8 +88,7 @@ object form_otchety: Tform_otchety
     object ts_attest: TTabSheet
       Caption = 'ts_attest'
       ImageIndex = 1
-      ExplicitWidth = 177
-      ExplicitHeight = 133
+      ExplicitHeight = 198
       object Label2: TLabel
         Left = 17
         Top = 16
@@ -107,10 +104,23 @@ object form_otchety: Tform_otchety
       end
       object Label3: TLabel
         Left = 17
-        Top = 72
+        Top = 128
         Width = 93
         Height = 13
         Caption = #1042#1080#1076' '#1072#1090#1090#1077#1089#1090#1072#1094#1080#1080
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label4: TLabel
+        Left = 17
+        Top = 74
+        Width = 77
+        Height = 13
+        Caption = #1053#1072#1087#1088#1072#1074#1083#1077#1085#1080#1077
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -11
@@ -129,7 +139,7 @@ object form_otchety: Tform_otchety
       end
       object BitBtn2: TBitBtn
         Left = 17
-        Top = 128
+        Top = 184
         Width = 141
         Height = 25
         Caption = #1057#1092#1086#1088#1084#1080#1088#1086#1074#1072#1090#1100
@@ -144,14 +154,14 @@ object form_otchety: Tform_otchety
       end
       object ProgressBar2: TProgressBar
         Left = 17
-        Top = 159
+        Top = 215
         Width = 141
         Height = 17
         TabOrder = 2
       end
       object DBLookupComboboxEh1: TDBLookupComboboxEh
         Left = 17
-        Top = 91
+        Top = 147
         Width = 141
         Height = 21
         DynProps = <>
@@ -161,6 +171,20 @@ object form_otchety: Tform_otchety
         ListField = 'Naimenovanie'
         ListSource = DM.ds_vid_attestacia
         TabOrder = 3
+        Visible = True
+      end
+      object DBLookupComboboxEh2: TDBLookupComboboxEh
+        Left = 17
+        Top = 88
+        Width = 141
+        Height = 21
+        DynProps = <>
+        DataField = ''
+        EditButtons = <>
+        KeyField = 'ID_napravlenie'
+        ListField = 'Napravlenie'
+        ListSource = DM.ds_napravlenie
+        TabOrder = 4
         Visible = True
       end
     end

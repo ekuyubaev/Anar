@@ -45,6 +45,12 @@ uses unit_datamodule, DB;
 
 procedure Tform_vybor_GSM.BitBtn1Click(Sender: TObject);
 begin
+  if DBEditEh1.IsEmpty then
+  begin
+    ShowMessage('Введите количество ГСМ!');
+    exit;
+  end;
+
   if DM.q_GSM.Lookup('ID_GSM',DBLookupComboboxEh1.KeyValue,'Kolichestvo') < DBEditEh1.Value then
   begin
     ShowMessage('Количества выбранного ГСМ недостаточно!');
@@ -66,7 +72,7 @@ begin
   if not DBLookupComboboxEh1.IsEmpty then
   begin
     DM.q_GSM.Locate('ID_GSM',DBLookupComboboxEh1.KeyValue,[]);
-    DBLookupComboboxEh2.KeyValue := DM.q_MTO.FieldByName('ID_EI').AsInteger;
+    DBLookupComboboxEh2.KeyValue := DM.q_GSM.FieldByName('ID_EI').AsInteger;
   end;
 end;
 

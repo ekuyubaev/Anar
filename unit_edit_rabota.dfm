@@ -1083,17 +1083,14 @@ object form_edit_rabota: Tform_edit_rabota
               Width = 90
             end
             item
+              LookupParams.KeyFieldNames = 'ID_EI'
+              LookupParams.LookupDataSet = DM.q_EI
+              LookupParams.LookupDisplayFieldName = 'Oboznachenie'
+              LookupParams.LookupKeyFieldNames = 'ID_EI'
+              Alignment = taCenter
               DynProps = <>
               EditButtons = <>
               FieldName = 'ID_EI'
-              Footers = <>
-              Visible = False
-            end
-            item
-              AutoFitColWidth = False
-              DynProps = <>
-              EditButtons = <>
-              FieldName = 'EI'
               Footers = <>
               Title.Alignment = taCenter
               Title.Caption = #1045#1076'. '#1080#1079#1084'.'
@@ -1103,7 +1100,6 @@ object form_edit_rabota: Tform_edit_rabota
               Title.Font.Name = 'Tahoma'
               Title.Font.Style = [fsBold]
               Title.TitleButton = True
-              Width = 70
             end
             item
               DynProps = <>

@@ -47,6 +47,7 @@ object form_attestacia: Tform_attestacia
           EditButtons = <>
           FieldName = 'ID_attestacia'
           Footers = <>
+          Title.Alignment = taCenter
           Title.Font.Charset = DEFAULT_CHARSET
           Title.Font.Color = clWindowText
           Title.Font.Height = -11
@@ -61,6 +62,7 @@ object form_attestacia: Tform_attestacia
           EditButtons = <>
           FieldName = 'Data_attestacia'
           Footers = <>
+          Title.Alignment = taCenter
           Title.Caption = #1044#1072#1090#1072' '#1087#1088#1086#1074#1077#1076#1077#1085#1080#1103
           Title.Font.Charset = DEFAULT_CHARSET
           Title.Font.Color = clWindowText
@@ -70,10 +72,31 @@ object form_attestacia: Tform_attestacia
           Width = 150
         end
         item
+          LookupParams.KeyFieldNames = 'ID_napravlenie'
+          LookupParams.LookupDataSet = DM.q_napravlenie
+          LookupParams.LookupDisplayFieldName = 'Napravlenie'
+          LookupParams.LookupKeyFieldNames = 'ID_napravlenie'
+          AutoFitColWidth = False
+          DynProps = <>
+          EditButtons = <>
+          FieldName = 'ID_napravlenie'
+          Footers = <>
+          Title.Alignment = taCenter
+          Title.Caption = #1053#1072#1087#1088#1072#1074#1083#1077#1085#1080#1077' '#1072#1090#1090#1077#1089#1090#1072#1094#1080#1080
+          Title.Font.Charset = DEFAULT_CHARSET
+          Title.Font.Color = clWindowText
+          Title.Font.Height = -11
+          Title.Font.Name = 'Tahoma'
+          Title.Font.Style = [fsBold]
+          Title.TitleButton = True
+          Width = 300
+        end
+        item
           DynProps = <>
           EditButtons = <>
           FieldName = 'ID_vid_attestacia'
           Footers = <>
+          Title.Alignment = taCenter
           Title.Font.Charset = DEFAULT_CHARSET
           Title.Font.Color = clWindowText
           Title.Font.Height = -11
@@ -88,6 +111,7 @@ object form_attestacia: Tform_attestacia
           EditButtons = <>
           FieldName = 'Vid_attestacia'
           Footers = <>
+          Title.Alignment = taCenter
           Title.Caption = #1042#1080#1076' '#1072#1090#1090#1077#1089#1090#1072#1094#1080#1080
           Title.Font.Charset = DEFAULT_CHARSET
           Title.Font.Color = clWindowText
@@ -102,6 +126,7 @@ object form_attestacia: Tform_attestacia
           EditButtons = <>
           FieldName = 'Primechanie'
           Footers = <>
+          Title.Alignment = taCenter
           Title.Caption = #1055#1088#1080#1084#1077#1095#1072#1085#1080#1077
           Title.Font.Charset = DEFAULT_CHARSET
           Title.Font.Color = clWindowText

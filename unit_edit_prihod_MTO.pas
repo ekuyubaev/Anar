@@ -19,10 +19,10 @@ type
     BitBtn1: TBitBtn;
     BitBtn2: TBitBtn;
     DBDateTimeEditEh1: TDBDateTimeEditEh;
-    DBEditEh1: TDBEditEh;
     DBEditEh2: TDBEditEh;
     DBLookupComboboxEh1: TDBLookupComboboxEh;
     DBMemoEh1: TDBMemoEh;
+    DBLookupComboboxEh2: TDBLookupComboboxEh;
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -65,24 +65,14 @@ end;
 
 procedure Tform_edit_prihod_MTO.FormActivate(Sender: TObject);
 begin
-  if state = 'view' then
-  begin
-      DBDateTimeEditEh1.ReadOnly := true;
-      DBEditEh1.ReadOnly := true;
-      DBEditEh2.ReadOnly := true;
-      DBLookupComboboxEh1.ReadOnly := true;
-  end;
+  if not dm.q_MTO.FieldByName('ID_EI').IsNull then
+      DBLookupComboBoxEh1.KeyValue := dm.q_MTO.FieldByName('ID_EI').AsInteger;
 end;
 
 procedure Tform_edit_prihod_MTO.FormClose(Sender: TObject;
   var Action: TCloseAction);
 begin
   if DM.q_prihod_MTO.State in [dsInsert, dsEdit] then  DM.q_prihod_MTO.Cancel;
-
-  DBDateTimeEditEh1.ReadOnly := false;
-  DBEditEh1.ReadOnly := false;
-  DBEditEh2.ReadOnly := false;
-  DBLookupComboboxEh1.ReadOnly := false;
 end;
 
 end.

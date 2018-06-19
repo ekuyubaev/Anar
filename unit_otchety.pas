@@ -22,6 +22,8 @@ type
     ProgressBar2: TProgressBar;
     Label3: TLabel;
     DBLookupComboboxEh1: TDBLookupComboboxEh;
+    Label4: TLabel;
+    DBLookupComboboxEh2: TDBLookupComboboxEh;
     procedure FormActivate(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -384,7 +386,7 @@ end;
 
 procedure Tform_otchety.BitBtn2Click(Sender: TObject);
 var MSWord, bookmarks: Variant;
-    pathToTemplate, attestDateStr, ID_vid_attestacia : String;
+    pathToTemplate, attestDateStr, ID_vid_attestacia, ID_napravlenie : String;
     attestDate : TDateTime;
     i : integer;
     step : real;
@@ -392,15 +394,16 @@ var MSWord, bookmarks: Variant;
     rowShift : integer;
 
 begin
-  if DBLookupComboboxEh1.IsEmpty then
+  if DBLookupComboboxEh1.IsEmpty or DBLookupComboboxEh2.IsEmpty then
   begin
-    ShowMessage('Выберите вид аттестации');
+    ShowMessage('Выберите вид и направление аттестации');
     Exit;
   end;
 
   attestDate := DateTimePicker1.DateTime;
   attestDateStr := FormatDateTime('yyyy-mm-dd', attestDate);
   ID_vid_attestacia := IntToStr(DBLookupComboboxEh1.KeyValue);
+  ID_napravlenie := IntToStr(DBLookupComboboxEh2.KeyValue);
 
   if dm.q_otchety.Active then dm.q_otchety.Close;
   dm.q_otchety.SQL.Text := 'Select * '
@@ -411,7 +414,8 @@ begin
                       +' From Zachet Z inner join Attestacia A'
                       +' on Z.ID_attestacia = A.ID_attestacia'
                       +' Where A.Data_attestacia > ADDDATE('+ QuotedStr(attestDateStr) +',INTERVAL -12 MONTH)'
-                      +' and A.ID_vid_attestacia = '+ ID_vid_attestacia +')';
+                      +' and A.ID_vid_attestacia = '+ ID_vid_attestacia
+                      +' and A.ID_napravlenie = ' + ID_napravlenie + ')';
   dm.q_otchety.Open;
 
 

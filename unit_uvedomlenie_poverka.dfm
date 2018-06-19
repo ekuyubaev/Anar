@@ -5,7 +5,7 @@ object form_uvedomlenie_poverka: Tform_uvedomlenie_poverka
   BorderStyle = bsSingle
   Caption = #1059#1074#1077#1076#1086#1084#1083#1077#1085#1080#1077' '#1086' '#1087#1086#1074#1077#1088#1082#1072#1093
   ClientHeight = 317
-  ClientWidth = 872
+  ClientWidth = 919
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -19,11 +19,11 @@ object form_uvedomlenie_poverka: Tform_uvedomlenie_poverka
   object GroupBox1: TGroupBox
     Left = 0
     Top = 276
-    Width = 872
+    Width = 919
     Height = 41
     Align = alBottom
     TabOrder = 0
-    ExplicitTop = 152
+    ExplicitWidth = 872
     object BitBtn1: TBitBtn
       Left = 16
       Top = 6
@@ -40,7 +40,7 @@ object form_uvedomlenie_poverka: Tform_uvedomlenie_poverka
       OnClick = BitBtn1Click
     end
     object BitBtn2: TBitBtn
-      Left = 768
+      Left = 808
       Top = 6
       Width = 90
       Height = 25
@@ -58,7 +58,7 @@ object form_uvedomlenie_poverka: Tform_uvedomlenie_poverka
   object DBGridEh1: TDBGridEh
     Left = 0
     Top = 0
-    Width = 872
+    Width = 919
     Height = 276
     Align = alClient
     DataSource = DM.ds_uvedomlenie_poverka
@@ -189,7 +189,7 @@ object form_uvedomlenie_poverka: Tform_uvedomlenie_poverka
         Title.Font.Name = 'Tahoma'
         Title.Font.Style = [fsBold]
         Title.TitleButton = True
-        Width = 100
+        Width = 90
       end
       item
         DynProps = <>
@@ -257,7 +257,7 @@ object form_uvedomlenie_poverka: Tform_uvedomlenie_poverka
         Title.Font.Name = 'Tahoma'
         Title.Font.Style = [fsBold]
         Title.TitleButton = True
-        Width = 120
+        Width = 170
       end>
     object RowDetailData: TRowDetailPanelControlEh
     end

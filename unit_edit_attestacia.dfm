@@ -4,7 +4,7 @@ object form_edit_attestacia: Tform_edit_attestacia
   BorderIcons = []
   BorderStyle = bsSingle
   Caption = #1044#1086#1073#1072#1074#1083#1077#1085#1080#1077'/'#1088#1077#1076#1072#1082#1090#1080#1088#1086#1074#1072#1085#1080#1077' '#1072#1090#1090#1077#1089#1090#1072#1094#1080#1081
-  ClientHeight = 513
+  ClientHeight = 538
   ClientWidth = 461
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -21,7 +21,7 @@ object form_edit_attestacia: Tform_edit_attestacia
     Left = 0
     Top = 0
     Width = 461
-    Height = 185
+    Height = 228
     Align = alTop
     TabOrder = 0
     object Label1: TLabel
@@ -38,11 +38,11 @@ object form_edit_attestacia: Tform_edit_attestacia
       ParentFont = False
     end
     object Label2: TLabel
-      Left = 28
+      Left = 44
       Top = 56
-      Width = 93
+      Width = 77
       Height = 13
-      Caption = #1042#1080#1076' '#1072#1090#1090#1077#1089#1090#1072#1094#1080#1080
+      Caption = #1053#1072#1087#1088#1072#1074#1083#1077#1085#1080#1077
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
@@ -52,10 +52,23 @@ object form_edit_attestacia: Tform_edit_attestacia
     end
     object Label3: TLabel
       Left = 51
-      Top = 96
+      Top = 136
       Width = 70
       Height = 13
       Caption = #1055#1088#1080#1084#1077#1095#1072#1085#1080#1077
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label4: TLabel
+      Left = 28
+      Top = 96
+      Width = 93
+      Height = 13
+      Caption = #1042#1080#1076' '#1072#1090#1090#1077#1089#1090#1072#1094#1080#1080
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
@@ -82,15 +95,18 @@ object form_edit_attestacia: Tform_edit_attestacia
       Width = 315
       Height = 21
       DynProps = <>
-      DataField = 'Vid_attestacia'
+      DataField = 'ID_napravlenie'
       DataSource = DM.ds_attestacia
       EditButtons = <>
+      KeyField = 'ID_napravlenie'
+      ListField = 'Napravlenie'
+      ListSource = DM.ds_napravlenie
       TabOrder = 1
       Visible = True
     end
     object DBMemoEh1: TDBMemoEh
       Left = 127
-      Top = 93
+      Top = 133
       Width = 315
       Height = 68
       AutoSize = False
@@ -101,12 +117,24 @@ object form_edit_attestacia: Tform_edit_attestacia
       TabOrder = 2
       Visible = True
     end
+    object DBLookupComboboxEh2: TDBLookupComboboxEh
+      Left = 127
+      Top = 93
+      Width = 315
+      Height = 21
+      DynProps = <>
+      DataField = 'Vid_attestacia'
+      DataSource = DM.ds_attestacia
+      EditButtons = <>
+      TabOrder = 3
+      Visible = True
+    end
   end
   object GroupBox2: TGroupBox
     Left = 0
-    Top = 185
+    Top = 228
     Width = 461
-    Height = 287
+    Height = 269
     Align = alClient
     Caption = #1057#1087#1080#1089#1086#1082' '#1072#1090#1090#1077#1089#1090#1091#1077#1084#1099#1093
     Font.Charset = DEFAULT_CHARSET
@@ -116,6 +144,8 @@ object form_edit_attestacia: Tform_edit_attestacia
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 1
+    ExplicitTop = 185
+    ExplicitHeight = 312
     object GroupBox4: TGroupBox
       Left = 2
       Top = 15
@@ -158,7 +188,7 @@ object form_edit_attestacia: Tform_edit_attestacia
       Left = 2
       Top = 49
       Width = 457
-      Height = 236
+      Height = 218
       Align = alClient
       AutoFitColWidths = True
       DataSource = DM.ds_zachet
@@ -274,11 +304,12 @@ object form_edit_attestacia: Tform_edit_attestacia
   end
   object GroupBox3: TGroupBox
     Left = 0
-    Top = 472
+    Top = 497
     Width = 461
     Height = 41
     Align = alBottom
     TabOrder = 2
+    ExplicitTop = 472
     object BitBtn1: TBitBtn
       Left = 16
       Top = 6

@@ -40,6 +40,7 @@ type
     N24: TMenuItem;
     N25: TMenuItem;
     N26: TMenuItem;
+    N27: TMenuItem;
     procedure N4Click(Sender: TObject);
     procedure N5Click(Sender: TObject);
     procedure N6Click(Sender: TObject);
@@ -63,6 +64,7 @@ type
     procedure N24Click(Sender: TObject);
     procedure N25Click(Sender: TObject);
     procedure N26Click(Sender: TObject);
+    procedure N27Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -94,7 +96,7 @@ implementation
 
 uses unit_dolzhnost, unit_vid_attestacia, unit_rezultat_attestacia,
   unit_sostoianie, unit_rezultat_poverka, unit_datamodule,
-  unit_EI, unit_vid_rabota, unit_naimenovanie_rabot;
+  unit_EI, unit_vid_rabota, unit_naimenovanie_rabot, unit_napravlenie;
 
 procedure Tform_main.FormActivate(Sender: TObject);
 begin
@@ -246,6 +248,11 @@ begin
     form_gant := Tform_gant.Create(Application);
     form_gant.Show;
   end;
+end;
+
+procedure Tform_main.N27Click(Sender: TObject);
+begin
+  form_napravlenie.ShowModal;
 end;
 
 procedure Tform_main.N4Click(Sender: TObject);

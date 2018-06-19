@@ -239,6 +239,16 @@ type
     q_MTOGOST: TWideStringField;
     qTempJobs: TADOQuery;
     qTempLaunches: TADOQuery;
+    q_vydacha_ZIPID_vydacha_ZIP: TAutoIncField;
+    q_vydacha_ZIPID_ZIP: TIntegerField;
+    q_vydacha_ZIPID_rabota: TIntegerField;
+    q_vydacha_ZIPData_vydano: TDateTimeField;
+    q_vydacha_ZIPData_vozvrata: TDateTimeField;
+    q_vydacha_ZIPOtvetstvennyi: TWideStringField;
+    q_vydacha_ZIPPrimechanie: TWideMemoField;
+    q_napravlenie: TADOQuery;
+    ds_napravlenie: TDataSource;
+    q_attestaciaID_napravlenie: TIntegerField;
     procedure q_narabotkaBeforePost(DataSet: TDataSet);
     procedure q_prihod_MTOBeforePost(DataSet: TDataSet);
     procedure q_prihod_GSMBeforePost(DataSet: TDataSet);
@@ -271,6 +281,7 @@ Procedure TDM.connect();
 begin
   if not self.conn_main.Connected then  self.conn_main.Open();
 
+  if not q_napravlenie.Active then q_napravlenie.Open;
   if not q_dolzhnost.Active then q_dolzhnost.Open;
   if not q_vid_attestacia.Active then q_vid_attestacia.Open;
   if not q_rezultat_attestacia.Active then q_rezultat_attestacia.Open;
@@ -283,7 +294,6 @@ begin
   if not q_EI.Active then q_EI.Open;
   if not q_sredstvo_izmerenia.Active then q_sredstvo_izmerenia.Open;
   if not q_ZIP.Active then q_ZIP.Open;
-  if not q_vydacha_ZIP.Active then q_vydacha_ZIP.Open;
   if not q_attestacia.Active then q_attestacia.Open;
   if not q_zachet.Active then q_zachet.Open;
   if not q_MTO.Active then q_MTO.Open;
@@ -300,6 +310,7 @@ begin
   if not q_vid_rabota.Active then q_vid_rabota.Open;
   if not q_naimenovanie_rabot.Active then q_naimenovanie_rabot.Open;
   if not q_poverka.Active then q_poverka.Open;
+  if not q_vydacha_ZIP.Active then q_vydacha_ZIP.Open;
 
 end;
 

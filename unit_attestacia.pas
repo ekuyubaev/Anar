@@ -89,6 +89,7 @@ begin
   begin
     form_otchety := Tform_otchety.Create(Application);
     form_otchety.WindowState := wsNormal;
+    form_otchety.DateTimePicker1.DateTime := now;
     form_otchety.Show;
     form_otchety.PageControl1.ActivePage := form_otchety.ts_attest;
   end;

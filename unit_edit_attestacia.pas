@@ -25,6 +25,8 @@ type
     DBDateTimeEditEh1: TDBDateTimeEditEh;
     DBLookupComboboxEh1: TDBLookupComboboxEh;
     DBMemoEh1: TDBMemoEh;
+    Label4: TLabel;
+    DBLookupComboboxEh2: TDBLookupComboboxEh;
     procedure BitBtn4Click(Sender: TObject);
     procedure BitBtn3Click(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
