@@ -51,13 +51,11 @@ end;
 
 procedure Tform_rabota.BitBtn2Click(Sender: TObject);
 begin
+  if (dm.q_rabota.FieldByName('Po_nariadu_dopusku').AsBoolean)
+    then form_edit_rabota.editable := false
+    else form_edit_rabota.editable := true;
   DM.q_rabota.Edit;
   form_edit_rabota.ShowModal;
-  if (not dm.q_rabota.FieldByName('Nomer_nariad').IsNull)
-    and (Length(dm.q_rabota.FieldByName('Nomer_nariad').AsString) > 0) then
-  begin
-    form_edit_rabota.editable := false;
-  end;
 end;
 
 procedure Tform_rabota.BitBtn3Click(Sender: TObject);

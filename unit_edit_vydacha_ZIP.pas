@@ -10,12 +10,10 @@ uses
 type
   Tform_edit_vydacha_ZIP = class(TForm)
     Label1: TLabel;
-    Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
     DBMemo1: TDBMemo;
     DBDateTimeEditEh1: TDBDateTimeEditEh;
-    DBDateTimeEditEh2: TDBDateTimeEditEh;
     BitBtn1: TBitBtn;
     BitBtn2: TBitBtn;
     DBLookupComboboxEh1: TDBLookupComboboxEh;

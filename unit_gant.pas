@@ -99,7 +99,7 @@ begin
 
   Chart1.Legend.Visible := false;
   Chart1.View3D := false;
-  Chart1.Title.Caption := 'Диаграмма Ганта для пусков и работ по ТО';
+  Chart1.Title.Caption := 'Диаграмма ТО и пусков';
   Chart1.BottomAxis.Title.Caption := 'Время';
   Chart1.LeftAxis.Title.Caption := 'Работы и пуски';
 
@@ -207,7 +207,9 @@ begin
       if ((dm.qTempJobs.FieldByName('Nachalo').AsDateTime >= dm.qTempLaunches.FieldByName('Data_nachalo').AsDateTime)
         and  (dm.qTempJobs.FieldByName('Nachalo').AsDateTime <= dm.qTempLaunches.FieldByName('Data_okonchanie').AsDateTime))
         or ((dm.qTempJobs.FieldByName('Okonchanie').AsDateTime >= dm.qTempLaunches.FieldByName('Data_nachalo').AsDateTime)
-        and  (dm.qTempJobs.FieldByName('Okonchanie').AsDateTime <= dm.qTempLaunches.FieldByName('Data_okonchanie').AsDateTime))  then
+        and  (dm.qTempJobs.FieldByName('Okonchanie').AsDateTime <= dm.qTempLaunches.FieldByName('Data_okonchanie').AsDateTime))
+        or ((dm.qTempJobs.FieldByName('Nachalo').AsDateTime <= dm.qTempLaunches.FieldByName('Data_nachalo').AsDateTime)
+        and  (dm.qTempJobs.FieldByName('Okonchanie').AsDateTime >= dm.qTempLaunches.FieldByName('Data_okonchanie').AsDateTime)) then
       begin
         if not isOverlaps then
         begin
@@ -257,7 +259,9 @@ begin
       if ((dm.qTempJobs.FieldByName('Nachalo').AsDateTime >= dm.qTempLaunches.FieldByName('Data_nachalo').AsDateTime)
         and  (dm.qTempJobs.FieldByName('Nachalo').AsDateTime <= dm.qTempLaunches.FieldByName('Data_okonchanie').AsDateTime))
         or ((dm.qTempJobs.FieldByName('Okonchanie').AsDateTime >= dm.qTempLaunches.FieldByName('Data_nachalo').AsDateTime)
-        and  (dm.qTempJobs.FieldByName('Okonchanie').AsDateTime <= dm.qTempLaunches.FieldByName('Data_okonchanie').AsDateTime))  then
+        and  (dm.qTempJobs.FieldByName('Okonchanie').AsDateTime <= dm.qTempLaunches.FieldByName('Data_okonchanie').AsDateTime))
+        or ((dm.qTempJobs.FieldByName('Nachalo').AsDateTime <= dm.qTempLaunches.FieldByName('Data_nachalo').AsDateTime)
+        and  (dm.qTempJobs.FieldByName('Okonchanie').AsDateTime >= dm.qTempLaunches.FieldByName('Data_okonchanie').AsDateTime)) then
       begin
         dm.qTempJobs.Edit;
         dm.qTempJobs.FieldByName('Nachalo').AsDateTime := IncDay(dm.qTempJobs.FieldByName('Nachalo').AsDateTime, shiftDays);
@@ -283,7 +287,7 @@ begin
 
   Chart1.Legend.Visible := false;
   Chart1.View3D := false;
-  Chart1.Title.Caption := 'Пересчитанная диаграмма Ганта для пусков и работ по ТО';
+  Chart1.Title.Caption := 'Пересчитанная диаграмма ТО и пусков';
   Chart1.BottomAxis.Title.Caption := 'Время';
   Chart1.LeftAxis.Title.Caption := 'Работы и пуски';
 

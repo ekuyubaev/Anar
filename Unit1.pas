@@ -9,7 +9,7 @@ uses
   DBGridEh, unit_attestacia, unit_oborudovanie, unit_sotrudnik, unit_sooruzhenie,
   unit_sredstvo_izmerenia, unit_ZIP, unit_MTO, unit_GSM, unit_pusk, unit_rabota,
   unit_uvedomlenie_attestacia, unit_uvedomlenie, unit_otchety, unit_login, unit_prognoz,
-  unit_gant;
+  unit_gant, Vcl.Imaging.jpeg, Vcl.ExtCtrls;
 
 type
   Tform_main = class(TForm)
@@ -41,6 +41,8 @@ type
     N25: TMenuItem;
     N26: TMenuItem;
     N27: TMenuItem;
+    Image1: TImage;
+    N28: TMenuItem;
     procedure N4Click(Sender: TObject);
     procedure N5Click(Sender: TObject);
     procedure N6Click(Sender: TObject);
@@ -65,6 +67,7 @@ type
     procedure N25Click(Sender: TObject);
     procedure N26Click(Sender: TObject);
     procedure N27Click(Sender: TObject);
+    procedure N28Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -253,6 +256,16 @@ end;
 procedure Tform_main.N27Click(Sender: TObject);
 begin
   form_napravlenie.ShowModal;
+end;
+
+procedure Tform_main.N28Click(Sender: TObject);
+begin
+  if form_otchety = nil then
+  begin
+    form_otchety := Tform_otchety.Create(Application);
+    form_otchety.Show;
+    form_otchety.PageControl1.ActivePage := form_otchety.ts_Zhurnal;
+  end;
 end;
 
 procedure Tform_main.N4Click(Sender: TObject);

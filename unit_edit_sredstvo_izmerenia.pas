@@ -37,9 +37,9 @@ type
     BitBtn2: TBitBtn;
     DBGridEh1: TDBGridEh;
     Label11: TLabel;
-    DBEditEh8: TDBEditEh;
     Label12: TLabel;
     DBEditEh9: TDBEditEh;
+    DBLookupComboboxEh2: TDBLookupComboboxEh;
     procedure BitBtn2Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure BitBtn1Click(Sender: TObject);

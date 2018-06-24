@@ -15,7 +15,6 @@ object form_edit_rabota: Tform_edit_rabota
   Position = poMainFormCenter
   WindowState = wsMaximized
   OnClose = FormClose
-  OnCreate = FormCreate
   OnResize = FormResize
   PixelsPerInch = 96
   TextHeight = 13

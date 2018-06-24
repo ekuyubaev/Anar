@@ -243,7 +243,7 @@ object form_ZIP: Tform_ZIP
       Width = 90
       Height = 25
       Anchors = [akTop, akRight]
-      Caption = #1042#1099#1076#1072#1095#1072' '#1047#1048#1055
+      Caption = #1056#1072#1089#1093#1086#1076' '#1047#1048#1055
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11

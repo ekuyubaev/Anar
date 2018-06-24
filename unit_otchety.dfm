@@ -24,13 +24,11 @@ object form_otchety: Tform_otchety
     Top = 0
     Width = 196
     Height = 274
-    ActivePage = ts_attest
+    ActivePage = ts_Zhurnal
     Align = alClient
     TabOrder = 0
-    ExplicitHeight = 226
     object ts_TO: TTabSheet
       Caption = 'ts_TO'
-      ExplicitHeight = 258
       object Label1: TLabel
         Left = 24
         Top = 16
@@ -88,7 +86,6 @@ object form_otchety: Tform_otchety
     object ts_attest: TTabSheet
       Caption = 'ts_attest'
       ImageIndex = 1
-      ExplicitHeight = 198
       object Label2: TLabel
         Left = 17
         Top = 16
@@ -186,6 +183,76 @@ object form_otchety: Tform_otchety
         ListSource = DM.ds_napravlenie
         TabOrder = 4
         Visible = True
+      end
+    end
+    object ts_Zhurnal: TTabSheet
+      Caption = 'ts_Zhurnal'
+      ImageIndex = 2
+      object Label5: TLabel
+        Left = 16
+        Top = 16
+        Width = 97
+        Height = 13
+        Caption = #1053#1072#1095#1072#1083#1100#1085#1072#1103' '#1076#1072#1090#1072
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label6: TLabel
+        Left = 16
+        Top = 80
+        Width = 89
+        Height = 13
+        Caption = #1050#1086#1085#1077#1095#1085#1072#1103' '#1076#1072#1090#1072
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object DateTimePicker2: TDateTimePicker
+        Left = 16
+        Top = 35
+        Width = 138
+        Height = 21
+        Date = 43275.400117430550000000
+        Time = 43275.400117430550000000
+        TabOrder = 0
+      end
+      object DateTimePicker3: TDateTimePicker
+        Left = 16
+        Top = 96
+        Width = 138
+        Height = 21
+        Date = 43275.400179872680000000
+        Time = 43275.400179872680000000
+        TabOrder = 1
+      end
+      object ProgressBar3: TProgressBar
+        Left = 16
+        Top = 167
+        Width = 138
+        Height = 17
+        TabOrder = 2
+      end
+      object BitBtn3: TBitBtn
+        Left = 16
+        Top = 136
+        Width = 138
+        Height = 25
+        Caption = #1057#1092#1086#1088#1084#1080#1088#1086#1074#1072#1090#1100
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 3
+        OnClick = BitBtn3Click
       end
     end
   end

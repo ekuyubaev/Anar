@@ -27,19 +27,6 @@ object form_edit_vydacha_ZIP: Tform_edit_vydacha_ZIP
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label2: TLabel
-    Left = 168
-    Top = 24
-    Width = 89
-    Height = 13
-    Caption = #1044#1072#1090#1072' '#1074#1086#1079#1074#1088#1072#1090#1072
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -11
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
   object Label3: TLabel
     Left = 24
     Top = 80
@@ -79,26 +66,13 @@ object form_edit_vydacha_ZIP: Tform_edit_vydacha_ZIP
   object DBDateTimeEditEh1: TDBDateTimeEditEh
     Left = 24
     Top = 43
-    Width = 112
+    Width = 265
     Height = 21
     DataField = 'Data_vydano'
     DataSource = DM.ds_vydacha_ZIP
     DynProps = <>
     EditButtons = <>
     TabOrder = 1
-    Visible = True
-    EditFormat = 'DD.MM.YYYY HH:NN'
-  end
-  object DBDateTimeEditEh2: TDBDateTimeEditEh
-    Left = 168
-    Top = 43
-    Width = 115
-    Height = 21
-    DataField = 'Data_vozvrata'
-    DataSource = DM.ds_vydacha_ZIP
-    DynProps = <>
-    EditButtons = <>
-    TabOrder = 2
     Visible = True
     EditFormat = 'DD.MM.YYYY HH:NN'
   end
@@ -114,7 +88,7 @@ object form_edit_vydacha_ZIP: Tform_edit_vydacha_ZIP
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 3
+    TabOrder = 2
     OnClick = BitBtn1Click
   end
   object BitBtn2: TBitBtn
@@ -129,7 +103,7 @@ object form_edit_vydacha_ZIP: Tform_edit_vydacha_ZIP
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 4
+    TabOrder = 3
     OnClick = BitBtn2Click
   end
   object DBLookupComboboxEh1: TDBLookupComboboxEh
@@ -144,7 +118,7 @@ object form_edit_vydacha_ZIP: Tform_edit_vydacha_ZIP
     KeyField = 'FIO'
     ListField = 'FIO'
     ListSource = DM.ds_sotrudnik
-    TabOrder = 5
+    TabOrder = 4
     Visible = True
   end
 end

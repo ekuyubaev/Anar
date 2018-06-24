@@ -80,7 +80,6 @@ type
     procedure BitBtn12Click(Sender: TObject);
     procedure BitBtn13Click(Sender: TObject);
     procedure BitBtn14Click(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -470,12 +469,6 @@ procedure Tform_edit_rabota.FormClose(Sender: TObject;
   var Action: TCloseAction);
 begin
   if DM.q_rabota.State in [dsEdit, dsInsert] then DM.q_rabota.Cancel;
-  editable := true;
-end;
-
-procedure Tform_edit_rabota.FormCreate(Sender: TObject);
-begin
-  editable := true;
 end;
 
 procedure Tform_edit_rabota.FormResize(Sender: TObject);

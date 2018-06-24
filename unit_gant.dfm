@@ -47,8 +47,8 @@ object form_gant: Tform_gant
         Marks.Callout.Arrow.Visible = True
         Marks.Visible = False
         ClickableLine = False
-        Pointer.Brush.Gradient.EndColor = 9300723
-        Pointer.Gradient.EndColor = 9300723
+        Pointer.Brush.Gradient.EndColor = 10708548
+        Pointer.Gradient.EndColor = 10708548
         Pointer.InflateMargins = True
         Pointer.Style = psRectangle
         Pointer.Visible = True

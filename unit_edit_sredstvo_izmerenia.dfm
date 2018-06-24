@@ -341,18 +341,6 @@ object form_edit_sredstvo_izmerenia: Tform_edit_sredstvo_izmerenia
         OnClick = BitBtn2Click
       end
     end
-    object DBEditEh8: TDBEditEh
-      Left = 179
-      Top = 365
-      Width = 214
-      Height = 21
-      DataField = 'Otvetstvennyi'
-      DataSource = DM.ds_sredstvo_izmerenia
-      DynProps = <>
-      EditButtons = <>
-      TabOrder = 11
-      Visible = True
-    end
     object DBEditEh9: TDBEditEh
       Left = 179
       Top = 400
@@ -362,6 +350,21 @@ object form_edit_sredstvo_izmerenia: Tform_edit_sredstvo_izmerenia
       DataSource = DM.ds_sredstvo_izmerenia
       DynProps = <>
       EditButtons = <>
+      TabOrder = 11
+      Visible = True
+    end
+    object DBLookupComboboxEh2: TDBLookupComboboxEh
+      Left = 179
+      Top = 365
+      Width = 211
+      Height = 21
+      DynProps = <>
+      DataField = 'Otvetstvennyi'
+      DataSource = DM.ds_sredstvo_izmerenia
+      EditButtons = <>
+      KeyField = 'FIO'
+      ListField = 'FIO'
+      ListSource = DM.ds_sotrudnik
       TabOrder = 12
       Visible = True
     end

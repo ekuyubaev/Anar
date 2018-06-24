@@ -25,7 +25,6 @@ object form_edit_GSM: Tform_edit_GSM
     Height = 365
     Align = alClient
     TabOrder = 0
-    ExplicitHeight = 280
     object Label1: TLabel
       Left = 48
       Top = 24
@@ -184,7 +183,7 @@ object form_edit_GSM: Tform_edit_GSM
       Width = 185
       Height = 21
       DataField = 'Tip'
-      DataSource = DM.ds_MTO
+      DataSource = DM.ds_GSM
       DynProps = <>
       EditButtons = <>
       TabOrder = 5
@@ -196,7 +195,7 @@ object form_edit_GSM: Tform_edit_GSM
       Width = 185
       Height = 21
       DataField = 'GOST'
-      DataSource = DM.ds_MTO
+      DataSource = DM.ds_GSM
       DynProps = <>
       EditButtons = <>
       TabOrder = 6
@@ -210,7 +209,6 @@ object form_edit_GSM: Tform_edit_GSM
     Height = 33
     Align = alBottom
     TabOrder = 1
-    ExplicitTop = 280
     object BitBtn1: TBitBtn
       Left = 16
       Top = 5

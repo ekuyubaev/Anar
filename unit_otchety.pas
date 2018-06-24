@@ -24,10 +24,18 @@ type
     DBLookupComboboxEh1: TDBLookupComboboxEh;
     Label4: TLabel;
     DBLookupComboboxEh2: TDBLookupComboboxEh;
+    ts_Zhurnal: TTabSheet;
+    DateTimePicker2: TDateTimePicker;
+    DateTimePicker3: TDateTimePicker;
+    ProgressBar3: TProgressBar;
+    BitBtn3: TBitBtn;
+    Label5: TLabel;
+    Label6: TLabel;
     procedure FormActivate(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure BitBtn2Click(Sender: TObject);
+    procedure BitBtn3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -460,6 +468,211 @@ begin
         MsWord.Visible := True;
   end
     else ShowMessage('Нет сотрудников подлежащих аттестации на выбранную дату!');
+end;
+
+procedure Tform_otchety.BitBtn3Click(Sender: TObject);
+var MSWord, bookmarks: Variant;
+    pathToTemplate, attestDateStr, ID_vid_attestacia, ID_napravlenie : String;
+    startDate, endDate, tempStr : String;
+    i, j : integer;
+    step : real;
+    totalStep : real;
+    rowShift : integer;
+begin
+  startDate := FormatDateTime('yyyy-mm-dd', DateTimePicker2.Date);
+  endDate := FormatDateTime('yyyy-mm-dd', DateTimePicker3.Date);
+
+  if dm.q_otchety.Active then dm.q_otchety.Close;
+  dm.q_otchety.SQL.Text := 'Select R.*, NR.Naimnovanie, O.Naimenovanie as Oborudovanie '
+                      +' From Rabota R left join Naimenovanie_rabot NR '
+                      +' ON R.ID_naimenovanie = NR.ID_naimenovanie left join Oborudovanie O '
+                      +' ON R.ID_oborudovanie = O.ID_oborudovanie '
+                      +' Where (Nachalo between ' + QuotedStr(startDate)
+                      +' and ' + QuotedStr(endDate)
+                      +') or (Okonchanie between ' + QuotedStr(startDate)
+                      +' and ' + QuotedStr(endDate) + ')';
+  dm.q_otchety.Open;
+
+  if dm.q_otchety.RecordCount > 0 then
+  begin
+      MsWord := CreateOleObject('Word.Application');
+
+      pathToTemplate := ExtractFilePath(Application.ExeName) + 'otchety\Журнал учета работ.dot';
+      MsWord.Documents.Add(pathToTemplate);
+
+      step := self.ProgressBar3.Max / dm.q_otchety.RecordCount;
+      totalStep := 0;
+      rowShift := 2;
+
+      for i := 1 to dm.q_otchety.RecordCount do
+        begin
+            dm.q_otchety.RecNo := i;
+
+            MsWord.ActiveDocument.Tables.Item(1).Rows.Add(EmptyParam);
+
+            if  (dm.q_otchety.FieldByName('Po_rasporiazheniu').AsBoolean)
+                and (not dm.q_otchety.FieldByName('Nomer_rasporiazhenie').IsNull) then
+                    MsWord.ActiveDocument.Tables.Item(1).Cell(i+rowShift,1).Range.Text
+                        := dm.q_otchety.FieldByName('Nomer_rasporiazhenie').AsString;
+
+            if  (dm.q_otchety.FieldByName('Po_nariadu_dopusku').AsBoolean)
+                and (not dm.q_otchety.FieldByName('Nomer_nariad').IsNull) then
+                    MsWord.ActiveDocument.Tables.Item(1).Cell(i+rowShift,2).Range.Text
+                        := dm.q_otchety.FieldByName('Nomer_nariad').AsString;
+
+            if  (not dm.q_otchety.FieldByName('Naimnovanie').IsNull)
+                and (not dm.q_otchety.FieldByName('Oborudovanie').IsNull) then
+                    MsWord.ActiveDocument.Tables.Item(1).Cell(i+rowShift,3).Range.Text
+                        := dm.q_otchety.FieldByName('Oborudovanie').AsString
+                            + ',  ' +  dm.q_otchety.FieldByName('Naimnovanie').AsString;
+
+            if  (not dm.q_otchety.FieldByName('Otvetstvennyi').IsNull) then
+                    MsWord.ActiveDocument.Tables.Item(1).Cell(i+rowShift,4).Range.Text
+                        := dm.q_otchety.FieldByName('Otvetstvennyi').AsString;
+
+            if  (not dm.q_otchety.FieldByName('Nachalo').IsNull) then
+                    MsWord.ActiveDocument.Tables.Item(1).Cell(i+rowShift,9).Range.Text
+                        := FormatDateTime('dd.mm.yyyy hh:nn',
+                                      dm.q_otchety.FieldByName('Nachalo').AsDateTime);
+
+            if  (not dm.q_otchety.FieldByName('Okonchanie').IsNull) then
+                    MsWord.ActiveDocument.Tables.Item(1).Cell(i+rowShift,10).Range.Text
+                        := FormatDateTime('dd.mm.yyyy hh:nn',
+                                      dm.q_otchety.FieldByName('Okonchanie').AsDateTime);
+
+            dm.q_temp_reps.SQL.Text := 'select S.* From Ispolnitel I left join Sotrudnik S'
+                                    + ' on I.ID_sotrudnik = S.ID_sotrudnik '
+                                    + ' Where I.ID_rabota = ' + dm.q_otchety.FieldByName('ID_rabota').AsString;
+            dm.q_temp_reps.Open;
+
+            tempstr := '';
+            for j := 1 to dm.q_temp_reps.RecordCount do
+            begin
+              dm.q_temp_reps.RecNo := j;
+              if j = 1 then tempStr := dm.q_temp_reps.FieldByName('FIO').AsString
+              else tempStr :=  tempStr + ', ' + dm.q_temp_reps.FieldByName('FIO').AsString;
+            end;
+
+            MsWord.ActiveDocument.Tables.Item(1).Cell(i+rowShift,5).Range.Text
+                        := tempStr;
+
+            totalStep := totalStep + step;
+            self.ProgressBar3.Position := Round(totalStep);
+        end;
+
+        MsWord.ActiveDocument.Range(0, 0).Select;
+
+        self.Close;
+
+        MsWord.Selection.Find.ClearFormatting;
+        MsWord.Selection.Find.Replacement.ClearFormatting;
+        MsWord.Selection.Find.Replacement.Text
+            := DayOf(DateTimePicker2.Date);
+        MsWord.Selection.Find.Text := 'startday';
+        MsWord.Selection.Find.Forward := True;
+        MsWord.Selection.Find.Wrap := 1;
+        MsWord.Selection.Find.Format := False;
+        MsWord.Selection.Find.MatchCase := False;
+        MsWord.Selection.Find.MatchWholeWord := False;
+        MsWord.Selection.Find.MatchWildcards := False;
+        MsWord.Selection.Find.MatchSoundsLike := False;
+        MsWord.Selection.Find.MatchAllWordForms := False;
+        MsWord.Selection.Find.Execute(Replace := 2);
+
+        MsWord.Selection.Find.ClearFormatting;
+        MsWord.Selection.Find.Replacement.ClearFormatting;
+        MsWord.Selection.Find.Replacement.Text
+            := MonthOf(DateTimePicker2.Date);
+        MsWord.Selection.Find.Text := 'startmonth';
+        MsWord.Selection.Find.Forward := True;
+        MsWord.Selection.Find.Wrap := 1;
+        MsWord.Selection.Find.Format := False;
+        MsWord.Selection.Find.MatchCase := False;
+        MsWord.Selection.Find.MatchWholeWord := False;
+        MsWord.Selection.Find.MatchWildcards := False;
+        MsWord.Selection.Find.MatchSoundsLike := False;
+        MsWord.Selection.Find.MatchAllWordForms := False;
+        MsWord.Selection.Find.Execute(Replace := 2);
+
+        MsWord.Selection.Find.ClearFormatting;
+        MsWord.Selection.Find.Replacement.ClearFormatting;
+        MsWord.Selection.Find.Replacement.Text
+            := YearOf(DateTimePicker2.Date);
+        MsWord.Selection.Find.Text := 'startyear';
+        MsWord.Selection.Find.Forward := True;
+        MsWord.Selection.Find.Wrap := 1;
+        MsWord.Selection.Find.Format := False;
+        MsWord.Selection.Find.MatchCase := False;
+        MsWord.Selection.Find.MatchWholeWord := False;
+        MsWord.Selection.Find.MatchWildcards := False;
+        MsWord.Selection.Find.MatchSoundsLike := False;
+        MsWord.Selection.Find.MatchAllWordForms := False;
+        MsWord.Selection.Find.Execute(Replace := 2);
+
+
+        MsWord.Selection.Find.ClearFormatting;
+        MsWord.Selection.Find.Replacement.ClearFormatting;
+        MsWord.Selection.Find.Replacement.Text
+            := DayOf(DateTimePicker3.Date);
+        MsWord.Selection.Find.Text := 'endday';
+        MsWord.Selection.Find.Forward := True;
+        MsWord.Selection.Find.Wrap := 1;
+        MsWord.Selection.Find.Format := False;
+        MsWord.Selection.Find.MatchCase := False;
+        MsWord.Selection.Find.MatchWholeWord := False;
+        MsWord.Selection.Find.MatchWildcards := False;
+        MsWord.Selection.Find.MatchSoundsLike := False;
+        MsWord.Selection.Find.MatchAllWordForms := False;
+        MsWord.Selection.Find.Execute(Replace := 2);
+
+        MsWord.Selection.Find.ClearFormatting;
+        MsWord.Selection.Find.Replacement.ClearFormatting;
+        MsWord.Selection.Find.Replacement.Text
+            := MonthOf(DateTimePicker3.Date);
+        MsWord.Selection.Find.Text := 'endmonth';
+        MsWord.Selection.Find.Forward := True;
+        MsWord.Selection.Find.Wrap := 1;
+        MsWord.Selection.Find.Format := False;
+        MsWord.Selection.Find.MatchCase := False;
+        MsWord.Selection.Find.MatchWholeWord := False;
+        MsWord.Selection.Find.MatchWildcards := False;
+        MsWord.Selection.Find.MatchSoundsLike := False;
+        MsWord.Selection.Find.MatchAllWordForms := False;
+        MsWord.Selection.Find.Execute(Replace := 2);
+
+        MsWord.Selection.Find.ClearFormatting;
+        MsWord.Selection.Find.Replacement.ClearFormatting;
+        MsWord.Selection.Find.Replacement.Text
+            := YearOf(DateTimePicker3.Date);
+        MsWord.Selection.Find.Text := 'endyear';
+        MsWord.Selection.Find.Forward := True;
+        MsWord.Selection.Find.Wrap := 1;
+        MsWord.Selection.Find.Format := False;
+        MsWord.Selection.Find.MatchCase := False;
+        MsWord.Selection.Find.MatchWholeWord := False;
+        MsWord.Selection.Find.MatchWildcards := False;
+        MsWord.Selection.Find.MatchSoundsLike := False;
+        MsWord.Selection.Find.MatchAllWordForms := False;
+        MsWord.Selection.Find.Execute(Replace := 2);
+
+        MsWord.Selection.Find.ClearFormatting;
+        MsWord.Selection.Find.Replacement.ClearFormatting;
+        MsWord.Selection.Find.Replacement.Text
+            := 'Узел Электротехнического обеспечения';
+        MsWord.Selection.Find.Text := 'organization';
+        MsWord.Selection.Find.Forward := True;
+        MsWord.Selection.Find.Wrap := 1;
+        MsWord.Selection.Find.Format := False;
+        MsWord.Selection.Find.MatchCase := False;
+        MsWord.Selection.Find.MatchWholeWord := False;
+        MsWord.Selection.Find.MatchWildcards := False;
+        MsWord.Selection.Find.MatchSoundsLike := False;
+        MsWord.Selection.Find.MatchAllWordForms := False;
+        MsWord.Selection.Find.Execute(Replace := 2);
+
+        MsWord.Visible := True;
+  end
+    else ShowMessage('За выбранный период отсутствуют работы!');
 end;
 
 procedure Tform_otchety.FormActivate(Sender: TObject);
